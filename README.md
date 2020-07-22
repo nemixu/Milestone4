@@ -173,3 +173,14 @@ The order models will be showcased here.
 #### The OrderItem Model:
 
 Will be showcased here.
+
+## Features:
+
+### Features that have been developed:
+
+* <p>Account creation, user can login and view orders on profile dashboard. </p>
+* <p>User can update their details from their profile dashboard.</p>
+* <p>A list of services / products the user can interact with and find more information about by clicking</p>
+* <p>An active shopping cart that users can add or remove items from and also update the cart.</p>
+* <p>User can complete a checkout purchase with shopping cart items through the Stripe API which will process the payment securely and place the order</p>
+* <p>Users can get in touch with the site owner via email by sending the contact form on the contact page.</p>
