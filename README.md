@@ -60,4 +60,8 @@
 * As a user looking to purchase a service I want to see the purchase on my created profile.
 * As a user looking to purchase a service I want to see my previous purchases if I have purchased before.
 
+* As a user interested in the service I want to know as much about the information as possible.
+* As a user interested in the service I Want to know if people have used the service before.
+* As a user interested in the service I want to know about the individual or company providing the service.
+* As a user interested in the service I want to see what the service has to offer.
 
