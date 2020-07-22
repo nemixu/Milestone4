@@ -288,3 +288,31 @@ python3 manage.py runserver
 
 Well done, DN fitness is now running locally on your machine.
 
+### Deploying DN Fitness to Heroku:
+
+* 1: Create a requirements.txt file using the following command.
+```bash
+pip3 freeze > requirements.txt
+```
+* 2: Create a procfile with the following command. Please ensure the P is capital in Procfile
+```bash
+echo web: python3 app.py > Procfile
+```
+* 2.1: In some cases after creating the procfile the webdynos do not always spin up and this may needed to be done manually via the command line.
+```bash
+heroku ps:scale web=1
+```
+* 3: Push the newly created files to your repository.
+* 4: Create an app for the project on the Heroku Dashboard, it can also be done by the command line.
+* 5: Select your deployment method by clicking on the deployment method button in this case you can select GitHub.
+* 6: On the dashboard, you will need to set config vars:
+
+DATABASE_URL: <your_URL>
+SECRET_KEY:<your_key>
+STRIPE_PUBLIC_KEY:<stripe_key>
+STRIPE_SECRET_KEY:<stipe_secret>
+
+* 7: Click the deploy button on the heroku Dashboard.
+* 8: Wait until the build has finished and click the view project link once it has done. If you get an error please refer to logs, and also check *2.1 above.
+
+Congratulations you have deployed DN fitness to Heroku and it is live to be viewed by anyone!
