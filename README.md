@@ -97,3 +97,21 @@
 
 ### Icons:
 <p>I have decided to use the collection of icons from font-awesome, as the collection they have are vast and easy to use. They have a wide range of icons that have come in handy for things such as the shopping cart and user icon</p>
+
+### Colours:
+<p>The colours I have chosen for this website will compliment the minimalistic feel and tones of the website, having a visually appealing contrast provides a more elegant user experience for those using / navigating the site website, below is a list of colours user across the website.</p>
+
+-![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
+"Black" - This Colour provides X and contrast to x colours.
+
+-![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
+"Black" - This Colour provides X and contrast to x colours.
+
+-![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
+"Black" - This Colour provides X and contrast to x colours.
+
+-![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
+"Black" - This Colour provides X and contrast to x colours.
+
+-![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
+"Black" - This Colour provides X and contrast to x colours.
