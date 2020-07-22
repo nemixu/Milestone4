@@ -22,14 +22,14 @@
 - [Features](#Features)
     - [Features that have been developed](#Features-that-have-been-developed)
     - [Features that will be implemented in the future](#Features-that-will-be-developed-in-future-releases)
-- Technologies Used 
-- Planning + Testing: 
-- Bugs 
-- Deployment 
-	- Deploying to Heroku
-    - Locally run this project
-- Credits 
-- Disclaimer
+- [Technologies Used](#Technologies-Used)
+- [Planning & Testing](#Planning-&-Testing) 
+- [Bugs](#Bugs)
+- [Deployment](#Deployment) 
+	- [Deploying to Heroku](#Deploying-DN-Fitness-to-Heroku)
+    - [Locally run this project](#Running-this-project-locally)
+- [Credits](#Credits) 
+- [Disclaimer](#Disclaimer)
 
 ## User Experience:
 
