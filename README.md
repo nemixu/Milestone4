@@ -115,3 +115,26 @@
 
 -![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
 "Black" - This Colour provides X and contrast to x colours.
+
+### Styles:
+
+DN Fitness Colours:
+
+```css
+$primary-color: #fafafa; // primary
+$secondary-color: #fafafa; // secondary
+$tertiary-color: #fafafa; // tertiary
+$white-color: #ffffff; // white
+$off-white-color: #fafafa; // off-white
+$black-color: #fafafa; // black
+$error-color: #fafafa; // error-red
+$success-color: #fafafa; // success-green
+```
+
+Shadows:
+```css
+$panel-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+$text-shadow: 0.5px 0.2px 1px rgba(0,0,0,0.2);
+
+```
+
