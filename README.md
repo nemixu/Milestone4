@@ -158,3 +158,6 @@ $slow-transition: 0.5s all ease-in-out;
 * During the development of DN fitness I worked with the standard sqlite3 database that is pre-installed with Django.
 * In the production version of DN fitness the database is utilizing PostgreSQL and is hosted and provided by Heroku.
 
+### DN Fitness Data Models:
+
+User models used in this application is provided by Django. <a href="https://docs.djangoproject.com/en/3.0/ref/contrib/auth/" target="_blank">Click here to read more about it.</a>
