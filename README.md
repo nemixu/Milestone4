@@ -70,3 +70,5 @@
 * As a user who is new to fitness I want to read about the service providers history to ensure they are certified.
 * As a user who is new to fitness I want to see possible workout routines.
 
+### User Requirements and Expectations:
+<p>Shopping online has become a cornerstone to modern life, a user needs to feel safe and comfortable in order for them to continue with a purchase online. Especially when it comes to using a site / service that is not as well known as big companies / webservices. To tackle this and to ensure we can provide the best possible UX, proper authentication and secure payments through Stripe is necessary to offer peace of mind to the consumer.</p>
