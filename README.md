@@ -33,3 +33,8 @@
     - Locally run this project
 - Credits 
 - Disclaimer
+
+## User Experience:
+
+### Project Goals:
+<p>The goal of this project is to offer a range of services and deals including merchandise. The user will be able to create an account, add a combination of services to a shopping basket, make payments and have their orders viewable on the profile dashboard.</p>
