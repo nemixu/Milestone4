@@ -12,19 +12,16 @@
     - [User Requirements and Expectations](#User-Requirements-and-Expectations)
 - [Design Choices](#Design-Choices) 
     - [Fonts](#Fonts)
-    - Icons
-    - Colours
-    - Styling
-    - Images
-    - Backgrounds
-- Planning
-- Wireframes 
-    - Website Layout
-    - Account Creation Flowchart
-    - Database Design
-- Features
-    - Features that have been developed
-    - Features that will be implemented in the future
+    - [Icons](#Icons)
+    - [Colours](#Colours)
+    - [Styling](#Styles)
+    - [Images](#Images)
+- [Wireframes](#Wireframes)
+    - [Database Design](#Database-Design)
+    - [Data Models](#DN-Fitness-Data-Models)
+- [Features](#Features)
+    - [Features that have been developed](#Features-that-have-been-developed)
+    - [Features that will be implemented in the future](#Features-that-will-be-developed-in-future-releases)
 - Technologies Used 
 - Planning + Testing: 
 - Bugs 
