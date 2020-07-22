@@ -38,3 +38,12 @@
 
 ### Project Goals:
 <p>The goal of this project is to offer a range of services and deals including merchandise. The user will be able to create an account, add a combination of services to a shopping basket, make payments and have their orders viewable on the profile dashboard.</p>
+
+### Target Audience Goals:
+
+* Browse various services and review information about that service.
+* Purchase a service that is shown on the webstore.
+* Create an account to track orders and purchase items on the webstore as a registered user.
+* A visually appealing and intuitive design.
+* A website that is navigable on any device (mobile/tablet/desktop).
+
