@@ -223,3 +223,30 @@ Will be showcased here.
 <p>The planning for this project was extremely important, using new technology to create an application for the first time I knew would be time consuming and I would run into a lot of issues and problems to solve.</p>
 
 <p>Part of my planning process was to use an agile styled system or ticket system to do hourly /daily / weekly tasks from a Todo List and move tasks into the in progress section, if completed they were moved to the completed block, and if i was having serious issues I would move them to the blocked section where I could do it when the rest of the tasks where done. Using this method helped me to ensure I was spending the right time on tasks and not wondering what to do next, when a job was done move it to completed and take a new ticket.</p>
+
+<p>Having wireframes also helped build a base to the project fairly quickly and helped get the basics down, such as the nav bar, footer and image placement. It allowed me to spend more time with the functionality of the framework Django to ensure each app was working correctly.</p>
+
+#### Feature Testing:
+
+Feature testing will go here.
+
+## Bugs 
+
+#### Bugs During Development:
+
+Bugs will go here
+
+## Deployment:
+
+### Running this project locally:
+
+To run DN Fitness locally please follow these steps below.
+
+Before we get started you will need to ensure you have the following:
+
+* An Interactive development environment such as <a href="https://code.visualstudio.com/" targe="_blank">Visual Studio Code.</a>
+* You must have the following installed on your machine
+* * <a href="https://www.python.org/">Python3</a>
+* * <a href="https://git-scm.com/">Git</a>
+* You will need to create an account with the below to run this project and use it sucessfully.
+* * <a href="https://stripe.com/">Stripe</a>
