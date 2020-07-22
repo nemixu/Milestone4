@@ -142,3 +142,6 @@ Transitions:
 ```css
 $slow-transition: 0.5s all ease-in-out;
 ```
+
+### Images:
+<p>The images used across the website have been sourced from royalty free image hosting websites such as <a href="https://unsplash.com/">this</a>. The images are related to gym / fitness in some way and helps invite the user to the site with visually appealing images.</p>
