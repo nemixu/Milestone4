@@ -250,3 +250,41 @@ Before we get started you will need to ensure you have the following:
 * * <a href="https://git-scm.com/">Git</a>
 * You will need to create an account with the below to run this project and use it sucessfully.
 * * <a href="https://stripe.com/">Stripe</a>
+
+## Instructions:
+<em>These instructions are for Windows 10, if you are using Mac or linux you may need to use different commands.
+<a href="https://python.readthedocs.io/en/latest/library/venv.html">Read more here.</a></em>
+
+* 1: Clone DN Fitness repository by either downloading from <a href="https://github.com/nemixu/Milestone4" target="_blank">Here</a> or type the following command into your desired terminal.
+```bash
+git clone https://github.com/nemixu/Milestone4"
+```
+* 2: Navigate to this folder in your terminal. (cd Milestone4 for e.g)
+* 3: Enter the following command into your terminal.
+```bash
+python3 -m .venv venv
+```
+* 4: Initialize the environment by using the following command.
+```bash
+.venv\bin\activate
+```
+* 5: Install the requirements and dependancies from the requirements.txt file
+```bash
+pip3 -r requirements.txt
+```
+* 6: Inside your IDE create a file where you can store your secret information for the application. This can be done by creating an env.py file.
+* 7: Enter the following command into the terminal to migrate models into the database.
+```bash
+python3 manage.py migrate
+```
+*8: Then you need to create a 'super user' for this project using the terminal. And follow the instructions.
+```
+python3 manage.py createsuperuser
+```
+*9: The application can now be ran locally using the following command.
+```bash
+python3 manage.py runserver
+```
+
+Well done, DN fitness is now running locally on your machine.
+
