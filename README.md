@@ -200,3 +200,13 @@ Will be showcased here.
 * <a href="https://www.w3schools.com/js/">JavaScript</a>
 * <a href="https://www.json.org/json-en.html">JSON</a>
 * <a href="https://www.python.org/">Python</a>
+
+#### Tools & Libraries: 
+* <a href="https://www.djangoproject.com/">Django</a>
+* <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+* <a href="https://stripe.com/">Stripe</a>
+* <a href="https://pip.pypa.io/en/stable/installing/">PIP</a>
+* <a href="https://jquery.com/">jQuery</a>
+* <a href="https://git-scm.com/">Git</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://fontawesome.com/icons?d=gallery">Font-Awesome</a>
