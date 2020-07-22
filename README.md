@@ -316,3 +316,10 @@ STRIPE_SECRET_KEY:<stipe_secret>
 * 8: Wait until the build has finished and click the view project link once it has done. If you get an error please refer to logs, and also check *2.1 above.
 
 Congratulations you have deployed DN fitness to Heroku and it is live to be viewed by anyone!
+
+## Credits:
+
+* All credits will go here.
+
+## Disclaimer:
+The contents of this website are for educational purposes only.
