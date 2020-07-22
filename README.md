@@ -59,12 +59,12 @@
 * As a user looking to purchase a service I want to recieve an email confirming my purchase.
 * As a user looking to purchase a service I want to see the purchase on my created profile.
 * As a user looking to purchase a service I want to see my previous purchases if I have purchased before.
-<br>
+<hr>
 * As a user interested in the service I want to know as much about the information as possible.
 * As a user interested in the service I Want to know if people have used the service before.
 * As a user interested in the service I want to know about the individual or company providing the service.
 * As a user interested in the service I want to see what the service has to offer.
-<br>
+<hr>
 * As a user who is new to fitness I want to ensure the information is clear and understandable.
 * As a user who is new to fitness I want to know what kind of activites are covered in the services.
 * As a user who is new to fitness I want to read about the service providers history to ensure they are certified.
