@@ -73,10 +73,18 @@
 ### User Requirements and Expectations:
 <p>Shopping online has become a cornerstone to modern life, a user needs to feel safe and comfortable in order for them to continue with a purchase online. Especially when it comes to using a site / service that is not as well known as big companies / webservices. To tackle this and to ensure we can provide the best possible UX, proper authentication and secure payments through Stripe is necessary to offer peace of mind to the consumer.</p>
 
-#### Requirements 
+#### Requirements:
 * Interact with a visually appealing and intuative website.
 * Navigate the website on multiple devices with ease.
 * Consume information about various products / services easily.
 * Add products / services to a shopping cart in a safe and secure way.
 * View orders in profile dashboard section.
 * Ensure contact to the company / owner is easily accessible for the user.
+
+#### Expectations:
+* The website will not store payment information from customers orders on the websites database.
+* The website will load with sufficient speed
+* The website will ensure safe storage of user details.
+* The content will be digestible on multiple devices, mobile, tablet, laptop, large screens.
+* The website will have good contrast colours to ensure a user can digest the information easily.
+* The website will have a navbar to ensure navigation around the site conforms to good UX.
