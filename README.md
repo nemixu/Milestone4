@@ -138,3 +138,7 @@ $text-shadow: 0.5px 0.2px 1px rgba(0,0,0,0.2);
 
 ```
 
+Transitions:
+```css
+$slow-transition: 0.5s all ease-in-out;
+```
