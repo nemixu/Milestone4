@@ -318,5 +318,5 @@ Congratulations you have deployed DN fitness to Heroku and it is live to be view
 
 * All credits will go here.
 
-## Disclaimer:
+## [Disclaimer](#Contents):
 The contents of this website are for educational purposes only.
