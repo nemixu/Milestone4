@@ -88,3 +88,6 @@
 * The content will be digestible on multiple devices, mobile, tablet, laptop, large screens.
 * The website will have good contrast colours to ensure a user can digest the information easily.
 * The website will have a navbar to ensure navigation around the site conforms to good UX.
+
+## Design Choices:
+<p>From the start the site design is extremely important to ensure a user is interested in the site, they will stay on the site and view what is to be offered and potentially purchase a product. The site will have a minimalistic theme to ensure the user is not distracted by too many colours, and also for colours to compliment the imagery used across the site.</p>
