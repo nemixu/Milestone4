@@ -31,7 +31,7 @@
 - [Credits](#Credits) 
 - [Disclaimer](#Disclaimer)
 
-## User Experience:
+## [User Experience](#Contents):
 
 ### Project Goals:
 <p>The goal of this project is to offer a range of services and deals including merchandise. The user will be able to create an account, add a combination of services to a shopping basket, make payments and have their orders viewable on the profile dashboard.</p>
@@ -88,7 +88,7 @@
 * The website will have good contrast colours to ensure a user can digest the information easily.
 * The website will have a navbar to ensure navigation around the site conforms to good UX.
 
-## Design Choices:
+## [Design Choices](#Contents):
 <p>From the start the site design is extremely important to ensure a user is interested in the site, they will stay on the site and view what is to be offered and potentially purchase a product. The site will have a minimalistic theme to ensure the user is not distracted by too many colours, and also for colours to compliment the imagery used across the site.</p>
 
 ### Fonts: 
@@ -145,7 +145,7 @@ $slow-transition: 0.5s all ease-in-out;
 ### Images:
 <p>The images used across the website have been sourced from royalty free image hosting websites such as <a href="https://unsplash.com/" target="_blank">Unsplash</a>. The images are related to gym / fitness in some way and helps invite the user to the site with visually appealing images.</p>
 
-## Wireframes:
+## [Wireframes](#Contents):
 <p>The wireframes for this project were created using <a href="https://balsamiq.com/" target="_blank">balsamiq</a>. This tool helped to devlop the wireframes in a quick and easy manner and had mutliple components ready to use to speed up the development process. Once all the wireframes were completed for mobile, tablet, desktop it was extremely easy to export the .png files in order to save for this project.</p>
 
 <p>The wireframes for this project can be found <a href="https://github.com/nemixu/Milestone4/tree/master/wireframes" target="_blank">here.</a></p>
@@ -171,7 +171,7 @@ The order models will be showcased here.
 
 Will be showcased here.
 
-## Features:
+## [Features](#Contents):
 
 ### Features that have been developed:
 
@@ -190,7 +190,7 @@ Will be showcased here.
 * <p>A feedback section / Recommendations from past users.</p>
 * <p>A forum / discussion section where users can talk about their journey in fitness</p>
 
-## Technologies Used:
+## [Technologies Used](#Contents):
 #### Languages:
 * <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
 * <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
@@ -213,7 +213,7 @@ Will be showcased here.
 * <a href="https://www.sqlite.org/index.html">SQlite3 - Development</a>
 
 
-## Planning and Testing:
+## [Planning and Testing](#Contents):
 
 #### Planning:
 
@@ -227,13 +227,13 @@ Will be showcased here.
 
 Feature testing will go here.
 
-## Bugs 
+## [Bugs](#Contents) 
 
 #### Bugs During Development:
 
 Bugs will go here
 
-## Deployment:
+## [Deployment](#Contents):
 
 ### Running this project locally:
 
@@ -248,7 +248,7 @@ Before we get started you will need to ensure you have the following:
 * You will need to create an account with the below to run this project and use it sucessfully.
 * * <a href="https://stripe.com/">Stripe</a>
 
-## Instructions:
+## [Instructions](#Contents):
 <em>These instructions are for Windows 10, if you are using Mac or linux you may need to use different commands.
 <a href="https://python.readthedocs.io/en/latest/library/venv.html">Read more here.</a></em>
 
@@ -314,7 +314,7 @@ STRIPE_SECRET_KEY:<stipe_secret>
 
 Congratulations you have deployed DN fitness to Heroku and it is live to be viewed by anyone!
 
-## Credits:
+## [Credits](#Contents):
 
 * All credits will go here.
 
