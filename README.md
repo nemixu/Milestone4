@@ -192,3 +192,11 @@ Will be showcased here.
 * <p>Order confirmation emails to be sent to customer upon placing an order.</p>
 * <p>A feedback section / Recommendations from past users.</p>
 * <p>A forum / discussion section where users can talk about their journey in fitness</p>
+
+## Technologies Used:
+#### Languages:
+* <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
+* <a href="https://www.w3schools.com/js/">JavaScript</a>
+* <a href="https://www.json.org/json-en.html">JSON</a>
+* <a href="https://www.python.org/">Python</a>
