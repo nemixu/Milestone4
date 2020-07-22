@@ -161,3 +161,15 @@ $slow-transition: 0.5s all ease-in-out;
 ### DN Fitness Data Models:
 
 User models used in this application is provided by Django. <a href="https://docs.djangoproject.com/en/3.0/ref/contrib/auth/" target="_blank">Click here to read more about it.</a>
+
+#### The Product Model:
+
+The product models will be showcased here.
+
+#### The Order Model:
+
+The order models will be showcased here.
+
+#### The OrderItem Model:
+
+Will be showcased here.
