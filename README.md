@@ -4,11 +4,11 @@
 
 ## Contents:
 
-- UX
-    - Project Goals
-    - Target Audience Goals
-    - Site Owner Goals
-    - User Stories
+- [UX](#User-experience)
+    - [Project Goals](#Project-Goals)
+    - [Target Audience Goals](#Target-Audience-Goals)
+    - [Site Owner Goals](#Site-Owner-Goals)
+    - [User Stories](#User-Stories)
     - User Requirements and Expectations
 - Design Choices 
     - Fonts
