@@ -52,3 +52,12 @@
 * Provide users with a safe and secure e-commerce platform in order to generate revenue from sales.
 * Encourage user sales with promotions and discounts or possible group buys.
 * Build awareness for the brand and attract more traffic on the site.
+
+### User Stories:
+
+* As a user looking to purchase a service I want to see what is included in that service.
+* As a user looking to purchase a service I want to recieve an email confirming my purchase.
+* As a user looking to purchase a service I want to see the purchase on my created profile.
+* As a user looking to purchase a service I want to see my previous purchases if I have purchased before.
+
+
