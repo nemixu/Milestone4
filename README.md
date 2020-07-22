@@ -23,7 +23,7 @@
     - [Features that have been developed](#Features-that-have-been-developed)
     - [Features that will be implemented in the future](#Features-that-will-be-developed-in-future-releases)
 - [Technologies Used](#Technologies-Used)
-- [Planning & Testing](#Planning-&-Testing) 
+- [Planning & Testing](#Planning-and-Testing) 
 - [Bugs](#Bugs)
 - [Deployment](#Deployment) 
 	- [Deploying to Heroku](#Deploying-DN-Fitness-to-Heroku)
@@ -213,7 +213,7 @@ Will be showcased here.
 * <a href="https://www.sqlite.org/index.html">SQlite3 - Development</a>
 
 
-## Planning & Testing:
+## Planning and Testing:
 
 #### Planning:
 
