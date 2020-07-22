@@ -65,3 +65,8 @@
 * As a user interested in the service I want to know about the individual or company providing the service.
 * As a user interested in the service I want to see what the service has to offer.
 
+* As a user who is new to fitness I want to ensure the information is clear and understandable.
+* As a user who is new to fitness I want to know what kind of activites are covered in the services.
+* As a user who is new to fitness I want to read about the service providers history to ensure they are certified.
+* As a user who is new to fitness I want to see possible workout routines.
+
