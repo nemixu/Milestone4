@@ -184,3 +184,11 @@ Will be showcased here.
 * <p>An active shopping cart that users can add or remove items from and also update the cart.</p>
 * <p>User can complete a checkout purchase with shopping cart items through the Stripe API which will process the payment securely and place the order</p>
 * <p>Users can get in touch with the site owner via email by sending the contact form on the contact page.</p>
+
+### Features that will be developed in future releases:
+
+* <p>A reset password link that will send the user a link to reset their password for the website.</p>
+* <p>Services will be filtered by recently purchased or user favourites.</p>
+* <p>Order confirmation emails to be sent to customer upon placing an order.</p>
+* <p>A feedback section / Recommendations from past users.</p>
+* <p>A forum / discussion section where users can talk about their journey in fitness</p>
