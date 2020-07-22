@@ -210,3 +210,16 @@ Will be showcased here.
 * <a href="https://git-scm.com/">Git</a>
 * <a href="https://getbootstrap.com/">Bootstrap</a>
 * <a href="https://fontawesome.com/icons?d=gallery">Font-Awesome</a>
+
+#### Databases:
+* <a href="https://www.postgresql.org/">PostgreSQL - Production</a>
+* <a href="https://www.sqlite.org/index.html">SQlite3 - Development</a>
+
+
+## Planning & Testing:
+
+#### Planning:
+
+<p>The planning for this project was extremely important, using new technology to create an application for the first time I knew would be time consuming and I would run into a lot of issues and problems to solve.</p>
+
+<p>Part of my planning process was to use an agile styled system or ticket system to do hourly /daily / weekly tasks from a Todo List and move tasks into the in progress section, if completed they were moved to the completed block, and if i was having serious issues I would move them to the blocked section where I could do it when the rest of the tasks where done. Using this method helped me to ensure I was spending the right time on tasks and not wondering what to do next, when a job was done move it to completed and take a new ticket.</p>
