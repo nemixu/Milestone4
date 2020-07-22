@@ -9,9 +9,9 @@
     - [Target Audience Goals](#Target-Audience-Goals)
     - [Site Owner Goals](#Site-Owner-Goals)
     - [User Stories](#User-Stories)
-    - User Requirements and Expectations
-- Design Choices 
-    - Fonts
+    - [User Requirements and Expectations](#User-Requirements-and-Expectations)
+- [Design Choices](#Design-Choices) 
+    - [Fonts](#Fonts)
     - Icons
     - Colours
     - Styling
