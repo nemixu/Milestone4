@@ -1,4 +1,6 @@
+__pycache__
 venv/
 env.py
-__pycache__/
 db.sqlite3
+DN_fitness/__pycache__/urls.cpython-38.pyc
+DN_fitness/__pycache__/settings.cpython-38.pyc
