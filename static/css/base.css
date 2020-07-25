@@ -1,0 +1,18 @@
+html {
+    height: 100%;
+  }
+
+body {
+    background: ulr('/media/homepage_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color:rgb(109, 109, 109);
+}
+
+.logo-font {
+  text-transform: uppercase;
+}
+
+.text-black {
+    color: #000000 !important;
+}
