@@ -192,25 +192,25 @@ Will be showcased here.
 
 ## [Technologies Used](#Contents):
 #### Languages:
-* <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
-* <a href="https://www.w3schools.com/js/">JavaScript</a>
-* <a href="https://www.json.org/json-en.html">JSON</a>
-* <a href="https://www.python.org/">Python</a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>
+* <a href="https://www.w3schools.com/js/" target="_blank">JavaScript</a>
+* <a href="https://www.json.org/json-en.html" target="_blank">JSON</a>
+* <a href="https://www.python.org/" target="_blank">Python</a>
 
 #### Tools & Libraries: 
-* <a href="https://www.djangoproject.com/">Django</a>
-* <a href="https://code.visualstudio.com/">Visual Studio Code</a>
-* <a href="https://stripe.com/">Stripe</a>
-* <a href="https://pip.pypa.io/en/stable/installing/">PIP</a>
-* <a href="https://jquery.com/">jQuery</a>
-* <a href="https://git-scm.com/">Git</a>
-* <a href="https://getbootstrap.com/">Bootstrap</a>
-* <a href="https://fontawesome.com/icons?d=gallery">Font-Awesome</a>
+* <a href="https://www.djangoproject.com/" target="_blank">Django</a>
+* <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
+* <a href="https://stripe.com/" target="_blank">Stripe</a>
+* <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">PIP</a>
+* <a href="https://jquery.com/" target="_blank">jQuery</a>
+* <a href="https://git-scm.com/" target="_blank">Git</a>
+* <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+* <a href="https://fontawesome.com/icons?d=gallery" target="_blank">Font-Awesome</a>
 
 #### Databases:
-* <a href="https://www.postgresql.org/">PostgreSQL - Production</a>
-* <a href="https://www.sqlite.org/index.html">SQlite3 - Development</a>
+* <a href="https://www.postgresql.org/" target="_blank">PostgreSQL - Production</a>
+* <a href="https://www.sqlite.org/index.html" target="_blank">SQlite3 - Development</a>
 
 
 ## [Planning and Testing](#Contents):
