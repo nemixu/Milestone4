@@ -8,6 +8,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color:rgb(109, 109, 109);
+    font-family: 'Roboto', sans-serif;
 }
 
 .logo-font {
@@ -16,4 +17,18 @@ body {
 
 .text-black {
     color: #000000 !important;
+}
+
+
+/* Updated bootstraps container to help people with XL screens / curved screens */
+@media (min-width: 1200px) {
+  .container{
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-container {
+    padding-top: 164px;
+  }
 }
