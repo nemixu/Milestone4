@@ -9,7 +9,7 @@
           "price": 50.00,
           "category": 2,
           "rating": 4.6,
-          "image_url": "https://i.ibb.co/SdgQXDM/12345678.jpg",
+          "image_url": "https://i.ibb.co/syQKv0Y/12345678.jpg",
           "image": "12345678.jpg"
         }
     },
@@ -23,7 +23,7 @@
           "price": 225.00,
           "category": 2,
           "rating": 5,
-          "image_url": "https://i.ibb.co/wJsjY9g/23456789.jpg",
+          "image_url": "https://i.ibb.co/C2yS0v8/23456789.jpg",
           "image": "23456789.jpg"
         }
     },
@@ -37,7 +37,7 @@
           "price": 225.00,
           "category": 2,
           "rating": 5,
-          "image_url": "https://i.ibb.co/7K7YxCT/98765432.jpg",
+          "image_url": "https://i.ibb.co/pWB9pnF/98765432.jpg",
           "image": "98765432.jpg"
         }
     },
@@ -51,7 +51,7 @@
           "price": 170,
           "category": 1,
           "rating": 4.8,
-          "image_url": "https://i.ibb.co/GTV9JLH/12398764.webp",
+          "image_url": "https://i.ibb.co/PQbBJSD/12398764.jpg",
           "image": "12398764.jpg"
         }
     },
@@ -65,7 +65,7 @@
           "price": 65,
           "category": 1,
           "rating": 5,
-          "image_url": "https://i.ibb.co/4Z3ymSf/3214567.jpg",
+          "image_url": "https://i.ibb.co/d2Y7Kf5/3214567.jpg",
           "image": "3214567.jpg"
         }
     },
@@ -79,7 +79,7 @@
         "price": 55,
         "category": 2,
         "rating": 4.9,
-        "image_url": "https://i.ibb.co/BZ607Gq/123321123.jpg",
+        "image_url": "https://i.ibb.co/Q656fYw/123321123.jpg",
         "image": "123321123.jpg"
       }
   },
@@ -96,5 +96,19 @@
       "image_url": "https://i.ibb.co/FJtLqYP/4564567.jpg",
       "image": "4564567.jpg"
     }
+},
+{
+  "pk": 8,
+  "model": "products.product",
+  "fields": {
+    "sku": "pp5001048234",
+    "name": "Circuit Training",
+    "description": "A high intensity training circuit to increase the heart rate and burn fat at a rapid rate. Amazing for weightloss and fitness",
+    "price": 60,
+    "category": 2,
+    "rating": 4.6,
+    "image_url": "https://i.ibb.co/pyzB9zp/9876543210.jpg",
+    "image": "9876543210.jpg"
+  }
 }
 ]
