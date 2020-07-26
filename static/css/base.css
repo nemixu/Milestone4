@@ -24,6 +24,16 @@ body {
 }
 
 
+.overlay {
+  height:100%;
+  width: 100%;
+  top:0;
+  left:0;
+  position: fixed;
+  background:black;
+  z-index: -1;
+}
+
 /* Updated bootstraps container to help people with XL screens / curved screens */
 @media (min-width: 1200px) {
   .container{
