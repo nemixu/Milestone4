@@ -233,6 +233,8 @@ Feature testing will go here.
 
 During the creation of the main page I was having issues / bugs with loading the background image from the media folder, at first the problem was I was not loading the directory into the settings.py file and joining to the basedir but I needed to resolve this by adding an additional param to the URLS.py file and import the settings from django config and import the static directory. This was added to the end of the URL patterns "+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)" After this it resolved the issue I was having with loading the images from the media directory.
 
+I had issues with the products page passing in the correct variable to allow access to the media folder and display images, inside the variable {{ MEDIA_URL}} i noticed it was not passing correctly to the view and couldnt understand why this was occuring. I attempted to pass a different variable to see if the error was different and noticed in the error it was stating /products/noimage.png is not found, I knew from here the variable was not passing correctly and had something to do with the context processors. Once I added the .media processor it resolved the issue and the images began displaying.
+
 
 ## [Deployment](#Contents):
 
