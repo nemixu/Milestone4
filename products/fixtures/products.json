@@ -1,0 +1,72 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5001340155",
+          "name": "One hour Personal Training session",
+          "description": "1 hour personal training session with a qualified PT, personalized workout to help you get to your goal",
+          "price": 50.00,
+          "category": 2,
+          "rating": 4.6,
+          "image_url": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+          "image": "12345678.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5001600425",
+          "name": "5 Personal Training sessions",
+          "description": "Five 1 hour personal training session with a qualified PT, Flexible appointments to suit you!",
+          "price": 225.00,
+          "category": 2,
+          "rating": 5,
+          "image_url": "https://images.unsplash.com/photo-1571732154690-f6d1c3e5178a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
+          "image": "23456789.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5001730010",
+          "name": "8 Personal Training sessions",
+          "description": "This package includes 8, 1 to 1 sessions with your personal trainer, you will have a weekly body fat test and strict workout plan for the duration of the package.",
+          "price": 225.00,
+          "category": 2,
+          "rating": 5,
+          "image_url": "https://images.unsplash.com/photo-1593355349790-6330d1a2dc98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+          "image": "98765432.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5001890157",
+          "name": "Boxercise Workout Package",
+          "description": "This package includes 3 boxercise workout classes with a qualified and experience boxercise coach who will push you to your limits and increase your fat burning potential.",
+          "price": 170,
+          "category": 1,
+          "rating": 4.8,
+          "image_url": "https://images.pexels.com/photos/1544774/pexels-photo-1544774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1350&q=80",
+          "image": "12398764.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5002111605",
+          "name": "Bums and tums",
+          "description": "If you are looking to shape your bum and lose some jiggle from your belly then this is the package for you! A highly experienced bums and tums expert class that will leave you in awe. ",
+          "price": 65,
+          "category": 1,
+          "rating": 5,
+          "image_url": "https://images.unsplash.com/photo-1566241142443-9cb495b037ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+          "image": "3214567.jpg"
+        }
+    }
+]
