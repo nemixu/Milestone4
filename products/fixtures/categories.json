@@ -12,9 +12,24 @@
         "pk": 2,
         "model": "products.category",
         "fields": {
-          "name": "workout",
-          "friendly_name": "Workout"
+          "name": "strength",
+          "friendly_name": "Strength"
         }
-
+    },
+    {
+      "pk": 3,
+      "model": "products.category",
+      "fields": {
+        "name": "fullbody",
+        "friendly_name": "Full Body"
+      }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "toning",
+      "friendly_name": "Toning Workout"
     }
+}
 ]
