@@ -27,7 +27,6 @@ body {
   max-width: 230px;
 }
 
-
 .overlay {
   height:100%;
   width: 100%;
@@ -36,6 +35,19 @@ body {
   position: fixed;
   background:black;
   z-index: -1;
+}
+
+
+.totop-button {
+  height:35px;
+  width:35px;
+  position:fixed;
+  bottom:10px;
+  right: 10px;
+}
+
+.totop-link {
+  cursor: pointer;
 }
 
 /* Updated bootstraps container to help people with XL screens / curved screens */

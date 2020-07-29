@@ -58,4 +58,18 @@
             </div>
         </div>
     </div>
+    <div class="totop-button shadow-sm rounded-0 border border-black">
+        <a class="totop-link d-flex h-100">
+            <i class="fas fa-arrow-circle-up text-white mx-auto my-auto"></i>
+        </a>   
+    </div>
 {% endblock  %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('.totop-link').click(function(e){
+            window.scrollTo(0,0)
+        })
+        </script>
+{% endblock %}
