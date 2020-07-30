@@ -73,7 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request', # Required by all auth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
+                'django.template.context_processors.media', # Required for media files / pictures
             ],
         },
     },
