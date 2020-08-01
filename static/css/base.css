@@ -95,6 +95,18 @@ body {
   background: orangered;
 }
 
+.btn-outline {
+  border: 1px solid black;
+}
+
+.btn-outline:hover {
+  background: orangered;
+  color: white;
+  border: transparent;
+  height:37px;
+  width:196.47px;
+}
+
 .button-box{
   display: flex;
   align-items: center;
