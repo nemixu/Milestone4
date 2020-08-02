@@ -26,69 +26,42 @@
             <div class="col">
                 {% if cart_items %}
                     <div class="table-responsive rounded">
-                        <table class="table">
+                        <table class="table table-sm table-borderless">
                             <thead class="thead-dark">
                                 <tr>
-                                <th scope="col">Product Info</th>
-                                <th scope="col"></th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Subtotal</th>
+                                    <th scope="col">Product Info</th>
+                                    <th scope="col" class="d-none d-sm-table-cell"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
+                            {% for item in cart_items %}
                             <tbody>
                                 <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                    <td class="p-3 w-25 d-none d-sm-table-cell">
+                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                    </td>
+                                <td class="p-3">
+                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                </td>
+                                <td class="p-3">
+                                    <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
+                                </td>
+                                <td class="p-3">
+                                    <p class="my-0">{{ item.quantity }}</p>
+                                </td>
+                                <td class="p-3">
+                                    <p class="my-0">€ {{ grand_total }}</p>
+                                </td>
                                 </tr>
                                 <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
+                               {% endfor %}
                             </tbody>
-                            </table>
+                        </table>
 
-                            <table class="table">
-                            <thead class="thead-light">
-                                <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                            </table>
-                    {{ cart_items }}
+    
                     </div>
                 {% else %}
                     <p class="lead mb-5">Your cart is empty.</p>
