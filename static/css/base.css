@@ -18,6 +18,11 @@ body {
   text-transform: uppercase;
 }
 
+.title-logo {
+  height: 200px;
+  width: 200px;
+}
+
 .text-black {
   color: #000000 !important;
 }
