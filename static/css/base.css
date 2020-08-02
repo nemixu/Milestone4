@@ -97,7 +97,7 @@ body {
 }
 
 .orange-btn {
-  background: orangered;
+  background: orangered!important;
 }
 
 .cart-colour {
