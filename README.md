@@ -235,6 +235,8 @@ During the creation of the main page I was having issues / bugs with loading the
 
 I had issues with the products page passing in the correct variable to allow access to the media folder and display images, inside the variable {{ MEDIA_URL}} i noticed it was not passing correctly to the view and couldnt understand why this was occuring. I attempted to pass a different variable to see if the error was different and noticed in the error it was stating /products/noimage.png is not found, I knew from here the variable was not passing correctly and had something to do with the context processors. Once I added the .media processor it resolved the issue and the images began displaying.
 
+On the cart page using the tables from bootstrap, I was using 5 table columns and when it came to using them on small screens it was not responsive enough for good UX, I began trying to adjust the styling of the bootstrap classes and the best solution to get this working smoothly on a small screen I utilized these classes "d-none d-sm-table-cell" on the child of tr, this removed the image of the item on small screens but kept it on medium and above screens.
+
 
 ## [Deployment](#Contents):
 
