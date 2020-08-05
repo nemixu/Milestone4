@@ -39,6 +39,29 @@ body {
   text-transform: uppercase;
 }
 
+.products-border {
+  background: #212529;
+  color: #ffffff;
+  border: 0;
+}
+
+.product-text, 
+.product-text:link{
+  text-decoration: none!important;
+  color: #ffffff!important;
+  font-size: 16px!important;
+  padding-top:20px;
+}
+.product-text:hover {
+  text-decoration: none!important;
+  color:orangered!important;
+}
+
+/* added to remove the hover link underline on products page*/
+a.products-border:hover{
+  text-decoration: none;
+}
+
 .overlay {
   height:100%;
   width: 100%;
