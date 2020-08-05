@@ -237,6 +237,8 @@ I had issues with the products page passing in the correct variable to allow acc
 
 On the cart page using the tables from bootstrap, I was using 5 table columns and when it came to using them on small screens it was not responsive enough for good UX, I began trying to adjust the styling of the bootstrap classes and the best solution to get this working smoothly on a small screen I utilized these classes "d-none d-sm-table-cell" on the child of tr, this removed the image of the item on small screens but kept it on medium and above screens.
 
+I was having an issue with the products page styling, I added a background colour behind the image to cover where the anchor text was used, after doing this the class from bootstrap border-top was being clipped by the background colour and it looked like there was no rounded corners on the products I decided to try and add a gradient instead of a solid colour to the background. Doing this worked perfectly, the top was white like the background and the rounder corners could now be seen and the bottom was a solid colour.
+
 
 ## [Deployment](#Contents):
 
