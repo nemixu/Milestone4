@@ -156,6 +156,12 @@ h2.logo-font:hover{
   background: linear-gradient(180deg, rgba(255,255,255,1) 24%, rgba(33,37,41,1) 75%, rgba(33,37,41,1) 100%);
 }
 
+.product_header {
+  display:block;
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+}
+
 
 /* Media Queries for large and small screen arguments */
 @media (min-width: 1200px) {
