@@ -4,9 +4,11 @@ from django.shortcuts import render
 
 def index(request):
     """ View to return the index page """
-    return render(request, 'home/index.html')
+    page_title = "Home Page"
+    return render(request, 'home/index.html', {'page_title': page_title})
 
 
 def about(request):
     """Returns the about page"""
-    return render(request, 'home/about.html')
+    page_title = "About us"
+    return render(request, 'home/about.html', {'page_title': page_title})
