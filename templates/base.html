@@ -25,58 +25,8 @@
    <title>DN Fitness</title>
   </head>
   <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top w-100">
-        <!-- Logo -->
-        <a class="navbar-link text-decoration-none" aria-label="Brand Logo & Link to refresh" href="{% url 'home' %}">
-            <h2 class="logo-font nav-link text-black my-0 d-none d-md-block"><strong>DN</strong> Fitness</h2>
-        </a>
-         {% include 'includes/mobile-top-header.html' %}
-        <!-- Toggler Icon on mobile view -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-               
-        <!-- Navigation links -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto uppercase">
-                        <!--user auth to go here-->
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'about'%}" id="about" aria-haspopup="true" aria-expanded="false">
-                        About
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="" id="classes"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </a>
-                    <div class="dropdown-menu boarder-0" aria-labelledby="Classes Link">
-                        <a href="{% url 'products' %}?category=toning,fullbody,strength,weightloss" class="dropdown-item">All Services</a>
-                        <a href="{% url 'products' %}?category=weightloss" class="dropdown-item">Weight Loss</a>
-                        <a href="{% url 'products' %}?category=strength" class="dropdown-item">Strength</a>
-                        <a href="{% url 'products' %}?category=fullbody" class="dropdown-item">Full Body</a>
-                        <a href="{% url 'products' %}?category=toning" class="dropdown-item">Toning Workout</a>
-                    </div>    
-                </li>
-
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="#" id="contact" aria-haspopup="true" aria-expanded="false">
-                        Contact
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-3" href="#" id="bookings" aria-haspopup="true" aria-expanded="false">
-                        Bookings
-                    </a>
-                </li>
-                {% include 'includes/icon-header.html'%}
-            </ul>
-                
-        </div>
-    </nav>
-      
+    {% include 'includes/navbar.html'%}
+          
     
     {% if messages %}
         <div class="message-container"></div>
