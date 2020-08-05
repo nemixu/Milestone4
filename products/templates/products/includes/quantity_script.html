@@ -1,5 +1,5 @@
 <script type="text/javascript">
-
+    // Example taken from django module handling buttons for increment and decrement.
     // Disable plus and minus buttons outside range of 1-99
     function handleEnableDisable(itemId){
         var currentValue = parseInt($(`#id_qty_${itemId}`).val());
@@ -9,7 +9,7 @@
         $(`#increase-qty_${itemId}`).prop('disabled', plusDisabled);
     }
 
-    // Ensure proper enabling / disabling of all inputs on page load
+    // Ensure proper enabling / disabling of all inputs on page
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
         var itemId = $(allQtyInputs[i]).data('item_id');
