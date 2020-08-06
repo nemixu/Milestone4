@@ -123,6 +123,18 @@ a.products-border:hover{
   background: orangered!important;
 }
 
+.button-styling {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  
+}
+
 .cart-colour {
   color:orangered!important;
 }
@@ -164,6 +176,10 @@ h2.logo-font:hover{
 
 .card-shadow {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, .2);
+}
+
+#quantity-control{
+  width: 110px;
 }
 
 /* Media Queries for large and small screen arguments */
