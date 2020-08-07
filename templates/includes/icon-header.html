@@ -1,3 +1,13 @@
+<li class="list-inline-item"> 
+    <div class="text-center">
+        <form class="form-inline" action="{% url 'search' %}" method="GET">
+            <input class="form-control" type="text" name="q"
+                placeholder="Search for a product name">
+            <div><i class="fas fa-search fa-lg text-black"></i></div>
+        </form>
+    </div>
+</li>
+
 <li class="list-inline-item dropdown">
     <a class="text-black nav-link d-none d-lg-block" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
