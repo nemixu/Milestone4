@@ -14,6 +14,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/*-------------------------- Text Styling--*/
+
 .logo-font {
   text-transform: uppercase;
 }
@@ -39,6 +41,8 @@ body {
   text-transform: uppercase;
 }
 
+/*-------------------------- Products Styling--*/
+
 .products-border {
   background: #212529;
   color: #ffffff;
@@ -62,6 +66,23 @@ a.products-border:hover{
   text-decoration: none;
 }
 
+.image-wrapper-products {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 24%, rgba(33,37,41,1) 75%, rgba(33,37,41,1) 100%);
+}
+
+.product_header {
+  display:block;
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+}
+
+#quantity-control{
+  width: 110px;
+}
+
+
+
+/*-------------------------- Reusable overlays hr rules and to top button Styling--*/
 .overlay {
   height:100%;
   width: 100%;
@@ -119,6 +140,14 @@ a.products-border:hover{
   box-shadow: 0px 3px 5px rgba(0, 0, 0, .2);
 }
 
+.card-shadow {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .2);
+}
+
+
+/*-------------------------- Button Styling--*/
+
+
 .orange-btn {
   background: orangered!important;
 }
@@ -132,7 +161,6 @@ a.products-border:hover{
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  
 }
 
 .cart-colour {
@@ -164,25 +192,25 @@ h2.logo-font:hover{
   transition: all 0.3s ease
 }
 
-.image-wrapper-products {
-  background: linear-gradient(180deg, rgba(255,255,255,1) 24%, rgba(33,37,41,1) 75%, rgba(33,37,41,1) 100%);
+
+/*-------------------------- Toast Styling--*/
+
+.message-container {
+  position: fixed;
+  top:82px;
+  right:15px;
+  z-index: 9999;
 }
 
-.product_header {
-  display:block;
-  font-size: 1.3rem;
-  padding-bottom: 5px;
+.toast-line {
+  height:3px;
 }
 
-.card-shadow {
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, .2);
+.toast-styling {
+  overflow: visible;
 }
 
-#quantity-control{
-  width: 110px;
-}
-
-/* Media Queries for large and small screen arguments */
+/*-------------------------- Media Queries--*/
 @media (min-width: 1200px) {
   .container{
     max-width: 80%;
