@@ -47,7 +47,7 @@
 ### Site Owner Goals:
 
 * Provide users with a safe and secure e-commerce platform in order to generate revenue from sales.
-* Encourage user sales with promotions and discounts or possible group buys.
+* Encourage user sales with reasonable prices
 * Build awareness for the brand and attract more traffic on the site.
 
 ### User Stories:
