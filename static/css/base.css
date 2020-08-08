@@ -41,6 +41,11 @@ body {
   text-transform: uppercase;
 }
 
+.cart-grandtotal {
+  font-size: 1.3rem;
+  padding-bottom:10px;
+}
+
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -150,6 +155,11 @@ a.products-border:hover{
 
 .orange-btn {
   background: orangered!important;
+}
+
+.dark-btn {
+  background: #212529!important;
+  color: #ffffff!important;
 }
 
 .button-styling {
