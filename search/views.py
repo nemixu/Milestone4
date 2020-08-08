@@ -12,7 +12,7 @@ def search_view(request):
     query = None
     
     if request.GET:
-    
+        
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -24,6 +24,9 @@ def search_view(request):
                 description__icontains=query)
             products = products.filter(queries)
             
+
+        
+        
     context = {
         'products' : products,
         'search_term' : query,

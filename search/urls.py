@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path(r'^$', views.search_view, name='search'),
+    path('', views.search_view, name='search'),
 
 ]
