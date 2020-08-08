@@ -73,13 +73,13 @@
         {% endfor %}  
  
         {% else %}
-            <p class="lead mb-5">Your cart is empty.</p>
+            <h3 class="lead text-center text-black mt-4">Your cart is empty!</h3>
+            <p class="text-center text-black">Browse our range of fitness classes in our online shop!</p>
+            <div class="d-flex justify-content-center">
             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
                 <span class="text-uppercase button-styling orange-btn rounded text-white">Keep Shopping</span>
             </a>
+            </div>
         {% endif %}        
             </div>
         </div>
