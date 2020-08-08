@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 {% block title %} DN Fitness | Your Shopping Cart {% endblock %}
 
 {% block page_header %}
@@ -18,7 +19,7 @@
         <div class="row">
             <div class="col-12">
                 <hr class="hr-black-long">
-                <h2 class="text-black text-uc mb-4 text-center">Your Cart<h2>
+                <h2 class="text-black text-uc mb-4 text-center">Your Cart</h2>
                 <hr class="hr-black-long">
             </div>
         </div>
@@ -37,12 +38,13 @@
                     <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                     <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
                     <p>Currently in your cart: {{ item.quantity }}</p>
+                    <p class="my-0">Subtotal: €{{ item.product.price | calc_subtotal:item.quantity }}
                     <form class="form update-form pt-3" method="POST" action="{% url 'update_cart' item.item_id %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <div class="input-group" id="quantity-control">
                                 <div class="input-group-prepend">
-                                    <button class="decrease-qty btn btn-sm btn-black rounded-0" 
+                                    <button class="decrease-qty btn btn-sm orange-btn rounded-left text-white" 
                                         data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
                                         <span>
                                             <i class="fas fa-minus fa-sm"></i>
@@ -54,7 +56,7 @@
                                     data-item_id="{{ item.item_id }}"
                                     id="id_qty_{{ item.item_id }}">
                                 <div class="input-group-append">
-                                    <button class="increase-qty btn btn-sm btn-black rounded-0"
+                                    <button class="increase-qty btn btn-sm orange-btn rounded-right text-white"
                                         data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
                                         <span>
                                             <i class="fas fa-plus fa-sm"></i>
@@ -64,14 +66,32 @@
                             </div>
                         </div>
                     </form>
-                    <a class="update-button text-white button-styling orange-btn rounded"><small>Update</small></a>
+                    <a class="update-button text-white button-styling dark-btn rounded"><small>Update</small></a>
                     <a class="remove-button text-white button-styling orange-btn rounded float-around" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                </div>
+            </div>   
+        </div>
+        {% endfor %}
+        <hr class="hr-black-long">
+        <h4 class="text-black text-uc mb-4 text-center">Summary:</h4>
+        <hr class="hr-black-long">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 p-5">
+                    <p class="text-black">Have everything you need? make sure to double check <a class="cart-colour" aria-label="classes" href="{% url 'products' %}">in the shop </a>before completing your order!</p>
+                </div>
+                <div class="col-sm-12 col-md-4 p-5">
+                    <h4 class="text-black">Grand Total:</h4>
+                    <p class="cart-colour cart-grandtotal">${{ grand_total|floatformat:2 }}</p>
+                    <a aria-label="checkout" id="checkout-button" class="btn orange-btn text-white font-weight-bold" href="{% url 'checkout'%}">Checkout</a>
                 </div>
             </div>
         </div>
-
-        {% endfor %}  
- 
+        
+        
+   
+                                    
+                                                    
         {% else %}
             <h3 class="lead text-center text-black mt-4">Your cart is empty!</h3>
             <p class="text-center text-black">Browse our range of fitness classes in our online shop!</p>
