@@ -27,11 +27,6 @@ def search_view(request):
             if not products:
                 messages.error(request, "Sorry we couldn't match your search, here is some products!")
                 return redirect(reverse('products'))
-            
-            
-            
-
-        
         
     context = {
         'products' : products,
