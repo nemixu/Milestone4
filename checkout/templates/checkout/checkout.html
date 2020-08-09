@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 {% block title %} DN Fitness | Checkout {% endblock %}
 
 {% block page_header %}
@@ -22,14 +23,13 @@
                 <hr class="hr-black-long">
             </div>
         </div>
-    
     <div class="row p-5">
-        <div class="col-12 col-lg-6 ">
-            <p class="text-black">Please fill out the below to complete your order</p>
-            <form action="{% url 'checkout'%}" method="POST" id="payment-form">
+        <div class="col-sm-12 col-lg-6 mr-2">
+            <h3 class="text-black text-center pb-3">Customer Details</h3>
+            <form action="{% url 'checkout'%}" method="POST" id="payment-form" class="checkout_row pt-3">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    <legend class="fieldset-label small text-black px-2 w-auto"></legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
@@ -46,7 +46,8 @@
                     </div>
                 </fieldset>
                 <fieldset class="rounded">
-                    <legend class="fieldset-label small text-black w-auto">Payment Details</legend>
+                    <p class="text-black text-center">Payment Details</p>
+                    <legend class="fieldset-label small text-black w-auto"></legend>
                     <!-- Stripe card to be inserted below.-->
                     <div class="mb-3" id="card-element"></div>
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
@@ -74,6 +75,33 @@
                 
             </form>
             </div>
+            <div class="col-sm-12 col-lg-5">
+                <h3 class="text-black text-center pb-3">Order Summary</h3>
+                {% for item in cart_items %}
+                <div class="row checkout_row">
+                    <div class="col-sm-3 col-lg-3">
+                        <div class="mw-100">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-lg-9">
+                        <div class="cart_text_items text-black">
+                            <h5>{{ item.product.name }}</h5>
+                            <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
+                            <p>Qty: {{ item.quantity }}</p>
+                            <p class="my-0">Subtotal: €{{ item.product.price | calc_subtotal:item.quantity }}
+                        </div>
+                    </div> 
+                </div>  
+                {% endfor %}
+                <div class="row checkout_row">
+                    <div class="col-sm-12 col-lg-12 text-center">
+                        <h4 class="text-black">Grand Total:</h4>
+                        <p class="cart-colour pb-0 cart-grandtotal">${{ grand_total|floatformat:2 }}</p>
+                    </div>
+                </div> 
+            </div>  
+            
         </div>
     </div>
 {% endblock  %}
