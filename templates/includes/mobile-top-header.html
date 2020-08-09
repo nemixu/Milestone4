@@ -22,6 +22,22 @@
         {% endif %}
     </div>
 </li>
+
+<li class="list-inline-item d-block d-lg-none dropdown"> 
+    <a class="text-black nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="text-center">
+            <div><i class="fas fa-search fa-lg"></i></div>
+                <p class="my-0">Search</p>
+        </div>
+    </a>
+    <div class="text-center dropdown-menu">
+        <form class="form-inline" action="{% url 'search' %}" method="GET">
+            <input class="form-control" type="text" name="q"
+                placeholder="Search for a product name">
+        </form>
+    </div>
+</li>
+
 <li class="list-inline-item d-block d-lg-none">
     <a class="{% if grand_total %}cart-colour font-weight-bold{% else %}text-black {% endif %} nav-link" href="{% url 'cart' %}">
         <div class="text-center">
