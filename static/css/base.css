@@ -46,6 +46,21 @@ body {
   padding-bottom:10px;
 }
 
+.product_counter {
+  height: 20px;
+  width: 20px;
+  top: 40px;
+  font-size: 0.857142857rem;
+  right: 30px;
+  border-radius: 50%;
+  font-weight: 400;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  padding-left: 1px;
+  background: red;
+}
+
 /*-------------------------- Products Styling--*/
 
 .products-border {
