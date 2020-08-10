@@ -34,7 +34,7 @@ def update_cart(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     if quantity > 0:
         cart[item_id] = quantity
-        messages.info(request, f'Updated { product.name } quantity in your cart')
+        messages.success(request, f'Updated { product.name } quantity in your cart')
     else:
         cart.pop(item_id)
         messages.success(request, f'Removed { product.name } from your cart')
