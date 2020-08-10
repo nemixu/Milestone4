@@ -263,18 +263,18 @@ Before we get started you will need to ensure you have the following:
 ```bash
 git clone https://github.com/nemixu/Milestone4"
 ```
-* 2: Navigate to this folder in your terminal. (cd Milestone4 for e.g)
+* 2: Navigate to the terminal in vscode or your IDE of choice.
 * 3: Enter the following command into your terminal.
 ```bash
-python3 -m .venv venv
+pip3 install pipenv
 ```
 * 4: Initialize the environment by using the following command.
 ```bash
-.venv\bin\activate
+pipenv shell
 ```
 * 5: Install the requirements and dependancies from the requirements.txt file
 ```bash
-pip3 -r requirements.txt
+pipenv -r requirements.txt
 ```
 * 6: Inside your IDE create a file where you can store your secret information for the application. This can be done by creating an env.py file.
 * 7: Enter the following command into the terminal to migrate models into the database.
@@ -288,6 +288,11 @@ python3 manage.py createsuperuser
 *9: The application can now be ran locally using the following command.
 ```bash
 python3 manage.py runserver
+```
+*10: To add any additional packages do so in the pipenv shell(you can set your python interpreter to use this shell), once any new package is installed
+you will need to use the following command to freeze the new requirements.
+```bash
+pipenv lock -r > requirements.txt
 ```
 
 Well done, DN fitness is now running locally on your machine.
