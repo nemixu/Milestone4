@@ -1,1 +1,1 @@
-web: python3 app.py 
+web: gunicorn DN_fitness.wsgi:application
