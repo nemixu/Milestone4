@@ -302,13 +302,22 @@ Well done, DN fitness is now running locally on your machine.
 
 ### Deploying DN Fitness to Heroku:
 
-* 1: Create a requirements.txt file using the following command.
+During the deployment of this project, I deployed the project early to ensure I could have time to iron out any issues I would have deploying a project. I was having issues with the intial deployment and was receiving H10 errors, and a number of things needed to be adjusted before the project would deploy correctly.
+
+Firstly I needed to change settings in the settings.py file, I needed to migrate my db to postgres, dj_database_url and psycopg2-binary. Next I had to ensure the allowed host was set to the herokuapp url. Gunicorn was installed and the procfile was adjusted from ```web:python3 app.py``` to ```web: gunicorn DN_fitness.wsgi:application ```
+
+Next step was to check if the project would deploy without static files and was tested with ```DISABLE_COLLECTSTATIC = 1``` once the project deployed the settings with whitenoise were set in the project settings file in middleware.
+
+A re-deployment then deployed the project without any issues.
+
+
+* 1: Create a requirements.txt file using the following command. Ensure whitenoise is installed for staticfiles
 ```bash
 pip3 freeze > requirements.txt
 ```
-* 2: Create a procfile with the following command. Please ensure the P is capital in Procfile
+* 2: Create a procfile in your project main directory. Please ensure the P is capital in Procfile
 ```bash
-echo web: python3 app.py > Procfile
+web: gunicorn DN_fitness.wsgi:application
 ```
 * 2.1: In some cases after creating the procfile the webdynos do not always spin up and this may needed to be done manually via the command line.
 ```bash
