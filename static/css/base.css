@@ -57,10 +57,21 @@ body {
   position: absolute;
   z-index: 1;
   color: #fff;
-  padding-left: 1px;
-  background: red;
+  background: orangered;
 }
 
+.product_counter-mobile {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  background: orangered;
+  height:20px;
+  width:20px;
+  font-size: 0.857142857rem;
+  border-radius: 50%;
+  left: 10px;
+  top: -15px;
+}
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -173,7 +184,25 @@ a.products-border:hover{
   box-shadow: 0px 3px 5px rgba(0, 0, 0, .2);
 }
 
+.navbar-search-focus {
+  top: -3px!important;
+  left: -193px!important;
+  padding: 0!important;
+}
 
+.list-inline-item.icon-nav-spacer.dropdown.show {
+  margin-left: 180px!important;
+}
+
+.inline-search-icon{
+  position: absolute;
+  left:4px;
+}
+
+.inline-form-icon {
+  position: relative;
+  padding-left: 20px;
+}
 /*-------------------------- Button Styling--*/
 
 
