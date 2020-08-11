@@ -25,7 +25,7 @@ SECRET_KEY = 'rp6p!*8aw^1x=74^*$x%jt8lt=e3!inne#!*vacl%sazfjrn%@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dn-fitness.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
