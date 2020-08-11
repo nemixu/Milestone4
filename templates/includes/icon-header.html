@@ -1,9 +1,9 @@
-<li class="list-inline-item dropdown"> 
+<li class="list-inline-item icon-nav-spacer dropdown"> 
     <a class="text-black nav-link d-none d-lg-block" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-lg"></i></a>
-    <div class="text-center dropdown-menu">
+    <div class="text-center dropdown-menu navbar-search-focus">
         <form class="form-inline" action="{% url 'search' %}" method="GET">
-            <input class="form-control" type="text" name="q"
-                placeholder="Search for a product name">
+            <input class="form-control inline-form-icon" type="text" name="q"
+                placeholder="Search for a product name"><i class="fas fa-search inline-search-icon"></i>
             <div>
             </div>
         </form>
@@ -34,13 +34,11 @@
     <a class="{% if grand_total %}cart-colour font-weight-bold{% else %}text-black{% endif %} d-none d-lg-block nav-link" href="{% url 'cart' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-basket fa-lg mr-3"></i></div>
-            <p class="my-0">
-                {% if grand_total %}
-                    €{{ grand_total|floatformat:2 }}
-                {% else %}
-                    €0.00
+                {% if product_count %}
+                <p class="my-0 product_counter">
+                    {{ product_count }}
+                </p>
                 {% endif %}
-            </p>
         </div>
     </a>
 </li>
