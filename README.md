@@ -239,6 +239,9 @@ On the cart page using the tables from bootstrap, I was using 5 table columns an
 
 I was having an issue with the products page styling, I added a background colour behind the image to cover where the anchor text was used, after doing this the class from bootstrap border-top was being clipped by the background colour and it looked like there was no rounded corners on the products I decided to try and add a gradient instead of a solid colour to the background. Doing this worked perfectly, the top was white like the background and the rounder corners could now be seen and the bottom was a solid colour.
 
+Issues with styling conflicts when a user added a product to their cart, i had it set that the ammount of the cart would show the ammount below the cart icon, but it was pushing the icons up and offset the bottom of the navbar, removing this and adding a counter with a circle to display how many items were in the cart was a better solution as the items on the site are quite big, having a counter for this type of site seemed like the best decision to make.
+
+Issues with styling conflicts with the search icon on the icon header, I wanted to make the search icon like the netflix search bar, when clicked it slides left and opens an input field. I knew how to do this with jquery but wanted to limit the ammount of code written to achieve this. The simplist solution was to take the boostrap class ```.list-inline-item.dropdown.show ``` and added a margin left property to push the other nav anchors to the left. As a result it worked to what was needed but it intefered with other classes using the ``` .dropdown.show ``` class, the easiest fix was to add a custom class which I done ```.list-inline-item.icon-nav-spacer.dropdown.show``` and achieved the exact effect I was looking for.
 
 ## [Deployment](#Contents):
 
