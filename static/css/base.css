@@ -1,5 +1,6 @@
 html {
     height: 100%;
+
   }
 
 body {
@@ -12,6 +13,7 @@ body {
   height: calc(100vh - 164px);
   color:rgb(109, 109, 109);
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /*-------------------------- Text Styling--*/
@@ -76,6 +78,10 @@ body {
   left: 10px;
   top: -15px;
 }
+
+.classes-text:hover {
+  color:orangered!important;
+}
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -88,7 +94,7 @@ body {
 .product-text:link{
   text-decoration: none!important;
   color: #ffffff!important;
-  font-size: 16px!important;
+  font-size: 1rem!important;
   padding-top:20px;
 }
 .product-text:hover {
@@ -178,6 +184,7 @@ a.products-border:hover{
   position:fixed;
   bottom:10px;
   right: 10px;
+  background: orangered;
 }
 
 .totop-link {
@@ -257,6 +264,10 @@ a.products-border:hover{
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
+}
+
+a:hover {
+  text-decoration: none!important;
 }
 
 a.nav-link:hover,
