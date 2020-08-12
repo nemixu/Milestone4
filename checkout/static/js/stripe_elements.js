@@ -10,12 +10,12 @@ const style = {
         color: '#000',
         fontFamily: '"Roboto", sans-serif',
         fontSmoothing: 'antialiased',
-        fontSize: '16px',
+        fontSize: '1.6rem',
         fontWeight: 'normal',
         '::placeholder': {
             color: '#aab7c4'
         },
-        backgroundColor: 'white',
+        backgroundColor: '#ffffff',
     },
     invalid: {
         color: '#dc3545',
