@@ -10,7 +10,7 @@ const style = {
         color: '#000',
         fontFamily: '"Roboto", sans-serif',
         fontSmoothing: 'antialiased',
-        fontSize: '1.6rem',
+        fontSize: '1.2rem',
         fontWeight: 'normal',
         '::placeholder': {
             color: '#aab7c4'
