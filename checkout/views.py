@@ -9,7 +9,12 @@ from products.models import Product
 from cart.contexts import cart_contents
 
 
+
 def checkout(request):
+    stripe_public_key = settings.STRIPE_PUBLISHABLE
+    stripe_secret_key = settings.STRIPE_SECRET
+  
+    
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "There's nothing in your cart at the moment!")
@@ -19,6 +24,7 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form' : order_form,
+        'stripe_public_key': stripe_public_key,
     }    
     
     return render(request, template, context)    
