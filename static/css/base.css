@@ -138,6 +138,11 @@ a.products-border:hover{
   justify-content: center;
 }
 
+.center-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /*-------------------------- Reusable overlays hr rules and to top button Styling--*/
 .overlay {
