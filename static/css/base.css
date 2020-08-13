@@ -144,6 +144,11 @@ a.products-border:hover{
   justify-content: center;
 }
 
+.checkout-image-small {
+  height:200px;
+  width:200px;
+}
+
 /*-------------------------- Reusable overlays hr rules and to top button Styling--*/
 .overlay {
   height:100%;
