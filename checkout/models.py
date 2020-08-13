@@ -23,7 +23,8 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
     
     def update_total(self):
-        """update grandd total each time a line item is added"""
+        """update grand total each time a line item is added"""
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
