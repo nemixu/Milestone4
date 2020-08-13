@@ -26,7 +26,59 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-12"></div>
+            <div class="col-12 col-lg-12">
+                <div class="checkout_row p-2 border">
+                    <div class="row">
+                        <div class="col">
+                            <small class="text-muted">Order Info:</small>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p>Order ID:</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p>{{ order.order_number }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p>Order Date:</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p>{{ order.order_date }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <small class="text-muted">Order Details:</small>
+                        </div>
+                    </div>
+                    {% for item in order.lineitems.all %}
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img class="checkout-image-small img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            
+                            
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p> {{ item.product.name }} </p>
+                            <p>qty: {{ item.quantity }} @ €{{ item.product.price }} each</p>
+                        </div>
+                    </div>
+                     {% endfor %}
+
+                    <div class="row">
+                        <div class="col">
+                            <small class="text-muted">Billing Info:</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-12">
