@@ -14,23 +14,30 @@
 
 {% block content %}
     <div class="white-overlay"></div>
-    <div class="container">
+    <div class="container px-5">
         <div class="row">
             <div class="col-12">
-                <hr class="hr-black-long">
-                <h2 class="text-black text-uc mb-4 text-center">Thank you for shopping with us!</h2>
-                <hr class="hr-black-long">
-                <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <div class="form-details-checkout">
+                    <hr class="hr-black-long">
+                    <h2 class="text-black text-uc mb-4 text-center">Thank you for shopping with us!</h2>
+                    <hr class="hr-black-long">
+                    <p class="text-black text-center">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-7"></div>
+            <div class="col-12 col-lg-12"></div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-7">
-                <a href="{% url 'products' %}" class="btn orange-btn button-styling rounded mt-4">
-                    <span class="text-uppercase">Continue Shopping</span>     
-                </a>
+            <div class="col-12 col-lg-12">
+                <div class="center-custom">
+                    <a href="#" class="btn dark-btn button-styling rounded mt-4 mr-1">
+                            <span class="text-uppercase">My Profile</span>     
+                    </a>
+                    <a href="{% url 'products' %}" class="btn orange-btn button-styling rounded mt-4">
+                        <span class="text-uppercase text-white">Continue Shopping</span>     
+                    </a>
+                </div>
             </div>
         </div>
     </div>
