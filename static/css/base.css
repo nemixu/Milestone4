@@ -144,10 +144,28 @@ a.products-border:hover{
   justify-content: center;
 }
 
-.checkout-image-small {
-  height:200px;
-  width:200px;
+.image-responsive {
+  display: block;
+  max-width: 100%;
+  margin: auto;
 }
+
+.image-box-shadow {
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.order-panel {
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.order-line-items {
+  margin-bottom: 20px;
+}
+
 
 /*-------------------------- Reusable overlays hr rules and to top button Styling--*/
 .overlay {
@@ -305,7 +323,49 @@ h2.logo-font:hover{
   overflow: visible;
 }
 
+/*-------------------------- Spinner styling --*/
+
+#loading-spinner:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border-top: 2px solid orangered;
+  border-right: 2px solid transparent;
+  animation: spinner 0.7s linear infinite;
+  z-index:9999;
+}
+
+#spinner-overlay {
+  display:none;
+  background: #000;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0.8;
+  visibility: visible;
+}
+
+/*-------------------------- Keyframes for transitions --*/
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 /*-------------------------- Media Queries--*/
+
 @media (min-width: 1200px) {
   .container{
     max-width: 80%;
@@ -342,4 +402,5 @@ h2.logo-font:hover{
     width: 250px;
   }
 }
+
 
