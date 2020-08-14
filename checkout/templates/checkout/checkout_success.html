@@ -28,53 +28,43 @@
         <div class="row">
             <div class="col-12 col-lg-12">
                 <div class="checkout_row p-2 border">
-                    <div class="row">
-                        <div class="col">
-                            <small class="text-muted">Order Info:</small>
+                    <h2 class="text-black text-uc mb-4 text-center">Your Order</h2>             
+                    <div class="row text-center align-items-center text-black">
+                        <div class="col-12">
+                            <h6 class="text-small"><strong>Order ID:</strong> {{ order.order_number }}</h6>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p>Order ID:</p>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <p>{{ order.order_number }}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p>Order Date:</p>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <p>{{ order.order_date }}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <small class="text-muted">Order Details:</small>
+                    <div class="row text-center align-items-center text-black">
+                        <div class="col-12">
+                            <p><strong>Order Date:</strong> {{ order.order_date }}</p>
                         </div>
                     </div>
                     {% for item in order.lineitems.all %}
-
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <img class="checkout-image-small img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                            
-                            
+                    <div class="div order-panel">
+                        <div class="row order-line-items center-custom">
+                            <div class="col-4">
+                                <div>
+                                    <img class="image-responsive image-box-shadow img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                </div>
+                            </div>
+                            <div class="col-6 text-black text-center">
+                                <p><strong>{{ item.product.name }}</strong></p>
+                                <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+                                <p><strong>Price:</strong> €{{ item.product.price }}</p>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                            <p> {{ item.product.name }} </p>
-                            <p>qty: {{ item.quantity }} @ €{{ item.product.price }} each</p>
+                     </div>   
+                    {% endfor %}
+                    <div class="row order-line-items center-custom">
+                        <div class="col-sm-12 col-md-4 text-black text-center">
+                            <h5><strong>Order Total: €{{ order.grand_total }}</strong>
                         </div>
-                    </div>
-                     {% endfor %}
-
-                    <div class="row">
-                        <div class="col">
-                            <small class="text-muted">Billing Info:</small>
+                        <div class="col-sm-12 col-md-4 text-black text-center">
+                            <div class="">
+                                <p>Need help with your order?</p>
+                                <a class="btn orange-btn text-white" aria-label="Contact Us" href="#">Contact Us</a>
+                            </div>
                         </div>
                     </div>
                 </div>
