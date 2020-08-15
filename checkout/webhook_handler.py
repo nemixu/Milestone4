@@ -29,7 +29,7 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
         
         billing_details = intent.charges.data[0].billing_details
-        grand_total = round(intent.data.charges[0].amount / 100, 2)
+        grand_total = round(intent.charges.data[0].amount / 100, 2)
         
         order_exists = False
         attempt = 1
