@@ -223,6 +223,8 @@ Will be showcased here.
 
 <p>Having wireframes also helped build a base to the project fairly quickly and helped get the basics down, such as the nav bar, footer and image placement. It allowed me to spend more time with the functionality of the framework Django to ensure each app was working correctly.</p>
 
+<p>Future proofing this project was also something that was considered when planning this project, firstly I knew If I did not use the likes of AWS for hosting the static files, if the store owner created a new product and uploaded it via the admin panel, it would not have images attached. This is something I have taken into consideration and i have chosen not to use AWS as I would like to maintain the site myself, but I do understand it is something to strongly consider for projects and the future use of projects.</p>
+
 #### Feature Testing:
 
 Feature testing will go here.
@@ -304,11 +306,11 @@ Well done, DN fitness is now running locally on your machine.
 
 During the deployment of this project, I deployed the project early to ensure I could have time to iron out any issues I would have deploying a project. I was having issues with the intial deployment and was receiving H10 errors, and a number of things needed to be adjusted before the project would deploy correctly.
 
-Firstly I needed to change settings in the settings.py file, I needed to migrate my db to postgres, dj_database_url and psycopg2-binary. Next I had to ensure the allowed host was set to the herokuapp url. Gunicorn was installed and the procfile was adjusted from ```web:python3 app.py``` to ```web: gunicorn DN_fitness.wsgi:application ```
+Firstly I needed to change settings in the settings.py file, I needed to migrate my db to postgres, dj_database_url and psycopg2-binary was installed using pip3. Next I had to ensure the allowed host was set to the herokuapp url. Gunicorn was installed and the procfile was adjusted from ```web:python3 app.py``` to ```web: gunicorn DN_fitness.wsgi:application ```
 
-Next step was to check if the project would deploy without static files and was tested with ```DISABLE_COLLECTSTATIC = 1``` once the project deployed the settings with whitenoise were set in the project settings file in middleware.
+Next step was to check if the project would deploy without static files and was tested with ```DISABLE_COLLECTSTATIC = 1``` once the project deployed the settings with whitenoise were set in the project settings file in middleware and inside the config Variables on heroku ```DISABLE_COLLECTSTATIC = 0``` was set.
 
-A re-deployment then deployed the project without any issues.
+A re-deployment then deployed the project with the collected staticfiles.
 
 
 * 1: Create a requirements.txt file using the following command. Ensure whitenoise is installed for staticfiles
@@ -332,6 +334,7 @@ DATABASE_URL: <your_URL>
 SECRET_KEY:<your_key>
 STRIPE_PUBLIC_KEY:<stripe_key>
 STRIPE_SECRET_KEY:<stipe_secret>
+STRIPE_WH_SECRET:<stripe_wh_secret>
 
 * 7: Click the deploy button on the heroku Dashboard.
 * 8: Wait until the build has finished and click the view project link once it has done. If you get an error please refer to logs, and also check *2.1 above.
