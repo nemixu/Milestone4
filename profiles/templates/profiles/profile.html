@@ -22,7 +22,22 @@
                 <hr class="hr-black-long">
             </div>
         </div>  
+    
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p class="text-black">Contact Information</p>
+            <form id="update-profile-form" action="#" method="POST">
+                {% csrf_token %} 
+                {{ form|crispy }}
+                <button class="btn orange-btn text-white rounded">Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p class="text-black">Order History</p>
+            {{ orders }}
+        </div>
     </div>
-
     {{ profile }}
+
+ </div>   
 {% endblock  %}
