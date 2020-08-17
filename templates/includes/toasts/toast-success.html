@@ -9,14 +9,14 @@
     <div class="toast-body bg-white">
         {{ message }}
     </div>
-    {% if product_count %}
+    {% if product_count and not on_profile_page %}
     <div class="toast-body bg-white">
         <p class="my-0">
         Your cart ({{ product_count }})
         </p>
     </div>
     {% endif %}
-    {% if total %}
+    {% if total and not on_profile_page %}
     <div class="toast-body bg-white">
     <strong><p class="mt-3 mb-1 text-black">
     Total: 
