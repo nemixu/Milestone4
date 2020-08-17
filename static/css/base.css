@@ -323,6 +323,13 @@ h2.logo-font:hover{
   overflow: visible;
 }
 
+/*-------------------------- Allauth styling --*/
+
+.allauth-form-inner-content p {
+  margin-top: 1.5rem;
+
+}
+
 /*-------------------------- Spinner styling --*/
 
 #loading-spinner:before {
