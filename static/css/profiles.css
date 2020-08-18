@@ -1,3 +1,44 @@
 .allauth-mt {
     margin-top:164px;
 }
+
+.order-truncate {
+    color: #000;
+    text-overflow:ellipsis;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;    
+}
+
+.order-truncate:hover {
+    color: orangered;
+    text-overflow:clip;
+    width:auto;
+    white-space: normal;
+}
+
+.profile-navigation-list{
+    background: #fafafafa;
+    border-radius: 6px;
+    border-bottom: 4px solid #fff;
+    padding: 12px;
+}
+
+.profile-navigation-list li:active,
+.profile-navigation-list li:hover {
+    background: orangered;
+    color:#fff!important;
+}
+
+.profile-dashboard {
+    padding: 1.4rem;
+    background: #fafafa;
+    border-radius: 6px;
+}
+
+.profile-dashboard-orders {
+    padding: 1.4rem;
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
