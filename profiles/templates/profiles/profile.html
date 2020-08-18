@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} DN Fitness | Profile {% endblock %}
+{% block title %} DN Fitness | {{ user.username|title }}'s Profile {% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -15,17 +15,101 @@
 {% block content %}
     <div class="white-overlay"></div>
     <div class="container">
+        <section class="row">
+            <div class="col-12">
+                <hr class="hr-black-long">
+                <h2 class="text-black mb-4 text-center">Welcome back, <span>{{ user.username|title }}.</span></h2>
+                <hr class="hr-black-long">
+            </div>
+        </section>
+        <!--Profile Nav-->
+        <section class="row">
+            <div class="col-md-4 col-12">
+                <div class="profile-nav ">
+                    <ul class="list-group profile-navigation-list">
+                        <a class="profile-nav-link-account text-black" href='#'>
+                            <li class="list-group-item profile-nav-link-text"><i class="fas fa-fw fa-user pr-1"></i>My Account</li>
+                        </a>
+                        <a class="profile-nav-link-account text-black" href='#'>
+                            <li class="list-group-item profile-nav-link-text"><i class="fas fa-fw fa-shopping-basket pr-1"></i>My Orders</li>
+                        </a>  
+                        <a class="profile-nav-link-account text-black" href='#'>
+                            <li class="list-group-item profile-nav-link-text"><i class="fas fa-fw fa-sign-out-alt pr-1"></i>Log Out</li>
+                        </a>      
+                    </ul>
+                </div>
+            </div>
+        <!-- Account Information-->
+        <div class="col-md-8 col-12 checkout_row">
+            <div class="profile-dashboard">
+                <h2 class="text-black text-center pb-3 text-heading-size">Contact Information</h2>
+                <form id="update-profile-form" action="#" method="POST">
+                {% csrf_token %} 
+                {{ form|crispy }}
+                <button class="btn orange-btn text-white rounded">Update Information</button>
+            </form>
+            </div>
+        </div>
+
+        <!-- Order Panel -->
+        <div class="col-md-8 col-12 profile-dashboard-orders checkout_row">
+            <div class="profile-dashboard">
+                <h2 class="text-black text-center pb-3 text-heading-size">Your Orders</h2>
+                {% if orders %}
+                {% for order in orders %}
+                <div class="profile-dashboard-order-panel">
+                    <p class="order-truncate">Order Id:{{ order.order_number }}</p> 
+                </div>
+                {% for item in order.lineitems.all %}
+                <section class="row profile-dashboard-orders-line-items">
+                    <div class="col-md-4 col-5">
+                        <div class="mw-100">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-7 align-items-center">
+                        <div class="profile-dashboard-order-details">
+                            <h5>{{ item.product.name }}</h5>
+                            <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
+                            <p>Qty: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                </section>
+                {% endfor %}
+                <!--Order Total-->
+                <section class="row">
+                    <div class="col-md-6">
+                        <h5 class="text-black">Order total: €{{ order.grand_total }}</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-dashboard-orders-view">
+                            <p>View your order<a class="cart-colour" href="#"> here!</a></p>
+                        </div>
+                    </div>
+                </section>    
+                {% endfor %}
+                {% else %}
+                <div class="profile-dashboard-no-orders text-center">
+                    <h4>No Orders!</h4>
+                    <p>Check out our range of training classes!</p>
+                    <a class="btn orange-btn rounded text-white" aria-label="Shop now" href="{% url 'products' %}">Shop Now</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% comment %} <div class="container">
         <div class="row">
             <div class="col-12">
                 <hr class="hr-black-long">
-                <h2 class="text-black text-uc mb-4 text-center">My Profile</h2>
+                <h2 class="text-black text-uc mb-4 text-center">Welcome back, <span>{{ user.username }}.</span></h2>
                 <hr class="hr-black-long">
             </div>
         </div>  
     
-    <div class="row">
+    <div class="row p-5">
         <div class="col-12 col-lg-6">
-            <p class="text-black">Contact Information</p>
+            <h2 class="text-black text-center pb-3 text-heading-size">Contact Information</h2>
             <form id="update-profile-form" action="#" method="POST">
                 {% csrf_token %} 
                 {{ form|crispy }}
@@ -33,11 +117,49 @@
             </form>
         </div>
         <div class="col-12 col-lg-6">
-            <p class="text-black">Order History</p>
-            {{ orders }}
+            <h2 class="text-black text-center pb-3 text-heading-size">Your Orders</h2>
+            {% for order in orders %}
+            {% for item in order.lineitems.all %}
+            <section class="order-history checkout_row">  
+            <p class="order-truncate">Order Id:{{ order.order_number }}</p>  
+                <div class="row ">
+                    <div class="col-sm-3 col-lg-3">
+                        <div class="mw-100">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-lg-9">
+                        <div class="cart_text_items text-black">
+                            <h5>{{ item.product.name }}</h5>
+                            <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
+                            <p>Qty: {{ item.quantity }}</p>
+                            
+                        </div>
+                        {% endfor %}
+                    </div> 
+                    
+                </div>
+                <p class="text-black">Order total: €{{ order.grand_total }}</p>
+            </section>    
+            
+                    
+            {% endfor %}
         </div>
     </div>
-    {{ profile }}
-
- </div>   
+    <p>{{ order.order_number }}</p>
+ </div>    {% endcomment %}
 {% endblock  %}
+ {% comment %} {{ order.order_number }}
+                <p>
+                    {{ order.order_date }}
+                    </p>
+                    <p>
+                    {{ order.grand_total }}
+                    
+                    </p>
+                    
+                    {{ item.product.name }}
+                    {{ item.product.price }}
+                    <img src="{{ item.product.image.url }}">
+                     {% endcomment %}
+        
