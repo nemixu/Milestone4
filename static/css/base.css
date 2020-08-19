@@ -155,10 +155,7 @@ a.products-border:hover{
 }
 
 .order-panel {
-  padding: 20px;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  padding: 20px;  
   margin-bottom: 20px;
 }
 
