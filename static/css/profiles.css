@@ -25,7 +25,8 @@
 }
 
 .profile-navigation-list li:active,
-.profile-navigation-list li:hover {
+.profile-navigation-list li:hover,
+.profile-navigation-list li:focus {
     background: orangered;
     color:#fff!important;
 }
@@ -37,8 +38,13 @@
 }
 
 .profile-dashboard-orders {
+    display: none;
     padding: 1.4rem;
     background: #fff;
     border-radius: 6px;
     margin-bottom: 20px;
+}
+
+#account-profile-logout-panel {
+    display: none;
 }
