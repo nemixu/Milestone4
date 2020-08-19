@@ -1,7 +1,10 @@
 .allauth-mt {
     margin-top:164px;
 }
-
+.profile-nav {
+    position: sticky;
+    top: 6.25rem;
+}
 .profile-navigation-list{
     background: #fafafafa;
     border-radius: 6px;
@@ -10,6 +13,10 @@
 
 .word-wrapper{
     word-break: break-word;
+}
+
+.small-font-sizing {
+    font-size: 0.8rem;
 }
 
 .profile-navigation-list li:active,
