@@ -59,7 +59,7 @@
                 {% for order in orders %}
                 <div class="profile-dashboard-order-panel">
                     <h5 class="text-black">Order Number:</h5>
-                    <p class="text-black word-wrapper">{{ order.order_number }}</p> 
+                    <p class="text-black word-wrapper small-font-sizing">{{ order.order_number }}</p> 
                 </div>
                 {% for item in order.lineitems.all %}
                 <section class="row profile-dashboard-orders-line-items">
@@ -68,7 +68,7 @@
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         </div>
                     </div>
-                    <div class="col-md-6 col-7 align-items-center text-black">
+                    <div class="col-md-6 col-7 align-items-center text-black d-flex">
                         <div class="profile-dashboard-order-details">
                             <h5>{{ item.product.name }}</h5>
                             <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
@@ -80,11 +80,11 @@
                 <!--Order Total-->
                 <section class="row">
                     <div class="col-md-6">
-                        <h5 class="text-black">Order total: €{{ order.grand_total }}</h5>
+                        <h5 class="text-black pt-4">Order total: €{{ order.grand_total }}</h5>
                     </div>
                     <div class="col-md-6 mb-5">
                         <div class="profile-dashboard-orders-view">
-                            <p class="text-black ">View your order<a class="cart-colour" href="{% url 'order_history' order.order_number %}"> here!</a></p>
+                            <p class="text-black pt-4">View your order<a class="cart-colour" href="{% url 'order_history' order.order_number %}"> here!</a></p>
                         </div>
                     </div>
                 </section>
