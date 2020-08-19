@@ -82,12 +82,13 @@
                     <div class="col-md-6">
                         <h5 class="text-black">Order total: €{{ order.grand_total }}</h5>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-5">
                         <div class="profile-dashboard-orders-view">
-                            <p class="text-black">View your order<a class="cart-colour" href="{% url 'order_history' order.order_number %}"> here!</a></p>
+                            <p class="text-black ">View your order<a class="cart-colour" href="{% url 'order_history' order.order_number %}"> here!</a></p>
                         </div>
                     </div>
-                </section>    
+                </section>
+                <hr class="hr-black-long">
                 {% endfor %}
                 {% else %}
                 <div class="profile-dashboard-no-orders text-center">
