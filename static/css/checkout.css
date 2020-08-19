@@ -33,6 +33,7 @@
 #payment-form .form-control,
 #card-element {
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid #00000052;
+    border-radius: 4px;
     font-size: 1rem;
 }
