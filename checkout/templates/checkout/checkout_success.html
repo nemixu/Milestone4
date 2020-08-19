@@ -19,7 +19,11 @@
             <div class="col-12">
                 <div class="form-details-checkout">
                     <hr class="hr-black-long">
+                    {% if from_profile %}
+                    <h2 class="text-black text-uc mb-4 text-center">Order history Confirmation</h2>
+                    {% else %}
                     <h2 class="text-black text-uc mb-4 text-center">Thank you for shopping with us!</h2>
+                    {% endif %}
                     <hr class="hr-black-long">
                     <p class="text-black text-center">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
                 </div>
