@@ -31,7 +31,7 @@
                     <h2 class="text-black text-uc mb-4 text-center">Your Order</h2>             
                     <div class="row text-center align-items-center text-black">
                         <div class="col-12">
-                            <h6 class="text-small"><strong>Order ID:</strong> {{ order.order_number }}</h6>
+                            <h6 class="text-small word-wrapper"><strong>Order ID:</strong> {{ order.order_number }}</h6>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
                     {% for item in order.lineitems.all %}
                     <div class="div order-panel">
                         <div class="row order-line-items center-custom">
-                            <div class="col-4">
+                            <div class="d-none d-md-block col-4">
                                 <div>
                                     <img class="image-responsive image-box-shadow img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 </div>
@@ -73,12 +73,18 @@
         <div class="row">
             <div class="col-12 col-lg-12">
                 <div class="center-custom">
-                    <a href="#" class="btn dark-btn button-styling rounded mt-4 mr-1">
-                            <span class="text-uppercase">My Profile</span>     
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn orange-btn text-white rounded mt-4 mr-1">
+                        <span class="text-uppercase">Back to Profile</span>     
                     </a>
-                    <a href="{% url 'products' %}" class="btn orange-btn button-styling rounded mt-4">
+                {% else %}
+                    <a href="{% url 'profile' %}" class="btn orange-btn text-white rounded mt-4 mr-1">
+                        <span class="text-uppercase">Profile</span>     
+                    </a>
+                    <a href="{% url 'products' %}" class="btn orange-btn text-white button-styling rounded mt-4">
                         <span class="text-uppercase text-white">Continue Shopping</span>     
                     </a>
+                {% endif %}    
                 </div>
             </div>
         </div>
