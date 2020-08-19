@@ -19,22 +19,22 @@
             <div class="col-12">
                 <hr class="hr-black-long">
                 <h2 class="text-black mb-4 text-center">Welcome back, <span>{{ user.username|title }}.</span></h2>
-                <hr class="hr-black-long">
+                <hr class="hr-black-long mb-5">
             </div>
         </section>
         <!--Profile Nav-->
         <section class="row">
             <div class="col-md-4 col-12">
-                <div class="profile-nav ">
+                <div class="profile-nav checkout_row">
                     <ul class="list-group profile-navigation-list">
-                        <a class="profile-nav-link-account text-black" id="account-profile" href='#'>
-                            <li class="list-group-item profile-nav-link-text"><i class="fas fa-fw fa-user pr-1"></i>My Account</li>
+                        <a class="profile-nav-link-account text-black m-1" href='#'>
+                            <li class="list-group-item active profile-nav-link-text" id="account-profile"><i class="fas fa-fw fa-user pr-1"></i>My Account</li>
                         </a>
-                        <a class="profile-nav-link-account text-black" id="account-orders" href='#'>
-                            <li class="list-group-item profile-nav-link-text"><i class="fas fa-fw fa-shopping-basket pr-1"></i>My Orders</li>
+                        <a class="profile-nav-link-account text-black m-1" href='#'>
+                            <li class="list-group-item profile-nav-link-text" id="account-orders"><i class="fas fa-fw fa-shopping-basket pr-1"></i>My Orders</li>
                         </a>  
-                        <a class="profile-nav-link-account text-black" id="account-logout" href='#'>
-                            <li class="list-group-item profile-nav-link-text"><i class="fas fa-fw fa-sign-out-alt pr-1"></i>Log Out</li>
+                        <a class="profile-nav-link-account text-black m-1" href='#'>
+                            <li class="list-group-item profile-nav-link-text" id="account-logout"><i class="fas fa-fw fa-sign-out-alt pr-1"></i>Log Out</li>
                         </a>      
                     </ul>
                 </div>
@@ -58,7 +58,8 @@
                 {% if orders %}
                 {% for order in orders %}
                 <div class="profile-dashboard-order-panel">
-                    <p class="order-truncate">Order Id:{{ order.order_number }}</p> 
+                    <h5 class="text-black">Order Number:</h5>
+                    <p class="text-black word-wrapper">{{ order.order_number }}</p> 
                 </div>
                 {% for item in order.lineitems.all %}
                 <section class="row profile-dashboard-orders-line-items">
@@ -67,11 +68,11 @@
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         </div>
                     </div>
-                    <div class="col-md-6 col-7 align-items-center">
+                    <div class="col-md-6 col-7 align-items-center text-black">
                         <div class="profile-dashboard-order-details">
                             <h5>{{ item.product.name }}</h5>
                             <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
-                            <p>Qty: {{ item.quantity }}</p>
+                            <p><strong>Qty:</strong> {{ item.quantity }}</p>
                         </div>
                     </div>
                 </section>
@@ -83,7 +84,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-dashboard-orders-view">
-                            <p>View your order<a class="cart-colour" href="#"> here!</a></p>
+                            <p class="text-black">View your order<a class="cart-colour" href="{% url 'order_history' order.order_number %}"> here!</a></p>
                         </div>
                     </div>
                 </section>    
@@ -100,77 +101,12 @@
         <!-- Logout Panel -->
         <div class="col-md-8 col-12 checkout_row" id="account-profile-logout-panel">
             <div class="profile-dashboard text-center">
-                <h2 class="text-black text-center pb-3 text-heading-size">Log out?</h2>
-                <p class="text-black text-center pb-3">Are you sure you wish to log out?</p>
+                <h2 class="text-black text-center text-heading-size">Log out?</h2>
+                <p class="text-black text-center">Are you sure you wish to log out?</p>
                 <a href="{% url 'account_logout' %}" class="btn orange-btn text-center text-white rounded">Log Out</a>
                 <a href="{% url 'products' %}" class="btn orange-btn text-center text-white rounded">Continue Shopping</a>
             </div>
         </div>
     </div>
 
-    
-    {% comment %} <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <hr class="hr-black-long">
-                <h2 class="text-black text-uc mb-4 text-center">Welcome back, <span>{{ user.username }}.</span></h2>
-                <hr class="hr-black-long">
-            </div>
-        </div>  
-    
-    <div class="row p-5">
-        <div class="col-12 col-lg-6">
-            <h2 class="text-black text-center pb-3 text-heading-size">Contact Information</h2>
-            <form id="update-profile-form" action="#" method="POST">
-                {% csrf_token %} 
-                {{ form|crispy }}
-                <button class="btn orange-btn text-white rounded">Update Information</button>
-            </form>
-        </div>
-        <div class="col-12 col-lg-6">
-            <h2 class="text-black text-center pb-3 text-heading-size">Your Orders</h2>
-            {% for order in orders %}
-            {% for item in order.lineitems.all %}
-            <section class="order-history checkout_row">  
-            <p class="order-truncate">Order Id:{{ order.order_number }}</p>  
-                <div class="row ">
-                    <div class="col-sm-3 col-lg-3">
-                        <div class="mw-100">
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        </div>
-                    </div>
-                    <div class="col-sm-9 col-lg-9">
-                        <div class="cart_text_items text-black">
-                            <h5>{{ item.product.name }}</h5>
-                            <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
-                            <p>Qty: {{ item.quantity }}</p>
-                            
-                        </div>
-                        {% endfor %}
-                    </div> 
-                    
-                </div>
-                <p class="text-black">Order total: €{{ order.grand_total }}</p>
-            </section>    
-            
-                    
-            {% endfor %}
-        </div>
-    </div>
-    <p>{{ order.order_number }}</p>
- </div>    {% endcomment %}
 {% endblock  %}
- {% comment %} {{ order.order_number }}
-                <p>
-                    {{ order.order_date }}
-                    </p>
-                    <p>
-                    {{ order.grand_total }}
-                    
-                    </p>
-                    
-                    {{ item.product.name }}
-                    {{ item.product.price }}
-                    <img src="{{ item.product.image.url }}">
-                     {% endcomment %}
-        
