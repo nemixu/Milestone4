@@ -37,7 +37,7 @@ def contact(request):
             'Contact from website' + message_name,
             message,
             message_email,
-            ['test@test.com],
+            ['test@test.com'],
         )
     
     
