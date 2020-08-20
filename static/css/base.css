@@ -88,25 +88,26 @@ body {
 .footer-container {
   background: #fafafa;;
   padding:1.25rem;
+  box-shadow: 1px 0px 2px rgba(0,0,0,0.4);
 }
 
-.list-group-item {
-  background:transparent;
+.footer-logo {
+  max-width: 200px;
+  max-height: 200px;
 }
 
-.list-group-item a {
+.footer-nav-ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-nav-li a{
   color:black;
 }
 
-.list-group-item a:hover {
+.footer-nav-li a:hover{
   color:orangered;
 }
-.list-group-item.active {
-  background: #fafafa;
-  border-color: #fafafa;
-
-}
-
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -367,6 +368,10 @@ h2.logo-font:hover{
   transition: all 0.3s ease
 }
 
+.dropdown-item:active {
+  background: #fff;
+  color: orangered;
+}
 /*-------------------------- Profile Styling--*/
 
 .allauth-mt {
