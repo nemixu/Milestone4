@@ -3,22 +3,24 @@ from django.conf import settings
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 
 import json
 import time
 
 
-class StripeWH_Handler: 
-    """Handle stripe webhooks"""
-    
+class StripeWH_Handler:
+    """Handle Stripe webhooks"""
+
     def __init__(self, request):
         self.request = request
-            
+
     def handle_event(self, event):
-        """Handle webhook event """
-        
+        """
+        Handle a generic/unknown/unexpected webhook event
+        """
         return HttpResponse(
-            content=f'Unhandled webhook recevied: {event["type"]}',
+            content=f'Unhandled webhook received: {event["type"]}',
             status=200)
         
     def handle_payment_intent_succeeded(self, event):
@@ -30,6 +32,16 @@ class StripeWH_Handler:
         
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)
+        
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = billing_details.phone
+                profile.default_email = billing_details.email
+                profile.save()
         
         order_exists = False
         attempt = 1
@@ -57,6 +69,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=billing_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
                     grand_total=grand_total,
