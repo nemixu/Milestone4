@@ -41,13 +41,13 @@ card.addEventListener('change', e => {
     }
 });
 
-const form = document.getElementById('#payment-form');
+const form = document.querySelector('#payment-form');
 const submitButton = document.querySelector('#submit-button');
 
 form.addEventListener('submit', ev => {
-    console.log('hey shithead')
     ev.preventDefault();
     card.update({ 'disabled': true });
+    submitButton.setAttribute('disabled', true);
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#spinner-overlay').fadeToggle(100);
@@ -87,7 +87,7 @@ form.addEventListener('submit', ev => {
     
             } else {
               if (result.paymentIntent.status === 'succeeded') {
-                    // form.submit();
+                    form.submit();
               }  
             }
         });
