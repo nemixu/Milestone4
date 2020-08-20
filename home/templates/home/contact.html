@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} DN Fitness | {{page_title}} {% endblock %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+
+{% block content %}
+    <div class="white-overlay"></div>
+    <div class="container">
+        <section class="row">
+            <div class="col-12">
+                <h2 class="text-black text-center text-uppercase">Contact Us</h2>
+                <hr class="hr-black">
+           </div>
+        </section>
+
+        <section class="row">
+            <div class="col-sm-12">
+                <form method="POST" class="form" action="#">
+                    {% csrf_token %}
+                    <div class="">
+                        <label class="" for="name">Name<span class="">*</span></label>
+                       
+                    </div>
+                    <div class="">
+                        <label class="" for="email">Email<span class="">*</span></label>
+                       
+                    </div>
+                    <div class="">
+                        <label class="" for="message">Message<span class="">*</span></label>
+                
+                    </div>
+                    <button class="btn btn-primary" type="submit">Send Message</button>
+                </form>    
+            </div>
+        </section>  
+    </div>  
+    
+{% endblock  %}
