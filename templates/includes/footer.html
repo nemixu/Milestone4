@@ -1,29 +1,31 @@
 <!--Footer-->
 <footer class="container-fluid footer-container">
     <div class="row">
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-6 col-md-3 text-center">
             <h4 class="text-black">DN Fitness</h4>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a aria-label="home" href="{% url 'home' %}">Home</a></li>
-                <li class="list-group-item"><a aria-label="shop" href="{% url 'products' %}">Shop</a></li>
-                <li class="list-group-item"><a aria-label="about-us" href="{% url 'home' %}">About</a></li>
-                <li class="list-group-item"><a aria-label="contact-us" href="{% url 'home' %}">Contact</a></li>                
+            <ul class="footer-nav-ul">
+                <li class="footer-nav-li"><a aria-label="home" href="{% url 'home' %}">Home</a></li>
+                <li class="footer-nav-li"><a aria-label="shop" href="{% url 'products' %}">Shop</a></li>
+                <li class="footer-nav-li"><a aria-label="about-us" href="{% url 'home' %}">About</a></li>
+                <li class="footer-nav-li"><a aria-label="contact-us" href="{% url 'home' %}">Contact</a></li>                
             </ul>
         </div>
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-6 col-md-3 text-center">
             <h4 class="text-black">Account</h4>
-            <ul class="list-group list-group-flush">
+            <ul class="footer-nav-ul">
                 {% if user.is_authenticated %}
-                <li class="list-group-item"><a aria-label="home" href="{% url 'profile' %}">Profile</a></li>
-                <li class="list-group-item"><a aria-label="shop" href="{% url 'products' %}">Shop</a></li>
-                <li class="list-group-item"><a aria-label="about-us" href="{% url 'account_logout' %}">Logout</a></li>
+                <li class="footer-nav-li"><a aria-label="home" href="{% url 'profile' %}">My Profile</a></li>
+                <li class="footer-nav-li"><a aria-label="shop" href="{% url 'cart' %}">My Cart</a></li>
+                <li class="footer-nav-li"><a aria-label="about-us" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
-                <li class="list-group-item"><a aria-label="home" href="{% url 'account_signup' %}">Register</a></li>
-                <li class="list-group-item"><a aria-label="shop" href="{% url 'account_login' %}">Sign In</a></li>
+                <li class="footer-nav-li"><a aria-label="home" href="{% url 'account_signup' %}">Register</a></li>
+                <li class="footer-nav-li"><a aria-label="shop" href="{% url 'account_login' %}">Sign In</a></li>
                 {% endif %}          
             </ul>
         </div>  
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-4 offset-md-2 text-center">
+            <img class="footer-logo" src=""></img>
+            <p class="text-black">Thank you for visiting DN Fitness, this website was created by Stephen Seagrave</p>
         </div>      
     </div>
 </footer>
