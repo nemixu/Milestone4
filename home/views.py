@@ -24,3 +24,27 @@ def about(request):
     }
     return render(request, template, context)
 
+def contact(request):
+    """View to handle the contact page"""
+    page_title = "Contact Us"
+    
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
+        
+        send_mail(
+            'Contact from website' + message_name,
+            message,
+            message_email,
+            ['test@test.com],
+        )
+    
+    
+    template = 'home/contact.html'
+    context = {
+        'page_title': page_title,
+        'send_mail' : send_mail,
+    }
+    
+    return render(request, template, context)
