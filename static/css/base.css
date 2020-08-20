@@ -82,6 +82,7 @@ body {
 .classes-text:hover {
   color:orangered!important;
 }
+
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -161,6 +162,46 @@ a.products-border:hover{
 
 .order-line-items {
   margin-bottom: 20px;
+}
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #00000052;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 
@@ -302,6 +343,65 @@ h2.logo-font:hover{
   transition: all 0.3s ease
 }
 
+/*-------------------------- Profile Styling--*/
+
+.allauth-mt {
+  margin-top:164px;
+}
+.profile-nav {
+  position: sticky;
+  top: 6.25rem;
+}
+.profile-navigation-list{
+  background: #fafafafa;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.word-wrapper{
+  word-break: break-word;
+}
+
+.small-font-sizing {
+  font-size: 0.8rem;
+}
+
+.profile-navigation-list li:active,
+.profile-navigation-list li:hover,
+.profile-navigation-list li:focus,
+.list-group-item.active {
+  background: orangered;
+  color:#fff!important;
+  border-color: transparent!important;
+}
+
+.profile-dashboard {
+  padding: 1.4rem;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.profile-dashboard-orders {
+  display: none;
+  padding: 1.4rem;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+#account-profile-logout-panel {
+  display: none;
+}
+
+.form-styling {
+  color: #000;
+  border: 1px solid #00000052;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-styling:focus {
+  border-color:orangered
+}
 
 /*-------------------------- Toast Styling--*/
 
