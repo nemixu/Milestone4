@@ -41,9 +41,11 @@ card.addEventListener('change', e => {
     }
 });
 
-const form = document.getElementById('payment-form');
+const form = document.getElementById('#payment-form');
+const submitButton = document.querySelector('#submit-button');
 
 form.addEventListener('submit', ev => {
+    console.log('hey shithead')
     ev.preventDefault();
     card.update({ 'disabled': true });
     $('#submit-button').attr('disabled', true);
@@ -57,7 +59,7 @@ form.addEventListener('submit', ev => {
         'client_secret': clientSecret,
         'save_info': saveInfo,
     };
-    const url= '/checkout/cache_checkout_data/';
+    const url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function() {
         stripe.confirmCardPayment(clientSecret, {
@@ -85,7 +87,7 @@ form.addEventListener('submit', ev => {
     
             } else {
               if (result.paymentIntent.status === 'succeeded') {
-                  form.submit();
+                    // form.submit();
               }  
             }
         });
