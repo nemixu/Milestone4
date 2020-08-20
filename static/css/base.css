@@ -83,6 +83,30 @@ body {
   color:orangered!important;
 }
 
+/*-------------------------- Footer Styling--*/
+
+.footer-container {
+  background: #fafafa;;
+  padding:1.25rem;
+}
+
+.list-group-item {
+  background:transparent;
+}
+
+.list-group-item a {
+  color:black;
+}
+
+.list-group-item a:hover {
+  color:orangered;
+}
+.list-group-item.active {
+  background: #fafafa;
+  border-color: #fafafa;
+
+}
+
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -369,7 +393,7 @@ h2.logo-font:hover{
 .profile-navigation-list li:active,
 .profile-navigation-list li:hover,
 .profile-navigation-list li:focus,
-.list-group-item.active {
+.profile-active.active {
   background: orangered;
   color:#fff!important;
   border-color: transparent!important;
