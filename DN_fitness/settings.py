@@ -116,6 +116,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'DN_fitness.wsgi.application'
 
+# Allauth remove provisional logout page
 ACCOUNT_LOGOUT_ON_GET = True
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
