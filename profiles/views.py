@@ -1,8 +1,8 @@
-from django.shortcuts import render,  get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
-from .models import UserProfile
-from.forms import UserProfileForm
+from .models import UserProfile, Diary
+from .forms import UserProfileForm, DiaryEntry
 
 from checkout.models import Order
 
@@ -45,3 +45,28 @@ def order_history(request, order_number):
     }
     
     return render(request, template, context)
+
+def diary(request):
+    diaries = Diary.objects.order_by('-date_posted')
+    context = {
+        'diaries': diaries
+        }
+    
+    return render(request, context)
+    
+    
+    
+def diary_entry(request):
+    if request.method == 'POST':
+        form = DiaryEntry(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Diary entry has been updated successfully')
+            return redirect('profile')
+        else:
+            form = DiaryEntry()
+        context = {
+            'form': form
+        }
+        
+        return render(request, context)    
