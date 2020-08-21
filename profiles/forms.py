@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, Diary
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
@@ -26,3 +26,18 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'rounded stripe-style-input form-styling'
             self.fields[field].label = False
+            
+
+class DiaryEntry(forms.ModelForm):
+    class Meta:
+        model = Diary
+        fields = ('task_name','diary_text')
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        self.fields['task_name'].widget.attrs['autofocus'] = True
+        self.fields['diary_text'].widget.attrs.update({'class': 'textarea', 'placeholder': 'What is your workout plans?'})
+        
+        
+                    
