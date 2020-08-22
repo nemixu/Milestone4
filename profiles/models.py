@@ -22,15 +22,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     # If user is existing - save the profile change
     instance.userprofile.save()    
     
-    
-class Diary(models.Model):
-    """A diary to maintain a users workout diary on their profile."""   
-    task_name = models.CharField(max_length=100, null=False, blank=False)
-    diary_text = models.TextField(null=False, blank=False)
-    date_created = models.DateField(auto_now_add=True)
-    
-    def __str__(self):
-        return 'Diary #{}'.format(self.id)
-    
-    class Meta:
-        verbose_name_plural = 'diaries'     
