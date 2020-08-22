@@ -46,8 +46,11 @@
                                     <h3 class="product-text products-border text-center">{{ product.name }}</h3>
                                 </a> 
                                 {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                <a href="{% url 'product_detail' product.id %}" class="products-border">
+                                    <div class="image-wrapper-products">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </div>
+                                    <h3 class="product-text products-border text-center">{{ product.name }}</h3>
                                 </a> 
                                 {% endif %}
                                 <div class="card-footer rounded-bottom text-center products-border p-0 b-0">
@@ -58,7 +61,7 @@
                                                 <small class="cart-colour"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}   
                                                 <small class="text-muted">No Rating</small>
-                                            {% endif %}     
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>  
