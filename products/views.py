@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import ProductForm
 
@@ -34,13 +36,57 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-
+@login_required
 def add_product(request):
     """add products to the store"""
-    form = ProductForm()
+    if not request.user.is_superuser:
+        messages.error(request, 'Oops! You don\'t have the required permission\
+        to access this page. Login with the required credentials to do so!')
+        return redirect(reverse('home'))
+    
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Successfully added a product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:        
+        form = ProductForm()
+    
+    page_title = 'Add a product'    
     template = 'products/add_product.html'
     context = {
         'form':form,
+        'page_title': page_title,
+    }
+    
+    return render(request, template, context)
+
+@login_required
+def edit_product(request, product_id):
+    """edit a product and update to the db"""
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'You have successfully updated {product.name}.')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to edit product. Please ensure the form is valid.')
+            
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+    
+    page_title = 'Edit a product'    
+    template = 'products/edit_product.html'
+    context = {
+        'form':form,
+        'product': product,
+        'page_title': page_title,
     }
     
     return render(request, template, context)
