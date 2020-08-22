@@ -49,7 +49,7 @@ def add_product(request):
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added a product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=['product.id']))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:        
@@ -67,6 +67,12 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """edit a product and update to the db"""
+    if not request.user.is_superuser:
+        messages.info(request, 'Oops! You don\'t have the required \
+                      permission to access this page. Login with the \
+                      required credentials to do so!')
+        return redirect(reverse('home'))
+    
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -90,3 +96,18 @@ def edit_product(request, product_id):
     }
     
     return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """Delete a product from products"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Oops! You don\'t have the required permission\
+        to access this page. Login with the required credentials to do so!')
+        return redirect(reverse('home'))
+    
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product has been deleted!')
+    
+    return redirect(reverse('home'))
