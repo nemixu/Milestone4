@@ -332,7 +332,7 @@ a.products-border:hover{
   height:100%;
   background: #000;
   transition: 0.5s all ease-in-out;
-  z-index: 50;
+  z-index: 999999;
 }
 
 .overlay-show {
@@ -345,7 +345,7 @@ a.products-border:hover{
   color: orangered;
   display:none;
   position: fixed;
-  z-index: 51;
+  z-index: 99999999;
   top:30%;
   left: 32%;
   padding: 1.2rem;
