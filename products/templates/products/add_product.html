@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} DN Fitness | Add a product {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+
+{% block content %}
+    <div class="white-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <hr class="hr-black-long">
+                <h2 class="text-black text-uc mb-4 text-center">Product Management</h2>
+                <hr class="hr-black-long">
+                <h5 class="text-black text-center">Add a product</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form action="{% url 'add_product' %}" method="POST" enctype="mutlipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="p-3 mb-3">
+                        <legend class="p-2 d-inline w-auto">
+                            Add Product
+                        </legend>
+                        {{ form | crispy }}
+                    </fieldset>
+                    <div class="text-right">
+                        <a href="{% url 'products' %}" class="btn orange-btn text-white mb-2 d-xs-block d-sm-inline-block"></i> Back To Products</a>
+                        <button class="btn btn-white ml-2 mb-2 d-xs-block d-sm-inline-block"><i class="fas fa-plus-circle"></i> Add Product</button>
+                    </div>
+                </form>    
+            </div>
+        </div>
+         
+    </div>
+{% endblock  %}
+
