@@ -28,7 +28,11 @@
         <div class="row p-5 d-flex">
             <div class="d-none d-md-block col-md-4">
                 <div class="mw-100">
+                    {% if item.product.image %}
                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% else %}
+                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    {% endif %}
                 </div>
             </div>
             <div class="col-sm-12 col-md-8">
