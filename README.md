@@ -52,6 +52,13 @@
 
 ### User Stories:
 
+* As a store owner I want a site that is user friendly and is easy to navigate for the user.
+* As a store owner I want users to purchase without being registered.
+* As a store owner I want to show customers what my services are and what they include.
+* As a store owner I want to be able to edit product prices, and upload and delete products.
+* As a store owner I want to see users feedback on classes/services.
+<hr>
+
 * As a user looking to purchase a service I want to see what is included in that service.
 * As a user looking to purchase a service I want to recieve an email confirming my purchase.
 * As a user looking to purchase a service I want to see the purchase on my created profile.
