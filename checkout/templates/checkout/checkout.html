@@ -85,7 +85,11 @@
                 <div class="row checkout_row">
                     <div class="col-sm-3 col-lg-3">
                         <div class="mw-100">
+                        {% if item.product.image %}
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                        {% endif %}
                         </div>
                     </div>
                     <div class="col-sm-9 col-lg-9">
