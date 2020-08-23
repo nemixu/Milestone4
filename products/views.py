@@ -141,6 +141,7 @@ def add_review(request, product_id):
             messages.success(request, "comment added")
         else:
             messages.error(request, 'comment not added')
+        return redirect(reverse('product_detail', args=(product_id,)))   
     else:
         review_form = ReviewForm(instance=profile) 
              
