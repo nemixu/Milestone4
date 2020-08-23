@@ -20,19 +20,19 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review 
-        fields = ['comment']
+        fields = '__all__'
         widgets = {
             'comment': forms.Textarea(
                 attrs={
                     "disabled": True,
-                    "rows": 10,
-                    "class": 'text-danger',
+                    "rows": 5,
+                    "class": 'form-control',
                     "placeholder": "Minimum 15 characters",
                 }
             ),
         }
         
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, *kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['comment'].label = "Leave a review"    
             
