@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -26,12 +26,14 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual class details """
+    """ A view to show individual class details and reviews for that specific class """
 
     product = get_object_or_404(Product, pk=product_id)
-
+    reviews = Review.objects.filter(product=product_id)
     context = {
         'product': product,
+        'reviews': reviews,
+        'page_title': product.name,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -111,3 +113,24 @@ def delete_product(request, product_id):
     messages.success(request, 'Product has been deleted!')
     
     return redirect(reverse('home'))
+
+
+def add_review(request, product_id):
+    """View to handle the POST of reviews from a specific user"""
+    if request.user.is_authenticated:
+        review_form = ReviewForm()
+        product = get_object_or_404(Product, pk=product_id)
+        context = {
+            'review_form': review_form
+        }
+        if request.method == "POST":
+            review_form = ReviewForm(request.POST, instance=product)
+            if review_form.is_valid():
+                review_form.save()
+                messages.success(request, f'You have successfully left a rating for {product.name}.')
+                return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            review_form = ReviewForm()
+        return render(request, 'products', context)
+    else:
+        return redirect('home')
