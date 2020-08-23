@@ -20,11 +20,10 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review 
-        fields = '__all__'
+        fields = ['comment']
         widgets = {
             'comment': forms.Textarea(
                 attrs={
-                    "disabled": True,
                     "rows": 5,
                     "class": 'form-control',
                     "placeholder": "Minimum 15 characters",
