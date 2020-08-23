@@ -32,7 +32,8 @@ class ReviewForm(forms.ModelForm):
             'rating': forms.NumberInput(
                 attrs={
                     "type": 'number',
-                    "min": 0,
+                    "value": 1,
+                    "min": 1,
                     "max": 5,
                     "class": "form-control stripe-style-input mb-2"
                 }
