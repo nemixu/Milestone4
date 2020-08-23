@@ -93,29 +93,42 @@
                     </form>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                    <h3 class="text-center">Reviews</h3>
-                    <form action="{% url 'add_review' product.id %}" method="POST">
-                        <div class="col-12 col-lg-8 offset-lg-2">
-                            {% csrf_token %}
-                            {{ review_form }}
+        </div>
+    </div>
+    <div class="container">
+    <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h3 class="text-center text-black">Leave a review</h3>
+                        <form action="{% url 'add_review' product.id %}" method="POST" class="text-center text-black">
+                            <div class="col-12 col-lg-8 offset-lg-2">
+                                {% csrf_token %}
+                                {{ review_form }}
+                            </div>
+                            <div class="col-8 offset-4 col-lg-4 offset-lg-6 text-right">
+                                <button class="btn orange-btn text-white" id="reviewbutton">Post review</button>
+                            </div>
+                        </form>
                         </div>
-                        <div class="col-8 offset-4 col-lg-4 offset-lg-6 text-right">
-                            <button class="btn orange-btn text-white" id="reviewbutton" type="submit">Post review</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <h3 class="text-center text-black">Reviews</h3>
+                            {% for review in reviews %}
+                            <h4 class="text-center text-black">{{review.user}}</h4>
+                            <p class="text-center text-black">{{review.comment}}</p>
+                            <p class="text-center text-black">{{ review.rating|floatformat:0 }}/5</p>
+                            {% endfor%}
                         </div>
-                    </form>
                     </div>
                 </div>
             </div>
-        </div>
+    
     </div>
-    {% for review in reviews %}
-     {{review.comment}}
-     {{ review.rating }}
-     {{ review.user }}
-    {% endfor%}
+    
 {% endblock  %}
 
 {% block postloadjs %}
