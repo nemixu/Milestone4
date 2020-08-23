@@ -332,12 +332,12 @@ a.products-border:hover{
   background: #000;
   opacity: 0;
   transition: 0.5s all ease-in-out;
-  z-index: 999999;
 }
 
 .overlay-show {
   opacity: 0.8;
   visibility: visible;
+  z-index: 999999;
 }
 
 .popup {
