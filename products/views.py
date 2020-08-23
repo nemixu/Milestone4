@@ -32,10 +32,12 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
+    review_form = ReviewForm()
     context = {
         'product': product,
         'reviews': reviews,
         'page_title': product.name,
+        'review_form': review_form
     }
 
     return render(request, 'products/product_detail.html', context)
