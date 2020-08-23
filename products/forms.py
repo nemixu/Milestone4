@@ -25,7 +25,7 @@ class ReviewForm(forms.ModelForm):
             'comment': forms.Textarea(
                 attrs={
                     "rows": 5,
-                    "class": 'form-control',
+                    "class": 'form-control stripe-style-input',
                     "placeholder": "Minimum 15 characters",
                 }
             ),
@@ -34,7 +34,7 @@ class ReviewForm(forms.ModelForm):
                     "type": 'number',
                     "min": 0,
                     "max": 5,
-                    "class": "form-control"
+                    "class": "form-control stripe-style-input mb-2"
                 }
             )
         }
