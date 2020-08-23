@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     class Meta:
@@ -26,3 +27,14 @@ class Product(models.Model):
     
     def __str__(self):
         return self.name
+    
+    
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True, related_name="reviews")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name="reviews")
+    comment = models.TextField(max_length=1000, blank=True, null=True)
+    rating = models.FloatField(default=0)
+    
+    def __str__(self):
+        return self.user.username
+    
