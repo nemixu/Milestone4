@@ -121,60 +121,33 @@ def delete_product(request, product_id):
 
 def add_review(request, product_id):
     """View to handle the POST of reviews from a specific user"""
-    user_profile = UserProfile.objects.get(user=request.user)
+    profile = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
     review_form = ReviewForm()
+    
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST, instance=product)
+        form_data = {
+                'comment': request.POST['comment'],
+                'rating': request.POST['rating']
+            }
+        review_form = ReviewForm(form_data)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            messages.success(request, "comment added")
+        else:
+            messages.error(request, 'comment not added')
+    else:
+        review_form = ReviewForm(instance=profile) 
+             
+            
     context = {
         "product": product,
         "reviews": reviews,
         "review_form": review_form,        
     }
     return render(request, 'products/product_detail.html', context)
-    
-    
-    
-    # if request.method == "POST":
-    #     user_profile = UserProfile.objects.get(user=request.user)
-    #     product = get_object_or_404(Product, pk=product_id)
-    #     reviews = Review.objects.filter(product=product_id)
-    #     form_data = {
-    #         'comment': request.POST['comment'],
-    #     }
-
-    #     review_form = ReviewForm(form_data)
-        
-    #     if review_form.is_valid():
-    #         comment = review_form.save(commit=False)
-    #         comment.save()
-    #         messages.success(request, "comment added")
-            
-    #     else:
-    #         messages.error(request, "Sorry that failed")
-            
-    # else:
-    #     review_form = ReviewForm()
-    # template = "products/product_detail.html"
-    # context = {
-    #     "product": product,
-    #     "reviews": reviews,
-    #     "review_form": review_form,        
-    # }
-    # return render(request, template , context)
-    # if request.user.is_authenticated:
-    #     product = get_object_or_404(Product, pk=product_id)
-    #     reviews = Review.objects.filter(product=product_id)
-    #     review_form = ReviewForm()
-    #     return render(request, 'products', context)
-    #     if request.method == "POST":
-    #         review_form = ReviewForm(request.POST, instance=product)
-    #         if review_form.is_valid():
-    #             review_form.save()
-    #             messages.success(request, f'You have successfully left a rating for {product.name}.')
-    #             return redirect(reverse('product_detail', args=[product.id]))
-    #     else:
-    #         review_form = ReviewForm()
-    #     return render(request, 'products', context)
-    
-    # else:
-    #     return redirect('home')
