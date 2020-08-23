@@ -20,7 +20,7 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review 
-        fields = ['comment']
+        fields = ['comment', 'rating']
         widgets = {
             'comment': forms.Textarea(
                 attrs={
@@ -29,6 +29,14 @@ class ReviewForm(forms.ModelForm):
                     "placeholder": "Minimum 15 characters",
                 }
             ),
+            'rating': forms.NumberInput(
+                attrs={
+                    "type": 'number',
+                    "min": 0,
+                    "max": 5,
+                    "class": "form-control"
+                }
+            )
         }
         
     def __init__(self, *args, **kwargs):
