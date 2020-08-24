@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from profiles.models import UserProfile
 from .models import Product, Category, Review
+from checkout.models import Order
 from .forms import ProductForm, ReviewForm
 
 # Create your views here.
@@ -32,12 +33,13 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
     review_form = ReviewForm()
-    
+    has_purchased = False
     context = {
         'product': product,
         'reviews': reviews,
         'page_title': product.name,
         'review_form': review_form,
+        'has_purchased': has_purchased
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -121,13 +123,15 @@ def delete_product(request, product_id):
 
 def add_review(request, product_id):
     """View to handle the POST of reviews from a specific user"""
-    profile = get_object_or_404(UserProfile, user=request.user)
+    user = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
     review_form = ReviewForm()
+    # has_purchased = False
 
     if request.method == 'POST':
         review_form = ReviewForm(request.POST, instance=product)
+
         form_data = {
                 'comment': request.POST['comment'],
                 'rating': request.POST['rating']
@@ -143,7 +147,7 @@ def add_review(request, product_id):
             messages.error(request, 'comment not added')
         return redirect(reverse('product_detail', args=(product_id,)))   
     else:
-        review_form = ReviewForm(instance=profile) 
+        review_form = ReviewForm(instance=user) 
              
             
     context = {
@@ -182,9 +186,19 @@ def delete_review(request, product_id):
     """
     Give the user the ability to delete their review
     """
-    user_profile = UserProfile.objects.get(user=request.user)
     review = get_object_or_404(Review, user=request.user, product=product_id)
     review.delete()
     messages.success(request, "Review has been deleted!")
     return redirect(reverse('product_detail', args=(product_id,)))   
-        
+
+
+def verify_purchase(user, order_model, product):
+    """
+    Verify if the user has purchased a product, if so return boolean.
+    """        
+    orders = order_models.objects.filter(user=user)
+    for order in orders:
+        for item in order.lineitems.all():
+            if item.product == product:
+                return True
+        return False
