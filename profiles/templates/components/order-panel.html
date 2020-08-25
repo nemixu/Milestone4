@@ -1,0 +1,48 @@
+<!-- Order Panel -->
+<div class="col-md-8 col-12 profile-dashboard-orders checkout_row" id="account-orders-panel">
+    <div class="profile-dashboard">
+        <h2 class="text-black text-center pb-3 text-heading-size">Your Orders</h2>
+        {% if orders %}
+        {% for order in orders %}
+        <div class="profile-dashboard-order-panel">
+            <h5 class="text-black">Order Number:</h5>
+            <p class="text-black word-wrapper small-font-sizing">{{ order.order_number }}</p> 
+        </div>
+        {% for item in order.lineitems.all %}
+        <section class="row profile-dashboard-orders-line-items">
+            <div class="col-md-4 col-5">
+                <div class="mw-100">
+                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                </div>
+            </div>
+            <div class="col-md-6 col-7 align-items-center text-black d-flex">
+                <div class="profile-dashboard-order-details">
+                    <h5>{{ item.product.name }}</h5>
+                    <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
+                    <p><strong>Qty:</strong> {{ item.quantity }}</p>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        <!--Order Total-->
+        <section class="row">
+            <div class="col-md-6">
+                <h5 class="text-black pt-4">Order total: €{{ order.grand_total }}</h5>
+            </div>
+            <div class="col-md-6 mb-5">
+                <div class="profile-dashboard-orders-view">
+                    <p class="text-black pt-4">View your order<a class="cart-colour" href="{% url 'order_history' order.order_number %}"> here!</a></p>
+                </div>
+            </div>
+        </section>
+        <hr class="hr-black-long">
+        {% endfor %}
+        {% else %}
+        <div class="profile-dashboard-no-orders text-center">
+            <h4>No Orders!</h4>
+            <p>Check out our range of training classes!</p>
+            <a class="btn orange-btn rounded text-white" aria-label="Shop now" href="{% url 'products' %}">Shop Now</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
