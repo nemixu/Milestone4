@@ -163,7 +163,7 @@ def edit_review(request, product_id):
     View to edit a current review that the user has placed on a product
     """
     product = get_object_or_404(Product, pk=product_id)
-    user = get_object_or_404(Review, user=request.user)
+    user = get_object_or_404(Review, user=request.user, product=product_id)
     if request.method == "POST":
         review_form = ReviewForm(request.POST, instance=user)
         if review_form.is_valid():
