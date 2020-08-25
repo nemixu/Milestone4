@@ -37,11 +37,8 @@ def product_detail(request, product_id):
     review_form = ReviewForm()
     has_review = False
     
-    if user_review_count > 0:
-        has_review = True
-    else:
-        has_review = False
-    
+    has_review = user_review_count > 0
+   
     context = {
         'product': product,
         'reviews': reviews,
@@ -211,5 +208,5 @@ def verify_purchase(user, order_model, product):
     for order in orders:
         for item in order.lineitems.all():
             if item.product == product:
-                return True
-        return False
+                print("hi")
+        print("fuck")
