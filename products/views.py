@@ -37,13 +37,14 @@ def product_detail(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
     review_form = None
+    edit_form = None
     reviews = Review.objects.filter(product=product_id)
+    
     
     if request.user.is_authenticated:
         profile = request.user.userprofile
         user_orders = Order.objects.filter(user_profile=profile)
         user_purchased = False
-        
         for order in user_orders:
             for item in order.lineitems.all():
                 if item.product.id == product.id:
@@ -54,8 +55,11 @@ def product_detail(request, product_id):
             review = Review.objects.filter(user=request.user, product=product_id)
             if review:
                 review_form = None
+                edit_form = True
             else:
                 review_form = ReviewForm()
+                edit_form = False
+               
                 
 
     context = {
@@ -165,9 +169,9 @@ def add_review(request, product_id):
             review.user = request.user
             review.product = product
             review.save()
-            messages.success(request, "comment added")
+            messages.success(request, f'Thank you for posting a review for {product.name}.')
         else:
-            messages.error(request, 'comment not added')
+            messages.error(request, f'Sorry we were unable to post your review for {product.name}, please try again')
         return redirect(reverse('product_detail', args=(product_id,)))   
     else:
         review_form = ReviewForm(instance=user) 
@@ -191,10 +195,10 @@ def edit_review(request, product_id):
         review_form = ReviewForm(request.POST, instance=user)
         if review_form.is_valid():
             review_form.save()
-            messages.success(request, "Thank you for updating your review.")
+            messages.success(request, f'We have updated your review for {product.name}.')
             return redirect(reverse('product_detail', args=[product_id,]))
         else:
-            messages.error(request, "sorry that failed go fuck")
+            messages.error(request, f'Sorry we were unable to update your review for {product.name}, please try again.')
     else:
         review_form = ReviewForm(instance=user)
                     
@@ -212,21 +216,5 @@ def delete_review(request, product_id):
     """
     review = get_object_or_404(Review, user=request.user, product=product_id)
     review.delete()
-    messages.success(request, "Review has been deleted!")
-    return redirect(reverse('product_detail', args=(product_id,)))   
-
-
-def verify_purchase(user, order_model, product):
-    """
-    Verify if the user has purchased a product, if so return boolean.
-    """        
-    orders = order_models.objects.filter(user=user)
-    for order in orders:
-        for item in order.lineitems.all():
-            if item.product == product:
-                print("hi")
-        print("fuck")
-
-
-
-
+    messages.success(request, f'We have removed your review.')
+    return redirect(reverse('product_detail', args=(product_id,)))
