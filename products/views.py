@@ -32,14 +32,24 @@ def product_detail(request, product_id):
     """ A view to show individual class details and reviews for that specific class """
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
+    user_reviews = Review.objects.filter(user=request.user, product=product_id)
+    user_review_count = Review.objects.filter(user=request.user, product=product_id).count()
     review_form = ReviewForm()
-    has_purchased = False
+    has_review = False
+    
+    if user_review_count > 0:
+        has_review = True
+    else:
+        has_review = False
+    
     context = {
         'product': product,
         'reviews': reviews,
         'page_title': product.name,
         'review_form': review_form,
-        'has_purchased': has_purchased
+        'user_reviews': user_reviews,
+        'has_review': has_review,
+        'user_review_count':user_review_count
     }
 
     return render(request, 'products/product_detail.html', context)
