@@ -29,24 +29,40 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual class details and reviews for that specific class """
+    """ 
+    Get product details, set form as None and check for reviews,
+    Check if user is autenticated and check user orders,
+    Loop order in Order model associated with user, check it matches the current
+    product and set bool, check truthy of variable and instantiate form.
+    """
     product = get_object_or_404(Product, pk=product_id)
+    review_form = None
     reviews = Review.objects.filter(product=product_id)
-    user_reviews = Review.objects.filter(user=request.user, product=product_id)
-    user_review_count = Review.objects.filter(user=request.user, product=product_id).count()
-    review_form = ReviewForm()
-    has_review = False
     
-    has_review = user_review_count > 0
-   
+    if request.user.is_authenticated:
+        profile = request.user.userprofile
+        user_orders = Order.objects.filter(user_profile=profile)
+        user_purchased = False
+        
+        for order in user_orders:
+            for item in order.lineitems.all():
+                if item.product.id == product.id:
+                    user_purchased = True
+                    break
+                
+        if user_purchased:
+            review = Review.objects.filter(user=request.user, product=product_id)
+            if review:
+                review_form = None
+            else:
+                review_form = ReviewForm()
+                
+
     context = {
         'product': product,
         'reviews': reviews,
         'page_title': product.name,
         'review_form': review_form,
-        'user_reviews': user_reviews,
-        'has_review': has_review,
-        'user_review_count':user_review_count
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -210,3 +226,7 @@ def verify_purchase(user, order_model, product):
             if item.product == product:
                 print("hi")
         print("fuck")
+
+
+
+
