@@ -169,6 +169,7 @@ def edit_review(request, product_id):
         if review_form.is_valid():
             review_form.save()
             messages.success(request, "Thank you for updating your review.")
+            return redirect(reverse('product_detail', args=[product_id,]))
         else:
             messages.error(request, "sorry that failed go fuck")
     else:
