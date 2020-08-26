@@ -9,11 +9,14 @@
         </form>
     </div>
 </li>
-
 <li class="list-inline-item dropdown">
     <a class="text-black nav-link d-none d-lg-block" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
+            {% if request.user.is_authenticated %}
             <div><i class="fas fa-user-circle fa-lg"></i></div>
+            {% else %}
+            <div><i class="far fa-user-circle fa-lg"></i></div>
+           {% endif %} 
         </div>
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
