@@ -16,6 +16,31 @@ body {
   scroll-behavior: smooth;
 }
 
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*-------------------------- Landing page Styling--*/
+
+.hero-landing {
+  background: grey;
+}
+
+.about-section {
+  background: #fff;
+  height:100vh;
+
+}
+
+/*-------------------------- Navbar Styling--*/
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  left: -84px;
+}
+
 /*-------------------------- Text Styling--*/
 
 .logo-font {
