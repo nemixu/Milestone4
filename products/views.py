@@ -154,7 +154,6 @@ def add_review(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
     review_form = ReviewForm()
-    # has_purchased = False
 
     if request.method == 'POST':
         review_form = ReviewForm(request.POST, instance=product)
