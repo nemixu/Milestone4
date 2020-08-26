@@ -40,7 +40,42 @@ body {
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   left: -5.25rem;
 }
-/*-------------------------- Mobile Nav burger Styling--*/
+
+.mobile-nav {
+  background: grey;
+  position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 85%;
+  max-width: 20rem;
+  height:100%;
+}
+.mobile-nav-search {
+  padding: 1.3rem;
+  height: 80px;
+}
+
+.mobile-nav-form {
+  position: absolute;
+  top: 20px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding:0;
+}
+
+.mobile-nav-img {
+  padding-top:10%;
+  max-width: 60%;
+}
+
+.mobile-nav-link-items{
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255,255, 0.4);
+}
+/*-------------------------- Mobile Nav burger Icon Styling--*/
 #burger-icon {
   width: 3.125rem;
   height: 5px;
