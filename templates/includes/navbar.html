@@ -4,16 +4,18 @@
             <img class="title-logo" src="/static/img/logowide.png"> 
         </a>
     </div>
-    <div class="nav-main-inner">
+    <div class="nav-main-inner d-none d-lg-block">
         <div class="nav-main-list">
             <ul class="nav-main-list-container">
-                <li class="nav-main-list-items"><a class="text-black" aria-label="home" href="{% url 'home' %}">Home</a></li>
-                <li class="nav-main-list-items"><a class="text-black" aria-label="classes" href="{% url 'products' %}">Classes</a></li>
-                <li class="nav-main-list-items"><a class="text-black" aria-label="contact" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-main-list-items"><a class="text-black font-weight-bold" aria-label="home" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-main-list-items"><a class="text-black font-weight-bold" aria-label="classes" href="{% url 'products' %}">Classes</a></li>
+                <li class="nav-main-list-items"><a class="text-black font-weight-bold" aria-label="contact" href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </div>
     </div>
+    {% include 'includes/mobile-top-header.html'%}
     {% include 'includes/icon-header.html'%}
+    {% include 'includes/mobile-nav-sidebar.html'%}
 </nav>
 
 
