@@ -173,9 +173,16 @@ li .text-white:hover {
   transition: all 0.3s ease
 }
 
-.a dropdown-item:active {
+.dropdown-item:active {
   background: #fff;
-  color: orangered;
+  color: orangered!important;
+}
+
+/*--used below to for the transform to none as it was causing pixilated navdrop down*/
+.dropdown-menu.show {
+  transform: unset !important;
+  top: 59px !important;
+  left: -100px !important;
 }
 
 /*-------------------------- Text Styling--*/
