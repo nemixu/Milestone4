@@ -1,39 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top w-100">
-        <!-- Logo -->
-        <a class="navbar-link text-decoration-none d-none d-md-block" aria-label="Brand Logo & Link to refresh" href="{% url 'home' %}">
-            <img class="title-logo" src="/static/img/logowide.png">
-            {% comment %} <img class="title-text" src="/static/img/text.png"> {% endcomment %}
-            {% comment %} <h2 class="logo-font nav-link text-black my-0 d-none d-md-block"><strong>DN</strong> Fitness</h2> {% endcomment %}
+<nav class="nav-main fixed-top w-100">
+    <div class="nav-main-logo">
+        <a aria-label="Home" href="{% url 'home' %}">
+            <img class="title-logo" src="/static/img/logowide.png"> 
         </a>
-         {% include 'includes/mobile-top-header.html' %}
-        <!-- Toggler Icon on mobile view -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-               
-        <!-- Navigation links -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto uppercase">
-                        <!--user auth to go here-->
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'about'%}" id="about" aria-expanded="false">
-                        About
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'products' %}?category=toning,fullbody,strength,weightloss" id="classes" aria-expanded="false">
-                        Classes
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}" id="contact" aria-expanded="false">
-                        Contact
-                    </a>
-                </li>
-                {% include 'includes/icon-header.html'%}
+    </div>
+    <div class="nav-main-inner">
+        <div class="nav-main-list">
+            <ul class="nav-main-list-container">
+                <li class="nav-main-list-items"><a class="text-black" aria-label="home" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-main-list-items"><a class="text-black" aria-label="classes" href="{% url 'products' %}">Classes</a></li>
+                <li class="nav-main-list-items"><a class="text-black" aria-label="contact" href="{% url 'contact' %}">Contact</a></li>
             </ul>
-                
         </div>
-    </nav>
+    </div>
+    {% include 'includes/icon-header.html'%}
+</nav>
+
+
