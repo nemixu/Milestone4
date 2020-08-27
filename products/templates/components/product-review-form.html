@@ -42,14 +42,11 @@
                         <button class="btn orange-btn text-white" id="reviewbutton">Post review</button>
                     </div>
                 </form>
-                {% endif %}
-
+                {% elif review and not review_form %}
+                <p class="text-black text-center">Thank you for reviewing this product, you can edit it in the reviews section</p>
+                {% else %}
                 <p class="text-black text-center">Purchase to make a review</p>
-
-                <p class="text-black text-center">Add your review</p>
-
-                <p class="text-black text-center">Edit Your review</p>
-
+                {% endif %}
                 </div>
             </div>
         </div>
