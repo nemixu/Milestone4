@@ -4,6 +4,7 @@
 
 
 {% block content %}
+<section class="home-landing">
     <div class="container-fluid h-100 hero-landing">
         <div class="container h-100 ">
             <div class="row h-100">
@@ -24,35 +25,53 @@
                     </div>
                 </div>
             </div>
-            <div id="about"></div>
         </div>
     </div>
-    <div class="container-fluid h-100 pt-5 about-section">
-        <div class="container">
+    <div class="container-fluid h-100 pt-5 about-section" id="about">
+        <div class="container pt-5">
             <div class="row text-center pt-5">
-                <div class="col-12">
-                    <h2 class="text-black">Welcome</h2>
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid about-image" src="{{ MEDIA_URL }}user-about.jpg" alt="About picture">
+                </div>
+                <div class="col-sm-12 col-md-6 text-center">
+                    <h2 class="text-black display-1">Hello,</h2>
+                    <h3 class="text-black hero-sub-text">a bit <span class="cart-colour">about</span> me:</h3>
+                    <h4 class="text-black">I am Dean!</h4>
+                    <p class="text-black">
+                    A professionally qualified personal trainer based in Dublin, Ireland.
+                    10 years industry experience delivering a wide range of courses. 
+                    I began my journey with a passion for fitness and wellbeing, health
+                    and fitness is an important part of our daily lives and I am here to
+                    help you reach your goals! Check out some of the classes we have to offer.
+                    </p>
                 </div>
             </div>
-            <div class="row h-100 mt-5" >
-                <div class="col-sm-12 col-md-6 p-3">
-                    <h3 class="text-black text-center text-uppercase">Who I am</h3>
-                        <p class="text-black">I'm Darren, a fully qualified personal trainer and gym instructor for the last 5 years! I completed the Image Fitness Training course and currently work as a gym instructer and class co-ordinator at Sheldon Park Leisure Centre. I specialize in spin classes, strength and conditioning and 1 to 1 personal training. </p>
+            <div class="row pt-5">
+                <div class="col-sm-12 col-md-6 text-center">
+                    <h3 class="text-black hero-sub-text"><span class="cart-colour">choosing</span> me:</h3>
+                    <p class="text-black">
+                    You may be asking yourself, why choose this guy. 
+                    Well, let me tell you that helping people with their health and fitness goals is my passion.
+                    It has been my life and source of energy for over 10 years. 
+                    I understand how the body works and I will show you how to make it optimally work for you. 
+                    I’ve transformed my own body for men’s physique competitions. 
+                    I’ve got skin in the game and practice what I preach.
+                    </p> 
                 </div>
-                <div class="col-sm-12 col-md-6 p-3">
-                    <h3 class="text-black text-center text-uppercase">My Journey</h3>
-                        <p class="text-black">Back in 2011 I decided to get working on my personal fitness and began losing weight by working out regularly and eating healthy, I tried everything I could to improve my fitness and weightloss! because of this I come as a veteran in the industry with a wealth of knowledge of do's and dont's and a heap of tips and tricks for your journey! I started at a weight of 110kg and now currently weigh 80kg</p>
-                </div>
-                <div class="col-sm-12 col-md-6 p-3">
-                    <h3 class="text-black text-center text-uppercase">How I did it</h3>
-                        <p class="text-black">Hard work, hard work and hard work! there is no easy way to get fit or lose weight it is all about consistancy! I was consistant when going to the gym, I had a plan on what I would be doing each day and I would have a plan for my meals. With that I was consistantly in the gym on the days I was suppose to and continued working hard.</p>
-                </div>
-                <div class="col-sm-12 col-md-6 p-3">
-                    <h3 class="text-black text-center text-uppercase">My promise</h3>
-                        <p class="text-black">As an experience veteran of the fitness world I can guarantee you your moneys worth each session without fail! Each workout completed will have you working on the limit throughout! and you will know you got your moneys worth!</p>
+                <div class="col-sm-12 col-md-6 text-center pb-5">
+                    <img class="img-fluid about-image" src="{{ MEDIA_URL }}user-about-2.jpg" alt="About picture">
                 </div>
             </div>
-
+        </div> 
+    </div>
+    <div class="container-fluid get-intouch pt-5">
+            <div class="row pt-5">
+                <div class="col-12 text-center pt-5 pb-5">
+                    <h4 class="text-center text-white hero-sub-text">have </h4>
+                    <h4 class="text-center text-white hero-sub-text">questions? </h4>
+                    <h3 class="text-white hero-sub-text"><span class="cart-colour">reach</span> out:</h3>
+                </div>
+            </div>
         </div>
-   </div> 
+</section>    
 {% endblock  %}
