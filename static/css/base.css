@@ -31,12 +31,12 @@ body {
 
 .about-section {
   background: #fff;
-  padding: 4.5rem 2rem;
+  padding: 5.5rem 2rem;
 }
 
 .contact-section {
   background:#212529;
-  padding: 4.5rem 0;
+  padding: 12.5rem 0;
 }
 
 .about-image {
@@ -69,6 +69,37 @@ body {
 #learn-more {
   font-size: 1.1rem;
 
+}
+
+.arrow{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid orangered;
+    border-right: 5px solid orangered;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
 }
 
 
@@ -234,9 +265,9 @@ li .text-white:hover {
 }
 
 .title-logo {
-  width: 15%;
+  width: 40%;
   margin: auto;
-  display: inline-block;
+  display: block;
   padding: 1.25rem 0.625rem;
 }
 
@@ -755,6 +786,10 @@ a.products-border:hover{
 
   body {
     height: calc(100vh - 7.25rem);
+  }
+
+  .icon-header-container {
+    margin-left: auto;
   }
 }
 @media (max-width:48rem){
