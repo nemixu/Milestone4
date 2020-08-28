@@ -494,6 +494,13 @@ a.products-border:hover{
     right: .5rem;
 }
 
+.form-control {
+  color: #000;
+  border: 1px solid #00000052;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
 #payment-form .form-control,
 #card-element {
     color: #000;
