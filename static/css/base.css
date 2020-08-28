@@ -31,11 +31,16 @@ body {
 
 .about-section {
   background: #fff;
-  height:100vh;
+  padding: 4.5rem 2rem;
+}
+
+.contact-section {
+  background:#212529;
+  padding: 4.5rem 0;
 }
 
 .about-image {
-  width: 310px;
+  width: 18.75rem;
   border-radius: 50%;
   box-shadow: 3px 5px 5px rgba(0, 0, 0, .4);
 }
@@ -50,6 +55,20 @@ body {
 
 .get-intouch {
   background: #212529;
+}
+
+.arrow-button {
+  font-size: 6rem;
+  text-shadow: 3px 5px 5px rgba(0, 0, 0, .4);
+}
+
+.about-info {
+  padding: 0 2rem;
+}
+
+#learn-more {
+  font-size: 1.1rem;
+
 }
 
 
@@ -100,6 +119,8 @@ body {
 
 .nav-main-list-container{
   display:flex;
+  position: relative;
+  top: 8px;
 }
 
 .nav-main-list-items{
@@ -152,6 +173,8 @@ body {
 .icon-header-list-items {
   padding-left:0;
   align-items: center;
+  position: relative;
+  top: 8px;
 }
 
 .list-inline-item {
@@ -251,7 +274,7 @@ li .text-white:hover {
 .product_counter {
   height: 1.25rem;
   width: 1.25rem;
-  top: 2.5rem;
+  top: 0.7rem;
   font-size: 0.857142857rem;
   right: 16px;
   border-radius: 50%;
