@@ -40,9 +40,9 @@
                             <div class="card-footer rounded-bottom text-center products-border p-0 b-0">
                                 <div class="row">
                                     <div class="col pb-4">
-                                        <p class="lead mb-0  font-weight-bold">€{{ product.price }}</p>
+                                        <p class="text-black mb-0  font-weight-bold">€{{ product.price }}</p>
                                         {% if product.rating %}
-                                            <small class="cart-colour"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            <small class="cart-colour"><i class="fas fa-star mr-1"></i>{{ product.rating|floatformat:1 }} / 5</small>
                                         {% else %}   
                                             <small class="text-muted">No Rating</small>
                                         {% endif %}
