@@ -386,16 +386,16 @@ li .text-white:hover {
 /*-------------------------- Products Styling--*/
 
 .products-border {
-  background: #212529;
-  color: #ffffff;
+  background: #fff;
+  color: #000;
   border: 0;
 }
 
 .product-text, 
 .product-text:link{
   text-decoration: none!important;
-  color: #ffffff!important;
-  font-size: 1rem!important;
+  color: #000!important;
+  font-size: 1.2rem!important;
   padding-top:20px;
 }
 .product-text:hover {
@@ -424,8 +424,8 @@ a.products-border:hover{
 
 .review-card {
   background:#fafafa;
-  width:18.75rem;
-  height: 12.5rem;
+  max-width: 650px;
+  min-width: 165px;
   margin-bottom: 0.625rem;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
@@ -443,7 +443,18 @@ a.products-border:hover{
   width: 3.125rem;
   border-radius: 50%;
   margin-left:4px
+}
 
+.product-detail-wrapper{
+  padding: 20px 50px;
+}
+
+.product-reviews-text{
+  padding-bottom: 30px;
+}
+
+.review-user {
+  padding: 0 10px;
 }
 /*-------------------------- Checkout Page Styling--*/
 
@@ -678,6 +689,7 @@ a.products-border:hover{
   flex-direction: column-reverse;
 }
 
+
 /*-------------------------- Profile Styling--*/
 
 .allauth-mt {
@@ -864,6 +876,7 @@ a.products-border:hover{
   .hr-black {
     width: 15.625rem;
   }
+  
 }
 
 
