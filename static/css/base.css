@@ -651,6 +651,10 @@ a.products-border:hover{
   background: orangered!important;
 }
 
+.orange-btn:hover {
+  background:#ff4500cc!important;
+}
+
 .dark-btn {
   background: #212529!important;
   color: #ffffff!important;
@@ -679,8 +683,7 @@ a.products-border:hover{
   background: orangered;
   color: white;
   border: transparent;
-  height:2.3125rem;
-  width: 12.279375rem;
+
 }
 
 .button-box{
