@@ -33,7 +33,8 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = (
         'user',
         'comment',
-        'product'
+        'product',
+        'rating'
     )
 
 
