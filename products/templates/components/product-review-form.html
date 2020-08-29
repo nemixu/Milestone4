@@ -21,10 +21,10 @@
                                 <p class="text-center text-black">{{review.comment}}</p>
                                 <p class="text-center text-black">{{ review.rating|floatformat:0 }}/5</p>
                                 {% if review.user == request.user %}
-                                <a class="text-black" href="{% url 'edit_review' product.id %}">Edit</a>|
-                                <a class="text-black" href="{% url 'delete_review' product.id %}">Delete</a> 
-                                {% else %}
-                                <p></p>
+                                <div class="button-wrapper pb-5">
+                                    <a class="btn orange-btn text-white " href="{% url 'edit_review' product.id %}">Edit</a>
+                                    <a class="btn white-btn text-black" href="{% url 'delete_review' product.id %}">Delete</a> 
+                                </div>
                                 {% endif %}
                             </div>
                         </div>
