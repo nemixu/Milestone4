@@ -2,6 +2,9 @@ from django.contrib import admin
 from .models import Product, Category, Review
 
 class ProductAdmin(admin.ModelAdmin):
+    """
+    Organising the list display names for easy reading for admin panel.
+    """
     list_display = (
         'sku',
         'name',
@@ -15,12 +18,18 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    Category Admin created to display friendly name or a category and the name.
+    """
     list_display = (
         'friendly_name',
         'name',
     )
-    
+
 class ReviewAdmin(admin.ModelAdmin):
+    """
+    To display the below fields to the Review admin panel.
+    """
     list_display = (
         'user',
         'comment',
