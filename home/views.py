@@ -34,7 +34,7 @@ def contact(request):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Thank you for reaching out, we will be in touch shortly')
+            messages.success(request, 'Your message has been sent successfully')
             return redirect(reverse('contact_success'))
             # send_mail(
             #     'Contact from website' + message_name,
@@ -42,6 +42,9 @@ def contact(request):
             #     message_email,
             #     ['test@test.com'],
             # )
+        else:
+            messages.error(request,
+                           'Sorry something went wrong, please ensure all fields are correctly filled out')
     else:
         form = Contact()
 
@@ -54,12 +57,17 @@ def contact(request):
 
     return render(request, template, context)
 
+
 def contact_success(request):
+    """
+    contact_success to return the template,
+    page title and context of the view.
+    """
     page_title = "Thanks for contacting"
     template = "home/contact_success.html"
-    
+
     context = {
         'page_title' : page_title
     }
-    
+
     return render(request, template, context)
