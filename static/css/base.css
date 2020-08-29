@@ -20,8 +20,8 @@ body {
 
 .hero-landing {
   background: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.7)
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 1)
   ),url('/media/home_background.jpg') no-repeat center
   center fixed;
   background-size: cover;
@@ -66,14 +66,14 @@ body {
   padding: 0 2rem;
 }
 
-#learn-more {
+#learn-more a {
   font-size: 1.1rem;
 
 }
 
 .arrow{
     position: absolute;
-    top: 90%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -102,6 +102,11 @@ body {
     }
 }
 
+/*-------------------------- Contact page Styling--*/
+
+.contact-form {
+  padding: 50px 50px;
+}
 
 /*-------------------------- Navbar Styling--*/
 
@@ -184,6 +189,20 @@ body {
 .mobile-nav-form {
   position: absolute;
   top: 20px;
+  left: 10px;
+  max-width: 250px !important;
+  min-width: 250px !important;
+  padding: .375rem .75rem !important;
+}
+
+.mobile-nav-button {
+  position: relative;
+  bottom: 37px;
+  left: 189px;
+  background: orangered;
+  padding: 18px;
+  border-radius: 0 3px 3px 0;
+  border: none;
 }
 
 .mobile-nav-links {
@@ -225,6 +244,12 @@ body {
 .inline-search-icon{
   position: absolute;
   left:4px;
+}
+
+.mobile-inline-search-icon {
+  position: absolute;
+  top: 11px;
+  left: 11px;
 }
 
 .inline-form-icon {
@@ -500,6 +525,12 @@ a.products-border:hover{
   border-radius: 4px;
   font-size: 1rem;
 }
+
+.form-control:focus {
+  border-color: #ff4500;
+  box-shadow: 0 0 0 0.2rem rgba(255, 69, 0, .25);
+}
+
 
 #payment-form .form-control,
 #card-element {
@@ -805,6 +836,12 @@ a.products-border:hover{
     left: 25%;
     padding: 1.2rem;
     max-width:18.75rem;
+  }
+}
+
+@media (min-width: 576px){
+  .mobile-nav-button {
+    left: 192px;
   }
 }
 
