@@ -27,12 +27,9 @@
         </div>
         <div class="col-12">
             <a href="{% url 'products' %}" class="btn btn-outline rounded mt-4">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Continue Shopping</span>     
+                <span>Continue Shopping</span>     
             </a>
-            <input type="submit" name="addcart" class="btn btn-black orange-btn text-white rounded text-uppercase mt-4" value="Add to Cart">  
+            <input type="submit" name="addcart" class="btn btn-black orange-btn text-white rounded mt-4" value="Add to Cart">  
         </div>
         <input type="hidden" name="redirect_url" value="{{ request.path }}"> 
     </div>
