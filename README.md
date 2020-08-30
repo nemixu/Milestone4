@@ -429,7 +429,7 @@ Congratulations you have deployed DN fitness to Heroku and it is live to be view
 
 ## [Credits](#Contents):
 
-* This project was developed following Chris Lielinski and the Boutique Ado provided by [Code Institute](https://codeinstitute.net/), but was heavily customized and expanded to meet my needs.
+* This project was developed following Chris Zielinski and the Boutique Ado provided by [Code Institute](https://codeinstitute.net/), but was heavily customized and expanded to meet my needs.
 * Loading spinner was taken from my previous project Trivia.
 * During development I constantly referred to and used code from [Django](https://docs.djangoproject.com/en/3.1/) and [Stripe](https://stripe.com/docs) documentation
 
