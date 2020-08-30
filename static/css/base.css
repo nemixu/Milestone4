@@ -273,6 +273,12 @@ li .text-white:hover {
 }
 
 /*--used below to for the transform to none as it was causing pixilated navdrop down*/
+.dropdown-menu.search.show {
+  transform: unset !important;
+  top: -10px !important;
+  left: -235px !important;
+}
+
 .dropdown-menu.show {
   transform: unset !important;
   top: 22px !important;
