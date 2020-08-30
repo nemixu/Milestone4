@@ -148,6 +148,7 @@ User models used in this application is provided by Django. <a href="https://doc
 
 #### The Product App:
 ##### Product Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 Name | name | charfield | max_length=254, null=False, blank=False
 Category | category | ForeignKey -> 'Category', null=True, blank=True, on_delete=models.SET_NULL
@@ -160,6 +161,7 @@ image | models.ImageField | null=True, blank=True
 
 #### The Category App:
 ##### Category Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 Name | name | charfield | max_length=254
 Friendly | friendly_name | Charfield | max_length=254, null=True, blank=True,
@@ -167,6 +169,7 @@ Friendly | friendly_name | Charfield | max_length=254, null=True, blank=True,
 
 #### The Order App:
 ##### Order Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 Order Number | order_number | CharField |max_length=32, null=False, editable=False
 User | user_profile | ForeignKey -> UserProfile, on_delete=models.SET_NULL, null=False, blank=False, related_name='orders'
@@ -181,6 +184,7 @@ Stripe PID | stripe_pid | CharField | max_length=254, null=False, blank=False, d
 
 #### The OrderItem App:
 ##### Order LineItem Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 Order | order | ForeignKey -> Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
 Product | product | ForeignKey -> Product, null=False, blank=False, on_delete=models.PROTECT
@@ -189,6 +193,7 @@ Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=Fal
 
 #### The Review App:
 ##### Review Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 User |user | ForeignKey -> User | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
 Product | product | ForeignKey -> Product | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
@@ -198,6 +203,7 @@ Rating|rating|Floatfield| default=1
 
 #### The Profile App:
 ##### Profile Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 User | user | OneToOneField -> User | on_delete=models.CASCADE
 Full Name | default_full_name | CharField | max_length=40, null=True, blank=True
@@ -206,8 +212,8 @@ Phone Number | default_phone_number | CharField | max_length=20, null=True, blan
 
 #### The Contact App:
 ##### Contact Model
+Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
-
 First Name | first_name | Charfield | max_length=50, blank=False, null=False
 Last Name | last_name | CharField | max_length=50, blank=False, null=False
 Email | email | EmailField | max_length=254, null=False, blank=False
