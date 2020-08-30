@@ -170,7 +170,7 @@ body {
 }
 
 .mobile-nav {
-  background: grey;
+  background: #212529;
   position:fixed;
   top: 0;
   left: 0;
@@ -604,6 +604,9 @@ a.products-border:hover{
   right: 0.625rem;
   background: orangered;
   z-index: 99999;
+}
+.fa-arrow-up:hover {
+  color: #fff!important;
 }
 
 .totop-link {
