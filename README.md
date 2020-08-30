@@ -231,11 +231,11 @@ Message | message | TextField | null=False, blank=False
 * <p>An active shopping cart that users can add or remove items from and also update the cart.</p>
 * <p>User can complete a checkout purchase with shopping cart items through the Stripe API which will process the payment securely and place the order</p>
 * <p>Users can get in touch with the site owner via email by sending the contact form on the contact page.</p>
+* <p>A user who has purchased and has an account are able to leave a review for a product.</p>
 
 ### Features that will be developed in future releases:
 
 * <p>A reset password link that will send the user a link to reset their password for the website.</p>
-* <p>Services will be filtered by recently purchased or user favourites.</p>
 * <p>Order confirmation emails to be sent to customer upon placing an order.</p>
 * <p>A feedback section / Recommendations from past users.</p>
 * <p>A forum / discussion section where users can talk about their journey in fitness</p>
@@ -256,7 +256,9 @@ Message | message | TextField | null=False, blank=False
 * <a href="https://jquery.com/" target="_blank">jQuery</a>
 * <a href="https://git-scm.com/" target="_blank">Git</a>
 * <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+* <a href="https://pipenv-fork.readthedocs.io/en/latest/" target="_blank">Pipenv</a>
 * <a href="https://fontawesome.com/icons?d=gallery" target="_blank">Font-Awesome</a>
+* <a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens" target="_blank">Error Lens</a>
 
 #### Databases:
 * <a href="https://www.postgresql.org/" target="_blank">PostgreSQL - Production</a>
@@ -304,7 +306,10 @@ I was having issues with the logout functionality that was built into the allaut
 
 I had issues when I split my css files into seperate components. I was getting errors in console when deployed to heroku that the MIME type was text type. To resolve this I attempted to add a ```type="css"``` but this did not resolve the issue and after discussing with a mentor, the best solution was to introduce the css into the base.css file. 
 
-issues with bootstrap dropdown menu text blurry when using transform - only fix i could find was forcing dropdown class to transform unset and re-positioning the profile dropdown to match how it was with transition.
+Issues with bootstrap dropdown menu text blurry when using transform - only fix i could find was forcing dropdown class to transform unset and re-positioning the profile dropdown to match how it was with transition.
+This was a know bug with bootstrap and was the easiest and quickest solution.
+
+Confirmation emails not being sent to a user who has purchased from the store, after debugging this was due to missing Parenthesis on the ``` content=(f'Webhook received: {event["type"]} | SUCCESS: 'Created order in webhook') ```
 
 
 ## [Deployment](#Contents):
@@ -339,16 +344,32 @@ pip3 install pipenv
 ```bash
 pipenv shell
 ```
-* 5: Install the requirements and dependancies from the requirements.txt file
+* 5: Install the required packages and start your virtual environment with these commands
 ```bash
-pipenv -r requirements.txt
+pipenv install
 ```
-* 6: Inside your IDE create a file where you can store your secret information for the application. This can be done by creating an env.py file.
+* 6: Set up your environment variables
+    * create a folder in project root called `.vscode`, inside this create `settings.json` and create this json object.
+    ```
+    terminal.integrated.env.windows": {
+        "SECRET_KEY": "<your key>",
+        "DEVELOPMENT": "1",
+        "STRIPE_PUBLISHABLE": "<your key>",
+        "STRIPE_SECRET": "<your key>",
+        "STRIPE_WH_SECRET": "<your key>",
+        "DATABASE_URL": "<your key>",
+        "EMAIL_HOST" : "<your email host server> "
+        "EMAIL_PASSWORD" : "<your email password key> "
+        "EMAIL_HOST_USER": "dnfitness@example.com",
+        "DEVELOPMENT_FROM_EMAIL": <email for dev>
+        "ADMIN_EMAIL": <your admin email>
+    }
+    ```
 * 7: Enter the following command into the terminal to migrate models into the database.
 ```bash
 python3 manage.py migrate
 ```
-*8: Then you need to create a 'super user' for this project using the terminal. And follow the instructions.
+*8: Then you need to create a 'superuser' for this project using the terminal. And follow the instructions.
 ```
 python3 manage.py createsuperuser
 ```
@@ -356,13 +377,8 @@ python3 manage.py createsuperuser
 ```bash
 python3 manage.py runserver
 ```
-*10: To add any additional packages do so in the pipenv shell(you can set your python interpreter to use this shell), once any new package is installed
-you will need to use the following command to freeze the new requirements.
-```bash
-pipenv lock -r > requirements.txt
-```
 
-Well done, DN fitness is now running locally on your machine.
+DN fitness is now running locally on your machine.
 
 ### Deploying DN Fitness to Heroku:
 
@@ -398,6 +414,10 @@ SECRET_KEY:<your_key>
 STRIPE_PUBLIC_KEY:<stripe_key>
 STRIPE_SECRET_KEY:<stipe_secret>
 STRIPE_WH_SECRET:<stripe_wh_secret>
+EMAIL_HOST <your email host server>
+EMAIL_PASSWORD <your email/app password>
+EMAIL_HOST_USER <your email>
+EMAIL_PORT <your email host port>
 ```
 
 * 7: Click the deploy button on the heroku Dashboard.
