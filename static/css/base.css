@@ -79,8 +79,8 @@ body {
 }
 .arrow span{
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     border-bottom: 5px solid orangered;
     border-right: 5px solid orangered;
     transform: rotate(45deg);
@@ -91,21 +91,21 @@ body {
 @keyframes animate {
     0%{
         opacity: 0;
-        transform: rotate(45deg) translate(-20px,-20px);
+        transform: rotate(45deg) translate(-1.25rem, -1.25rem);
     }
     50%{
         opacity: 1;
     }
     100%{
         opacity: 0;
-        transform: rotate(45deg) translate(20px,20px);
+        transform: rotate(45deg) translate(1.25rem, 1.25rem);
     }
 }
 
 /*-------------------------- Contact page Styling--*/
 
 .contact-form {
-  padding: 50px 50px;
+  padding: 3.125rem 3.125rem;
 }
 
 /*-------------------------- Navbar Styling--*/
@@ -156,7 +156,7 @@ body {
 .nav-main-list-container{
   display:flex;
   position: relative;
-  top: 8px;
+  top: 0.5rem;
 }
 
 .nav-main-list-items{
@@ -183,12 +183,12 @@ body {
 }
 .mobile-nav-search {
   padding: 1.5rem;
-  height: 80px;
+  height: 5rem;
 }
 
 .mobile-nav-form {
   position: absolute;
-  top: 20px;
+  top: 1.25rem;
   left: 10px;
   max-width: 250px !important;
   min-width: 250px !important;
@@ -197,10 +197,10 @@ body {
 
 .mobile-nav-button {
   position: relative;
-  bottom: 37px;
-  left: 189px;
+  bottom: 2.3125rem;
+  left: 11.8125rem;
   background: orangered;
-  padding: 18px;
+  padding: 1.125rem;
   border-radius: 0 3px 3px 0;
   border: none;
 }
@@ -216,7 +216,7 @@ body {
 }
 
 .mobile-nav-link-items{
-  padding: 20px;
+  padding: 1.25rem;
   border-bottom: 1px solid rgba(255, 255,255, 0.4);
 }
 
@@ -224,7 +224,7 @@ body {
   padding-left:0;
   align-items: center;
   position: relative;
-  top: 8px;
+  top: 0.5rem;
 }
 
 .list-inline-item {
@@ -244,8 +244,8 @@ body {
 
 .mobile-inline-search-icon {
   position: absolute;
-  top: 11px;
-  left: 11px;
+  top: 0.6875rem;
+  left: 0.6875rem;
 }
 
 .inline-form-icon {
@@ -275,20 +275,20 @@ li .text-white:hover {
 /*--used below to for the transform to none as it was causing pixilated navdrop down*/
 .dropdown-menu.search.show {
   transform: unset !important;
-  top: -10px !important;
-  left: -235px !important;
+  top: -0.625rem !important;
+  left: -14.6875rem !important;
 }
 
 .dropdown-menu.show {
   transform: unset !important;
-  top: 22px !important;
-  left: -95px !important;
+  top: 1.375rem !important;
+  left: -5.9375rem !important;
 }
 
 /*-------------------------- Text Styling--*/
 
 .hero-landing-text {
-  margin-top: 75px
+  margin-top: 4.6875rem
 }
 
 .logo-font {
@@ -303,7 +303,7 @@ li .text-white:hover {
 
 .title-logo-footer,
 .title-text {
-  width: 80px;
+  width: 5rem;
   margin: auto;
   display: block;
 }
@@ -343,7 +343,7 @@ li .text-white:hover {
   width: 1.25rem;
   top: 0.7rem;
   font-size: 0.857142857rem;
-  right: 16px;
+  right: 1rem;
   border-radius: 50%;
   font-weight: 400;
   position: absolute;
@@ -378,8 +378,8 @@ li .text-white:hover {
 }
 
 .footer-logo {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 12.5rem;
+  max-height: 12.5rem;
 }
 
 .footer-nav-ul {
@@ -407,7 +407,7 @@ li .text-white:hover {
   text-decoration: none!important;
   color: #000!important;
   font-size: 1.2rem!important;
-  padding-top:20px;
+  padding-top:1.25rem;
 }
 .product-text:hover {
   text-decoration: none!important;
@@ -435,8 +435,8 @@ a.products-border:hover{
 
 .review-card {
   background:#fafafa;
-  max-width: 650px;
-  min-width: 165px;
+  max-width: 40.625rem;
+  min-width: 10.3125rem;
   margin-bottom: 0.625rem;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
@@ -457,15 +457,15 @@ a.products-border:hover{
 }
 
 .product-detail-wrapper{
-  padding: 20px 50px;
+  padding: 1.25rem 3.125rem;
 }
 
 .product-reviews-text{
-  padding-bottom: 30px;
+  padding-bottom: 1.875rem;
 }
 
 .review-user {
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 /*-------------------------- Checkout Page Styling--*/
 
@@ -770,13 +770,13 @@ a.products-border:hover{
 }
 
 .profile-nav-wrapper {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
 }
 
 .profile-container {
-  padding: 0 50px;
-  margin-bottom: 270px;
+  padding: 0 3.125rem;
+  margin-bottom: 16.875rem;
 }
 
 /*-------------------------- Toast Styling--*/
@@ -886,13 +886,13 @@ a.products-border:hover{
 
 @media (min-width:48rem){
   .keep-shopping-button{
-    margin-bottom: 350px;
+    margin-bottom: 21.875rem;
   }
 }
 
-@media (min-width: 576px){
+@media (min-width: 36rem){
   .mobile-nav-button {
-    left: 192px;
+    left: 12rem;
   }
 }
 
@@ -907,7 +907,7 @@ a.products-border:hover{
     max-width:18.75rem;
   }
   .keep-shopping-button {
-    margin-bottom: 240px;
+    margin-bottom: 15rem;
   }
 }
 
@@ -920,4 +920,8 @@ a.products-border:hover{
   }
 }
 
-
+@-moz-document url-prefix(){
+  .dropdown-menu.search.show{
+    left: -13.5625rem !important;
+  }
+}
