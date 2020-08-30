@@ -301,6 +301,13 @@ li .text-white:hover {
   display: block;
 }
 
+.title-logo-footer,
+.title-text {
+  width: 80px;
+  margin: auto;
+  display: block;
+}
+
 .title-text {
   width: 30%;
   margin: auto;
@@ -762,6 +769,15 @@ a.products-border:hover{
   border-color:orangered
 }
 
+.profile-nav-wrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.profile-container {
+  padding: 0 50px;
+}
+
 /*-------------------------- Toast Styling--*/
 
 .message-container {
@@ -860,6 +876,10 @@ a.products-border:hover{
     left: 25%;
     padding: 1.2rem;
     max-width:18.75rem;
+  }
+  .profile-nav-wrapper {
+    padding-right: 0px!important;
+    padding-left: 0px!important;
   }
 }
 
