@@ -15,7 +15,7 @@
 
 {% block content %}
     <div class="white-overlay"></div>
-    <div class="container">
+    <div class="container cart-container">
         <div class="row">
             <div class="col-12">
                 <hr class="hr-black-long">
@@ -99,7 +99,7 @@
         {% else %}
             <h3 class="lead text-center text-black mt-4">Your cart is empty!</h3>
             <p class="text-center text-black">Browse our range of fitness classes in our online shop!</p>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center keep-shopping-button">
             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-1 btn-lg">
                 <span class="text-uppercase button-styling orange-btn rounded text-white">Keep Shopping</span>
             </a>
