@@ -237,10 +237,6 @@ body {
   padding: 0!important;
 }
 
-.list-inline-item.icon-nav-spacer.dropdown.show {
-  margin-left: 6.25rem!important;
-}
-
 .inline-search-icon{
   position: absolute;
   left:4px;
@@ -263,7 +259,7 @@ a:hover {
 
 a i:hover,
 li .text-white:hover {
-  color: orangered!important;
+  color: #ff4500cc!important;
 }
 .nav-main-list-items a:hover,
 .dropdown-menu a:hover {
@@ -279,11 +275,15 @@ li .text-white:hover {
 /*--used below to for the transform to none as it was causing pixilated navdrop down*/
 .dropdown-menu.show {
   transform: unset !important;
-  top: 59px !important;
-  left: -100px !important;
+  top: 22px !important;
+  left: -95px !important;
 }
 
 /*-------------------------- Text Styling--*/
+
+.hero-landing-text {
+  margin-top: 75px
+}
 
 .logo-font {
   text-transform: uppercase;
@@ -293,14 +293,12 @@ li .text-white:hover {
   width: 40%;
   margin: auto;
   display: block;
-  padding: 1.25rem 0.625rem;
 }
 
 .title-text {
   width: 30%;
   margin: auto;
   display: inline-block;
-  padding: 1.25rem 0.625rem;
 }
 .text-black {
   color: #000000 !important;
@@ -594,10 +592,12 @@ a.products-border:hover{
 .totop-button {
   height:2.1875rem;
   width:2.1875rem;
+  color: #fff;
   position:fixed;
   bottom:0.625rem;
   right: 0.625rem;
   background: orangered;
+  z-index: 99999;
 }
 
 .totop-link {
@@ -854,6 +854,12 @@ a.products-border:hover{
   }
 }
 
+@media (min-width:48rem){
+  .keep-shopping-button{
+    margin-bottom: 350px;
+  }
+}
+
 @media (min-width: 576px){
   .mobile-nav-button {
     left: 192px;
@@ -870,6 +876,9 @@ a.products-border:hover{
     padding: 1.2rem;
     max-width:18.75rem;
   }
+  .keep-shopping-button {
+    margin-bottom: 240px;
+  }
 }
 
 @media (min-width: 17.5rem){
@@ -879,7 +888,6 @@ a.products-border:hover{
   .hr-black {
     width: 15.625rem;
   }
-  
 }
 
 
