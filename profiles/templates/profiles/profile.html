@@ -13,18 +13,20 @@
 
 {% block content %}
     <div class="white-overlay"></div>
-    <div class="container">
-        {% include 'components/profile-header.html'%}
-        <!--Profile Nav-->
-        <section class="row mb-5">
-            {% include 'components/profile-nav.html'%}
-            <!--Account information panel-->    
-            {% include 'components/account-information.html'%}
-            <!--Order history panel-->   
-            {% include 'components/order-panel.html'%}
-            <!--Logout panel-->   
-            {% include 'components/logout-panel.html'%}
-        </section>
+    <div class="container profile-container">
+        <div class="profile-wrapper">
+            {% include 'components/profile-header.html'%}
+            <!--Profile Nav-->
+            <section class="row mb-5">
+                {% include 'components/profile-nav.html'%}
+                <!--Account information panel-->    
+                {% include 'components/account-information.html'%}
+                <!--Order history panel-->   
+                {% include 'components/order-panel.html'%}
+                <!--Logout panel-->   
+                {% include 'components/logout-panel.html'%}
+            </section>
+        </div>
     </div>
 
 {% endblock  %}
