@@ -39,3 +39,8 @@ mobileNavBg.click(function(){
     mobileNavBg.removeClass('overlay-nav');
     mobileNav.removeClass('transition');
 })
+
+// To top scroll
+$('.totop-link').click(function(e){
+    window.scrollTo(0,0)
+})
