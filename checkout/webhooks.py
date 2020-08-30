@@ -3,9 +3,11 @@ from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
+import stripe
+
 from checkout.webhook_handler import StripeWH_Handler
 
-import stripe
+
 
 
 @require_POST
@@ -14,7 +16,7 @@ def webhook(request):
     """Listen for webhooks from Stripe"""
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET
-    
+
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
