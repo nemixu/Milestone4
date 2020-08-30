@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -22,7 +22,7 @@ def index(request):
 def contact(request):
     """View to handle the contact page"""
     page_title = "Contact Us"
-    admin_email = settings.ADMIN_EMAIL
+    admin_email = settings.EMAIL_HOST_USER
     subject = render_to_string(
         'emails/contact_request_subject.txt'
     )
@@ -33,15 +33,14 @@ def contact(request):
             message = request.POST.get('message', '')
             reply_email = request.POST.get('email', '')
             subject = render_to_string('emails/contact_request_subject.txt')
-            email = EmailMessage(
-                subject,
-                message,
-                to=["s.r.seagrave@gmail.com"],
-                headers={"Reply-to": reply_email},
-            )
             form.save()
             try:
-                email.send()
+                send_mail(
+                    subject,
+                    message,
+                    reply_email,
+                    [admin_email]
+                    )
                 messages.success(request, 'Your message has been sent successfully')
             except Exception as e:
                 messages.error(request, f"Message not sent,Error! {e}")
