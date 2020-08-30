@@ -235,9 +235,9 @@ Message | message | TextField | null=False, blank=False
 
 ### Features that will be developed in future releases:
 
-* <p>A reset password link that will send the user a link to reset their password for the website.</p>
-* <p>Order confirmation emails to be sent to customer upon placing an order.</p>
+* <p>Fully functional review system, when a user updates it updates the overal rating for a product.</p>
 * <p>A feedback section / Recommendations from past users.</p>
+* <p>A booking system so a customer can book a specific session.</p>
 * <p>A forum / discussion section where users can talk about their journey in fitness</p>
 
 ## [Technologies Used](#Contents):
