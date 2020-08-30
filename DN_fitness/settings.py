@@ -154,7 +154,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'CET'
 
 USE_I18N = True
 
@@ -178,8 +178,6 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', '')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-
 
 
 if 'DEVELOPMENT' in os.environ:
