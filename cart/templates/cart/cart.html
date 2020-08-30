@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-sm-12 col-md-4 p-5">
                     <h4 class="text-black">Grand Total:</h4>
-                    <p class="cart-colour cart-grandtotal">${{ grand_total|floatformat:2 }}</p>
+                    <p class="cart-colour cart-grandtotal">€{{ grand_total|floatformat:2 }}</p>
                     <a aria-label="checkout" id="checkout-button" class="btn orange-btn text-white font-weight-bold" href="{% url 'checkout'%}">Checkout</a>
                 </div>
             </div>
