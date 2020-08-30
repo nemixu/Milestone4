@@ -30,16 +30,16 @@ def contact(request):
         form = Contact(request.POST)
 
         if form.is_valid():
-            message = request.POST.get('message', '')
-            reply_email = request.POST.get('email', '')
+            reply_email = request.POST.get('email')
+            body = render_to_string('emails/contact_request_body.txt')
             subject = render_to_string('emails/contact_request_subject.txt')
             form.save()
             try:
                 send_mail(
                     subject,
-                    message,
+                    body,
                     reply_email,
-                    [admin_email]
+                    [admin_email],
                     )
                 messages.success(request, 'Your message has been sent successfully')
             except Exception as e:
