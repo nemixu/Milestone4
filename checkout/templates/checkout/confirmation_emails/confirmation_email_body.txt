@@ -13,7 +13,7 @@ Grand Total: €{{ order.grand_total }}
 
 Your order has been confirmed, if you have not specified a date for the class to commence a member of staff will be in touch to arrange.
 
-According to our records, your phone number is {{ order.phone_number }}order.order_total
+According to our records, your phone number is {{ order.phone_number }}
 
 Should you have any questions, feel free to contact us at {{ contact_email }}.
 

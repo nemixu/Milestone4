@@ -1,1 +1,1 @@
-A customer has sent a contact request on DN Fitness
+A customer has sent a contact request on DN Fitness {{ reply_email }}
