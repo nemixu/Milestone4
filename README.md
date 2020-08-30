@@ -51,30 +51,30 @@
 * Build awareness for the brand and attract more traffic on the site.
 
 ### User Stories:
-
-* As a store owner I want a site that is user friendly and is easy to navigate for the user.
-* As a store owner I want users to purchase without being registered.
-* As a store owner I want to show customers what my services are and what they include.
-* As a store owner I want to be able to edit product prices, and upload and delete products.
-* As a store owner I want to see users feedback on classes/services.
+* As a store owner:
+    * As a store owner, I want a site that is user friendly and is easy to navigate for the user.
+    * As a store owner, I want users to purchase without being registered.
+    * As a store owner, I want to show customers what my services are and what they include.
+    * As a store owner, I want to be able to edit product prices, and upload and delete products.
+    * As a store owner, I want to see users feedback on classes/services.
 <hr>
-
-* As a user looking to purchase a service I want to see what is included in that service.
-* As a user looking to purchase a service I want to recieve an email confirming my purchase.
-* As a user looking to purchase a service I want to see the purchase on my created profile.
-* As a user looking to purchase a service I want to see my previous purchases if I have purchased before.
+* As a site User:
+    * As a user looking to purchase a service, I want to see what is included in that service.
+    * As a user looking to purchase a service, I want to recieve an email confirming my purchase.
+    * As a user looking to purchase a service, I want to see the purchase on my created profile.
+    * As a user looking to purchase a service, I want to see my previous purchases if I have purchased before.
 <hr>
-
-* As a user interested in the service I want to know as much about the information as possible.
-* As a user interested in the service I Want to know if people have used the service before.
-* As a user interested in the service I want to know about the individual or company providing the service.
-* As a user interested in the service I want to see what the service has to offer.
+* As a shopper:
+    * As a user interested in the service I want to know as much about the information as possible.
+    * As a user interested in the service I Want to know if people have used the service before.
+    * As a user interested in the service I want to know about the individual or company providing the service.
+    * As a user interested in the service I want to see what the service has to offer.
 <hr>
+* As a client:
+    * As a user who is new to fitness I want to ensure the information is clear and understandable.
+    * As a user who is new to fitness I want to know what kind of activites are covered in the services.
+    * As a user who is new to fitness I want to read about the service providers history to ensure they are certified.
 
-* As a user who is new to fitness I want to ensure the information is clear and understandable.
-* As a user who is new to fitness I want to know what kind of activites are covered in the services.
-* As a user who is new to fitness I want to read about the service providers history to ensure they are certified.
-* As a user who is new to fitness I want to see possible workout routines.
 
 ### User Requirements and Expectations:
 <p>Shopping online has become a cornerstone to modern life, a user needs to feel safe and comfortable in order for them to continue with a purchase online. Especially when it comes to using a site / service that is not as well known as big companies / webservices. To tackle this and to ensure we can provide the best possible UX, proper authentication and secure payments through Stripe is necessary to offer peace of mind to the consumer.</p>
@@ -99,7 +99,8 @@
 <p>From the start the site design is extremely important to ensure a user is interested in the site, they will stay on the site and view what is to be offered and potentially purchase a product. The site will have a minimalistic theme to ensure the user is not distracted by too many colours, and also for colours to compliment the imagery used across the site.</p>
 
 ### Fonts: 
-<p>I have chosen the # font for this project as the font family for this website made sense as it provided a clean and elegant & clean style to go along nicely with the colour scheme. And also helped to ensure the information on the site was readable to the user.</p>
+* [Roboto](https://fonts.google.com/specimen/Roboto)
+<p>I have chosen this font for this project as the font family for this website made sense as it provided a clean and elegant & clean style to go along nicely with the colour scheme. And also helped to ensure the information on the site was readable to the user.</p>
 
 ### Icons:
 <p>I have decided to use the collection of icons from font-awesome, as the collection they have are vast and easy to use. They have a wide range of icons that have come in handy for things such as the shopping cart and user icon</p>
@@ -107,46 +108,25 @@
 ### Colours:
 <p>The colours I have chosen for this website will compliment the minimalistic feel and tones of the website, having a visually appealing contrast provides a more elegant user experience for those using / navigating the site website, below is a list of colours user across the website.</p>
 
--![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
-"Black" - This Colour provides X and contrast to x colours.
-
--![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
-"Black" - This Colour provides X and contrast to x colours.
-
--![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
-"Black" - This Colour provides X and contrast to x colours.
-
--![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
-"Black" - This Colour provides X and contrast to x colours.
-
--![#000](https://placehold.it/15/000/000000?text=+) Primary: #000;
-"Black" - This Colour provides X and contrast to x colours.
+* Primary Colour - #ffffff - This colour was used for the navbar and overal site pages.
+* Secondary Colour - #212529 - A Dark blue/grey colour used for the landing page about section and mobile nav slide menu.
+* Tertiary Colour - #ff4500 - A vibrant orange red used to make buttons and important information pop out for the user.
+* #000 - Black was used for text throughout the application
+* #fafafa - Offwhite colour used on the footer and insets for profile navigation and order cards.
 
 ### Styles:
 
-DN Fitness Colours:
-
-```css
-$primary-color: #fafafa; // primary
-$secondary-color: #fafafa; // secondary
-$tertiary-color: #fafafa; // tertiary
-$white-color: #ffffff; // white
-$off-white-color: #fafafa; // off-white
-$black-color: #fafafa; // black
-$error-color: #fafafa; // error-red
-$success-color: #fafafa; // success-green
-```
+DN Fitness Shadows and transitions:
 
 Shadows:
 ```css
-$panel-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-$text-shadow: 0.5px 0.2px 1px rgba(0,0,0,0.2);
-
+panel-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+text-shadow: 0.5px 0.2px 1px rgba(0,0,0,0.2);
 ```
 
 Transitions:
 ```css
-$slow-transition: 0.5s all ease-in-out;
+slow-transition: 0.5s all ease-in-out;
 ```
 
 ### Images:
@@ -166,17 +146,74 @@ $slow-transition: 0.5s all ease-in-out;
 
 User models used in this application is provided by Django. <a href="https://docs.djangoproject.com/en/3.0/ref/contrib/auth/" target="_blank">Click here to read more about it.</a>
 
-#### The Product Model:
+#### The Product App:
+##### Product Model
+:-----:|:-----:|:-----:|:-----:
+Name | name | charfield | max_length=254, null=False, blank=False
+Category | category | ForeignKey -> 'Category', null=True, blank=True, on_delete=models.SET_NULL
+SKU | sku | CharField | max_length=254, null=False, blank=True
+Description | description | TextField|()
+Price | price | DecimalField | max_digits=6, decimal_places=2
+Rating | rating|DecimnalField | max_digits=6, decimal_places=2, null=True, blank=True
+Image URL | image_url | URLField | max_length=1024, null=True, blank=True
+image | models.ImageField | null=True, blank=True
 
-The product models will be showcased here.
+#### The Category App:
+##### Category Model
+:-----:|:-----:|:-----:|:-----:
+Name | name | charfield | max_length=254
+Friendly | friendly_name | Charfield | max_length=254, null=True, blank=True,
 
-#### The Order Model:
 
-The order models will be showcased here.
+#### The Order App:
+##### Order Model
+:-----:|:-----:|:-----:|:-----:
+Order Number | order_number | CharField |max_length=32, null=False, editable=False
+User | user_profile | ForeignKey -> UserProfile, on_delete=models.SET_NULL, null=False, blank=False, related_name='orders'
+Full Name | full_name | CharField | max_length=40, null=False, blank=False
+Email|email | EmailField | max_length=254, null=False, blank=False
+Phone Number | phone_number | CharField | max_length=20, null=True, blank=True
+Date|order_date | DateTimeField | auto_now_add=True
+Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
+Grand Total | grand_total | DecimalField |max_digits=10, decimal_places=2, null=False, default=0
+Shopping Cart | original_cart | TextField | null=False, blank=False, default=''
+Stripe PID | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
 
-#### The OrderItem Model:
+#### The OrderItem App:
+##### Order LineItem Model
+:-----:|:-----:|:-----:|:-----:
+Order | order | ForeignKey -> Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
+Product | product | ForeignKey -> Product, null=False, blank=False, on_delete=models.PROTECT
+Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False, default=0,
 
-Will be showcased here.
+
+#### The Review App:
+##### Review Model
+:-----:|:-----:|:-----:|:-----:
+User |user | ForeignKey -> User | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
+Product | product | ForeignKey -> Product | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
+Comment| comment | TextField | max_length=1000, blank=True, null=True
+Rating|rating|Floatfield| default=1
+
+
+#### The Profile App:
+##### Profile Model
+:-----:|:-----:|:-----:|:-----:
+User | user | OneToOneField -> User | on_delete=models.CASCADE
+Full Name | default_full_name | CharField | max_length=40, null=True, blank=True
+Email | default_email | EmailField | max_length=254, null=True, blank=True
+Phone Number | default_phone_number | CharField | max_length=20, null=True, blank=True
+
+#### The Contact App:
+##### Contact Model
+:-----:|:-----:|:-----:|:-----:
+
+First Name | first_name | Charfield | max_length=50, blank=False, null=False
+Last Name | last_name | CharField | max_length=50, blank=False, null=False
+Email | email | EmailField | max_length=254, null=False, blank=False
+Phone | phone | CharField | max_length=20, null=False, blank=False, default=''
+Message | message | TextField | null=False, blank=False
+
 
 ## [Features](#Contents):
 
@@ -260,6 +297,9 @@ On the profile page, I did not want a single page that displayed on the left and
 I was having issues with the logout functionality that was built into the allauth package. on my user profile I had setup a sign out and are you sure you wish to sign out page on the profile, but when you click the url for signout on allauth it brings you to a provision page to ask if you wish to sign out which I did not want. The solution to this problem after reading the allauth documentation was simple, in settings.py in the project directory I added ```ACCOUNT_LOGOUT_ON_GET = True```, this has got one downfall tho which I am fully aware and does not effect this project direction. When you use the navicons to logout, it instantly logs you out now instead of having the provisonal page. This is something I can handle with a popup modal for logout if necessary.
 
 I had issues when I split my css files into seperate components. I was getting errors in console when deployed to heroku that the MIME type was text type. To resolve this I attempted to add a ```type="css"``` but this did not resolve the issue and after discussing with a mentor, the best solution was to introduce the css into the base.css file. 
+
+issues with bootstrap dropdown menu text blurry when using transform - only fix i could find was forcing dropdown class to transform unset and re-positioning the profile dropdown to match how it was with transition.
+
 
 ## [Deployment](#Contents):
 
@@ -346,11 +386,13 @@ heroku ps:scale web=1
 * 5: Select your deployment method by clicking on the deployment method button in this case you can select GitHub.
 * 6: On the dashboard, you will need to set config vars:
 
+```
 DATABASE_URL: <your_URL>
 SECRET_KEY:<your_key>
 STRIPE_PUBLIC_KEY:<stripe_key>
 STRIPE_SECRET_KEY:<stipe_secret>
 STRIPE_WH_SECRET:<stripe_wh_secret>
+```
 
 * 7: Click the deploy button on the heroku Dashboard.
 * 8: Wait until the build has finished and click the view project link once it has done. If you get an error please refer to logs, and also check *2.1 above.
@@ -359,7 +401,21 @@ Congratulations you have deployed DN fitness to Heroku and it is live to be view
 
 ## [Credits](#Contents):
 
-* All credits will go here.
+* This project was developed following Chris Lielinski and the Boutique Ado provided by [Code Institute](https://codeinstitute.net/), but was heavily customized and expanded to meet my needs.
+* Loading spinner was taken from my previous project Trivia.
+* During development I constantly referred to and used code from [Django](https://docs.djangoproject.com/en/3.1/) and [Stripe](https://stripe.com/docs) documentation
+
+Massive thanks to [Simen Daehlin](https://github.com/Eventyret) for being a great mentor and teacher during my course, and for helping me keep ontop of my projects during the course.
+
+Thanks to [Chris Zielinski](https://github.com/ckz8780) for his endless support with the django framework when things werent sinking in, and for his boutique ado project that basically thought me the structure of django and how to build an e-commerce site.
+
+[James Gregory](https://github.com/asdfractal) for his feedback and troubleshooting during production, and for being always on hand to help with tricky logic.
+
+[Andy Gorman](https://github.com/kangadrewie) for user testing the site, and highlighting bugs to me that were overlooked.
+
+### Images
+* [All images for this site came from Unspalsh](https://unsplash.com/)
+* [Logo created using](https://hatchful.shopify.com/)
 
 ## [Disclaimer](#Contents):
 The contents of this website are for educational purposes only.
