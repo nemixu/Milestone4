@@ -195,8 +195,8 @@ Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=Fal
 ##### Review Model
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
-User |user | ForeignKey | User | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
-Product | product | ForeignKey | Product | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
+User | user | ForeignKey | User, on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
+Product | product | ForeignKey | Product, on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
 Comment| comment | TextField | max_length=1000, blank=True, null=True
 Rating|rating|Floatfield| default=1
 
@@ -205,7 +205,7 @@ Rating|rating|Floatfield| default=1
 ##### Profile Model
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
-User | user | OneToOneField | User | on_delete=models.CASCADE
+User | user | OneToOneField | User, on_delete=models.CASCADE
 Full Name | default_full_name | CharField | max_length=40, null=True, blank=True
 Email | default_email | EmailField | max_length=254, null=True, blank=True
 Phone Number | default_phone_number | CharField | max_length=20, null=True, blank=True
