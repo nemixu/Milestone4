@@ -279,7 +279,9 @@ Message | message | TextField | null=False, blank=False
 
 #### Feature Testing:
 
-Feature testing will go here.
+A full write up of user testing can be found here
+
+[Feature Testing](https://github.com/nemixu/Milestone4/blob/master/TESTING.md)
 
 ## [Bugs](#Contents) 
 
