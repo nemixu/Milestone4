@@ -151,13 +151,13 @@ User models used in this application is provided by Django. <a href="https://doc
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 Name | name | charfield | max_length=254, null=False, blank=False
-Category | category | ForeignKey -> 'Category', null=True, blank=True, on_delete=models.SET_NULL
+Category | category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL
 SKU | sku | CharField | max_length=254, null=False, blank=True
 Description | description | TextField|()
 Price | price | DecimalField | max_digits=6, decimal_places=2
 Rating | rating|DecimnalField | max_digits=6, decimal_places=2, null=True, blank=True
 Image URL | image_url | URLField | max_length=1024, null=True, blank=True
-image | models.ImageField | null=True, blank=True
+image | image | models.ImageField | null=True, blank=True
 
 #### The Category App:
 ##### Category Model
@@ -172,7 +172,7 @@ Friendly | friendly_name | Charfield | max_length=254, null=True, blank=True,
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
 Order Number | order_number | CharField |max_length=32, null=False, editable=False
-User | user_profile | ForeignKey -> UserProfile, on_delete=models.SET_NULL, null=False, blank=False, related_name='orders'
+User | user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=False, blank=False, related_name='orders'
 Full Name | full_name | CharField | max_length=40, null=False, blank=False
 Email|email | EmailField | max_length=254, null=False, blank=False
 Phone Number | phone_number | CharField | max_length=20, null=True, blank=True
@@ -186,8 +186,8 @@ Stripe PID | stripe_pid | CharField | max_length=254, null=False, blank=False, d
 ##### Order LineItem Model
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
-Order | order | ForeignKey -> Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
-Product | product | ForeignKey -> Product, null=False, blank=False, on_delete=models.PROTECT
+Order | order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
+Product | product | ForeignKey | Product, null=False, blank=False, on_delete=models.PROTECT
 Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False, default=0,
 
 
@@ -195,8 +195,8 @@ Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=Fal
 ##### Review Model
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
-User |user | ForeignKey -> User | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
-Product | product | ForeignKey -> Product | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
+User |user | ForeignKey | User | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
+Product | product | ForeignKey | Product | on_delete=models.CASCADE, null=True, blank=True,related_name="reviews"
 Comment| comment | TextField | max_length=1000, blank=True, null=True
 Rating|rating|Floatfield| default=1
 
@@ -205,7 +205,7 @@ Rating|rating|Floatfield| default=1
 ##### Profile Model
 Name|Key in db|Field Type|Arguments
 :-----:|:-----:|:-----:|:-----:
-User | user | OneToOneField -> User | on_delete=models.CASCADE
+User | user | OneToOneField | User | on_delete=models.CASCADE
 Full Name | default_full_name | CharField | max_length=40, null=True, blank=True
 Email | default_email | EmailField | max_length=254, null=True, blank=True
 Phone Number | default_phone_number | CharField | max_length=20, null=True, blank=True
