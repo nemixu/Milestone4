@@ -7,10 +7,10 @@ from django.conf import settings
 from .forms import Contact
 
 
-# Create your views here.
-
 def index(request):
-    """ View to return the index page """
+    """
+    View to return the index page
+    """
     page_title = "Home Page"
     template = "home/index.html"
     context = {
@@ -20,7 +20,11 @@ def index(request):
 
 
 def contact(request):
-    """View to handle the contact page"""
+    """
+    View to handle the contact page
+    instasiate form onto page and handle post request from user
+    if form is valid send email
+    """
     page_title = "Contact Us"
     admin_email = settings.EMAIL_HOST_USER
     subject = render_to_string(
@@ -56,7 +60,6 @@ def contact(request):
         'page_title': page_title,
         'form':form,
     }
-
     return render(request, template, context)
 
 
