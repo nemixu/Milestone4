@@ -81,8 +81,8 @@ body {
     display: block;
     width: 1.875rem;
     height: 1.875rem;
-    border-bottom: 5px solid orangered;
-    border-right: 5px solid orangered;
+    border-bottom: 5px solid #FF4500;
+    border-right: 5px solid #FF4500;
     transform: rotate(45deg);
     margin: -10px;
     animation: animate 2s infinite;
@@ -214,7 +214,7 @@ body {
   position: relative;
   bottom: 2.3125rem;
   left: 11.8125rem;
-  background: orangered;
+  background:#FF4500;
   padding: 1.125rem;
   border-radius: 0 3px 3px 0;
   border: none;
@@ -278,13 +278,13 @@ li .text-white:hover {
 }
 .nav-main-list-items a:hover,
 .dropdown-menu a:hover {
-  color: orangered!important;
+  color:#FF4500!important;
   transition: all 0.3s ease
 }
 
 .dropdown-item:active {
   background: #fff;
-  color: orangered!important;
+  color:#FF4500!important;
 }
 
 /*--used below to for the transform to none as it was causing pixilated navdrop down*/
@@ -365,14 +365,14 @@ li .text-white:hover {
   position: absolute;
   z-index: 1;
   color: #fff;
-  background: orangered;
+  background:#FF4500;
 }
 
 .product_counter-mobile {
   position: relative;
   z-index: 1;
   color: #fff;
-  background: orangered;
+  background:#FF4500;
   height:1.25rem;
   width:1.25rem;
   font-size: 0.857142857rem;
@@ -382,7 +382,7 @@ li .text-white:hover {
 }
 
 .classes-text:hover {
-  color:orangered!important;
+  color:#FF4500!important;
 }
 
 .review-vh {
@@ -411,7 +411,7 @@ li .text-white:hover {
 }
 
 .footer-nav-li a:hover{
-  color:orangered;
+  color:#FF4500;
 }
 
 /*-------------------------- Products Styling--*/
@@ -431,7 +431,7 @@ li .text-white:hover {
 }
 .product-text:hover {
   text-decoration: none!important;
-  color:orangered!important;
+  color:#FF4500!important;
 }
 
 /* added to remove the hover link underline on products page*/
@@ -468,7 +468,7 @@ a.products-border:hover{
 .review-card i {
   color: #fff;
   font-size: 1.875rem;
-  background: orangered;
+  background:#FF4500;
   padding: 0.5625rem;
   height: 3.125rem;
   width: 3.125rem;
@@ -634,7 +634,7 @@ a.products-border:hover{
   position:fixed;
   bottom:0.625rem;
   right: 0.625rem;
-  background: orangered;
+  background:#FF4500;
   z-index: 99999;
 }
 .fa-arrow-up:hover {
@@ -671,7 +671,7 @@ a.products-border:hover{
 .popup {
   background:#fff;
   display: none;
-  color: orangered;
+  color:#FF4500;
   position: fixed;
   z-index: 99999999;
   top:30%;
@@ -696,7 +696,7 @@ a.products-border:hover{
   border: 1px solid black;
 }
 .orange-btn {
-  background: orangered!important;
+  background:#FF4500!important;
 }
 
 .orange-btn:hover,
@@ -721,7 +721,7 @@ a.orange-btn:hover {
 }
 
 .cart-colour {
-  color:orangered!important;
+  color:#FF4500!important;
 }
 
 .btn-outline {
@@ -729,7 +729,7 @@ a.orange-btn:hover {
 }
 
 .btn-outline:hover {
-  background: orangered;
+  background: #FF4500;
   color: white;
   border: transparent;
 
@@ -769,7 +769,7 @@ a.orange-btn:hover {
 .profile-navigation-list li:hover,
 .profile-navigation-list li:focus,
 .profile-active.active {
-  background: orangered;
+  background:#FF4500;
   color:#fff!important;
   border-color: transparent!important;
 }
@@ -799,7 +799,7 @@ a.orange-btn:hover {
 }
 
 .form-styling:focus {
-  border-color:orangered
+  border-color:#FF4500;
 }
 
 .profile-nav-wrapper {
@@ -849,7 +849,7 @@ a.orange-btn:hover {
   margin-top: -1.875rem;
   margin-left: -1.875rem;
   border-radius: 50%;
-  border-top: 2px solid orangered;
+  border-top: 2px solid #FF4500;
   border-right: 2px solid transparent;
   animation: spinner 0.7s linear infinite;
   z-index:9999;
