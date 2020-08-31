@@ -13,14 +13,14 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                         <div class="card h-100 border-0 card-shadow">
                             {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}" class="products-border"> 
+                            <a href="{% url 'product_detail' product.id %}" class="products-border" aria-label="product detail link"> 
                                 <div class="image-wrapper-products">
-                                    <img class="card-img-top img-fluid rounded-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid rounded-top" aria-label="product image" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </div>
                                 <h3 class="product-text products-border text-center">{{ product.name }}</h3>
                             </a> 
                             {% else %}
-                            <a href="{% url 'product_detail' product.id %}">
+                            <a href="{% url 'product_detail' product.id %} aria-label="product detail link"">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                             </a> 
                             {% endif %}
@@ -44,7 +44,7 @@
     </div>
 </div>
 <div class="totop-button shadow-sm rounded-0 border border-black">
-    <a class="totop-link d-flex h-100">
+    <a class="totop-link d-flex h-100" aria-label="to top button">
         <i class="fas fa-arrow-circle-up text-white mx-auto my-auto"></i>
     </a>   
 </div>
