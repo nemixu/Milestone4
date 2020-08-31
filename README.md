@@ -114,6 +114,8 @@
 * #000 - Black was used for text throughout the application
 * #fafafa - Offwhite colour used on the footer and insets for profile navigation and order cards.
 
+![alt text](https://github.com/nemixu/Milestone4/blob/master/media/colour_scheme.PNG "colour Palette")
+
 ### Styles:
 
 DN Fitness Shadows and transitions:
