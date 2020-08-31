@@ -7,11 +7,12 @@ from checkout.models import Order
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
 
-# Create your views here.
 
 
 def all_products(request):
-    """ A view to show products """
+    """
+    A view to show products
+     """
     products = Product.objects.all()
     categories = None
 
@@ -68,7 +69,9 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """add products to the store"""
+    """
+    add products to the store
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Oops! You don\'t have the required permission\
         to access this page. Login with the required credentials to do so!')
@@ -96,7 +99,9 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """edit a product and update to the db"""
+    """
+    edit a product and update to the db
+    """
     if not request.user.is_superuser:
         messages.info(request, 'Oops! You don\'t have the required \
                       permission to access this page. Login with the \
@@ -130,7 +135,9 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """Delete a product from products"""
+    """
+    Delete a product from products
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Oops! You don\'t have the required permission\
         to access this page. Login with the required credentials to do so!')
@@ -144,7 +151,9 @@ def delete_product(request, product_id):
 
 
 def add_review(request, product_id):
-    """View to handle the POST of reviews from a specific user"""
+    """
+    View to handle the POST of reviews from a specific user
+    """
     user = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
@@ -157,6 +166,7 @@ def add_review(request, product_id):
             'comment': request.POST['comment'],
             'rating': request.POST['rating']
             }
+
         review_form = ReviewForm(form_data)
         if review_form.is_valid():
             review = review_form.save(commit=False)
@@ -209,5 +219,5 @@ def delete_review(request, product_id):
     """
     review = get_object_or_404(Review, user=request.user, product=product_id)
     review.delete()
-    messages.success(request, f'We have removed your review.')
+    messages.success(request, 'Your review has been deleted.')
     return redirect(reverse('product_detail', args=(product_id,)))

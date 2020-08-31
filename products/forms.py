@@ -3,6 +3,9 @@ from .models import Category, Product, Review
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Product form to populate all fields
+    """
     class Meta:
         model = Product
         fields = '__all__'
@@ -15,11 +18,14 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'stripe-style-input rounded'
-            
+
 
 class ReviewForm(forms.ModelForm):
+    """
+    Review form class to create and populate a review form for user.
+    """
     class Meta:
-        model = Review 
+        model = Review
         fields = ['comment', 'rating']
         widgets = {
             'comment': forms.Textarea(
@@ -39,8 +45,8 @@ class ReviewForm(forms.ModelForm):
                 }
             )
         }
-        
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['comment'].label = "Leave a review"    
+        self.fields['comment'].label = "Leave a review"
             

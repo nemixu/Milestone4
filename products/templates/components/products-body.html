@@ -7,11 +7,11 @@
         </div>
         <div class="col-12 text-center mt-2 mb-4">
         <div class="container">
-            <a href="{% url 'products' %}?category=toning,fullbody,strength,weightloss" class="d-inline-block classes-text h5 text-black m-1">All Classes</a>|
-            <a href="{% url 'products' %}?category=weightloss" class="d-inline-block classes-text h5 text-black m-1">Weight Loss</a>|
-            <a href="{% url 'products' %}?category=strength" class="d-inline-block classes-text h5 text-black m-1">Strength</a>|
-            <a href="{% url 'products' %}?category=fullbody" class="d-inline-block classes-text h5 text-black m-1">Full Body</a>|
-            <a href="{% url 'products' %}?category=toning" class="d-inline-block classes-text h5 text-black m-1">Toning Workout</a>
+            <a href="{% url 'products' %}?category=toning,fullbody,strength,weightloss" class="d-inline-block classes-text h5 text-black m-1" aria-label="classes">All Classes</a>|
+            <a href="{% url 'products' %}?category=weightloss" class="d-inline-block classes-text h5 text-black m-1" aria-label="weight loss class link">Weight Loss</a>|
+            <a href="{% url 'products' %}?category=strength" class="d-inline-block classes-text h5 text-black m-1" aria-label="strength class link">Strength</a>|
+            <a href="{% url 'products' %}?category=fullbody" class="d-inline-block classes-text h5 text-black m-1" aria-label="fullbody class link">Full Body</a>|
+            <a href="{% url 'products' %}?category=toning" class="d-inline-block classes-text h5 text-black m-1" aria-label="toning class link">Toning Workout</a>
         </div>
         </div>
     </div>
@@ -23,16 +23,16 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
                         <div class="card h-100 border-0 card-shadow">
                             {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}" class="products-border"> 
+                            <a href="{% url 'product_detail' product.id %}" class="products-border" aria-label="product detail link"> 
                                 <div class="image-wrapper-products">
-                                    <img class="card-img-top img-fluid rounded-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid rounded-top" src="{{ product.image.url }}" alt="{{ product.name }}" aria-label="product image">
                                 </div>
                                 <h3 class="product-text products-border text-center">{{ product.name }}</h3>
                             </a> 
                             {% else %}
-                            <a href="{% url 'product_detail' product.id %}" class="products-border">
+                            <a href="{% url 'product_detail' product.id %}" class="products-border" aria-label="product detail link">
                                 <div class="image-wrapper-products">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" aria-label="product image">
                                 </div>
                                 <h3 class="product-text products-border text-center">{{ product.name }}</h3>
                             </a> 

@@ -22,8 +22,8 @@
                                 <p class="text-center text-black">{{ review.rating|floatformat:0 }}/5</p>
                                 {% if review.user == request.user %}
                                 <div class="button-wrapper pb-5">
-                                    <a class="btn orange-btn text-white " href="{% url 'edit_review' product.id %}">Edit</a>
-                                    <a class="btn white-btn text-black" href="{% url 'delete_review' product.id %}">Delete</a> 
+                                    <a class="btn orange-btn text-white " href="{% url 'edit_review' product.id %}" aria-label="edit button">Edit</a>
+                                    <a class="btn white-btn text-black" href="{% url 'delete_review' product.id %}" aria-label="delete button">Delete</a> 
                                 </div>
                                 {% endif %}
                             </div>

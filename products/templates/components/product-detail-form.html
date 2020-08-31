@@ -6,17 +6,17 @@
             <div class="form-group w-60">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <button class="decrease-qty btn orange-btn rounded-left text-white" 
-                            data-item_id="{{ product.id }}" id="decrease-qty_{{ product.id }}">
+                        <button class="decrease-qty btn orange-btn rounded-left text-white"
+                            data-item_id="{{ product.id }}" id="decrease-qty_{{ product.id }}" aria-label="decrease quantity button">
                             <span class="icon">
                                 <i class="fas fa-minus"></i>
                             </span>
                         </button>
                     </div>
-                    <input class="form-control qty_input" type="number" name="quantity" 
+                    <input class="form-control qty_input" aria-label="quantity input field" type="number" name="quantity" 
                     value="1" min="1" max="10" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                     <div class="input-group-append">
-                        <button class="increase-qty btn orange-btn rounded-right text-white" data-item_id="{{ product.id }}" id="increase-qty_{{ product.id }}">
+                        <button class="increase-qty btn orange-btn rounded-right text-white" aria-label="increase quantity button" data-item_id="{{ product.id }}" id="increase-qty_{{ product.id }}">
                             <span class="icon">
                                 <i class="fas fa-plus"></i>
                             </span>
