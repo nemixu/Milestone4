@@ -18,6 +18,9 @@ from .models import OrderLineItem, Order
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Save cart and user data in case of processing error.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET
@@ -34,6 +37,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Display a view to purchase items in cart. Checks user has no duplicate products
+    and processes Stripe payment.
+    """
     stripe_public_key = settings.STRIPE_PUBLISHABLE
     stripe_secret_key = settings.STRIPE_SECRET
 
@@ -118,12 +125,13 @@ def checkout(request):
     return render(request, template, context)
 
 
-         
 def checkout_success(request, order_number):
-    """Handle successful checkout"""
+    """
+    Handle successful checkout
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
@@ -135,18 +143,18 @@ def checkout_success(request, order_number):
                 'default_email': order.email,
                 'default_phone_number': order.phone_number,
             }
-            
+
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-            
+
     messages.success(request, f'Order successfully proceessed! \
         Your order number is {order_number}. A confirmation \
             email will be sent to {order.email}.')
-    
+
     if 'cart' in request.session:
         del request.session['cart']
-        
+
     template = 'checkout/checkout_success.html'
     context = {
         'order':order,
