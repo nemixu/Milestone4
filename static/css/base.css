@@ -848,7 +848,10 @@ a.orange-btn:hover {
 
 .allauth-form-inner-content p {
   margin-top: 1.5rem;
+}
 
+.allauth-padding {
+  padding: 0 1.875rem;
 }
 
 /*-------------------------- Spinner styling --*/
