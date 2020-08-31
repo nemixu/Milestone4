@@ -22,7 +22,7 @@ body {
   background: linear-gradient(
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 1)
-  ),url('/media/home_background.jpg') no-repeat center
+  ),url('/media/home_background.png') no-repeat center
   center fixed;
   background-size: cover;
 
@@ -306,6 +306,7 @@ li .text-white:hover {
   width: 5rem;
   margin: auto;
   display: block;
+  padding-bottom: 5px;
 }
 
 .title-text {
@@ -394,6 +395,7 @@ li .text-white:hover {
 .footer-nav-li a:hover{
   color:orangered;
 }
+
 /*-------------------------- Products Styling--*/
 
 .products-border {
@@ -467,6 +469,7 @@ a.products-border:hover{
 .review-user {
   padding: 0 0.625rem;
 }
+
 /*-------------------------- Checkout Page Styling--*/
 
 .checkout_row {
@@ -655,6 +658,13 @@ a.products-border:hover{
   transition: 0.5s all ease-in-out;
 }
 
+.login-padding{
+  margin-bottom: 20rem;
+}
+
+.allauth-form-inner-content {
+  margin-bottom: 12rem;
+}
 
 /*-------------------------- Button Styling--*/
 
@@ -886,7 +896,7 @@ a.products-border:hover{
 
 @media (min-width:48rem){
   .keep-shopping-button{
-    margin-bottom: 21.875rem;
+    margin-bottom: 28.875rem;
   }
 }
 
