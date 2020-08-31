@@ -1,3 +1,4 @@
+{% load static %}
 <div class="mobile-nav">
     <div class="mobile-nav-inner">
         <div class="mobile-nav-search">
@@ -8,19 +9,19 @@
             </form>
         </div>
         <ul class="mobile-nav-links">
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="home" href="{% url 'home' %}"><i class="fas fa-home pr-2"></i>Home</a></li>
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="classes" href="{% url 'products' %}"><i class="fas fa-shopping-basket pr-2"></i>Classes</a></li>
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="contact" href="{% url 'contact' %}"><i class="fas fa-envelope pr-2"></i>Contact</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="home" href="{% url 'home' %}"><i class="fas fa-home pr-2"></i>Home</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="classes" href="{% url 'products' %}"><i class="fas fa-shopping-basket pr-2"></i>Classes</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="contact" href="{% url 'contact' %}"><i class="fas fa-envelope pr-2"></i>Contact</a></li>
             {% if user.is_authenticated %}
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="profile" href="{% url 'profile' %}"><i class="fas fa-user pr-2"></i>Profile</a></li>
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="sign out" href="{% url 'account_logout' %}"><i class="fas fa-door-closed pr-2"></i>Sign Out</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="profile" href="{% url 'profile' %}"><i class="fas fa-user pr-2"></i>Profile</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="sign out" href="{% url 'account_logout' %}"><i class="fas fa-door-closed pr-2"></i>Sign Out</a></li>
             {% else %}
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="Register" href="{% url 'account_signup' %}"><i class="fas fa-user-plus pr-2"></i>Register</a></li>
-            <li class="mobile-nav-link-items text-white"><a class="text-white" aria-label="Sign in" href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt pr-2"></i>Sign In</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="Register" href="{% url 'account_signup' %}"><i class="fas fa-user-plus pr-2"></i>Register</a></li>
+            <li class="mobile-nav-link-items text-white"><a class="text-white anchor-fill" aria-label="Sign in" href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt pr-2"></i>Sign In</a></li>
             {% endif %}
         </ul>
     </div>
     <div class="mobile-nav-bottom text-center">
-        <img src="/static/img/logofied.png" alt="DN Fitness logo" class="mobile-nav-img">
+        <img src="{% static 'img/logofied.png' %}" alt="DN Fitness logo" class="mobile-nav-img">
     </div>
 </div>
