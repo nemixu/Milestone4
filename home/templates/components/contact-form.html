@@ -1,0 +1,10 @@
+<!-- Contact Form -->
+<section class="row">
+    <div class="col-sm-12 offset-md-2 col-md-8 contact-form">
+        <form method="POST" class="form" action="{% url 'contact'%}">
+            {% csrf_token %}
+            {{ form | crispy}}
+            <button class="btn orange-btn text-white" type="submit">Send Message</button>
+        </form>    
+    </div>
+</section> 
