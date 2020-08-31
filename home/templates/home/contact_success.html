@@ -2,23 +2,25 @@
 {% block title %} DN Fitness | {{page_title}} {% endblock %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-            </div>
-        </div>
-    </div>
-{% endblock  %}
 
 {% block content %}
-    <div class="white-overlay"></div>
-    <div class="container">
+    <div class="contact-success"></div>
+    <div class="container-fluid contact-container">
         <section class="row">
-            <div class="col-12">
-                <h2 class="text-black">We have just received your email</h2>
+            <div class="col-12 pb-5">
+                <h2 class="text-white text-center display-1">Hi!</h2>
+                <h3 class="text-white hero-sub-text text-center">We just received <span class="cart-colour">your</span> email:</h3>
+           </div>
+        </section>
+        <section class="row">
+            <div class="col-12 pb-5 text-center">
+                <h3 class="text-white hero-sub-text text-center pb-2">a member of our team has been <span class="cart-colour">notified </span></h3>
+                <h4 class="text-white text-center pb-2">we will review it and be in touch soon!</h4>
+                <h5 class="text-white text-center pb-2"><span class="cart-colour">DN</span> Fitness Team!</h5>
+                <a class="btn orange-btn text-white justify-content-center mt-3" aria-label="homebutton" href="{% url 'home' %}">Home</a>
            </div>
         </section>  
     </div>  
     
 {% endblock  %}
+
