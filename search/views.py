@@ -25,7 +25,7 @@ def search_view(request):
             products = products.filter(queries)
 
             if not products:
-                messages.error(request, "Sorry we couldn't match your search!")
+                messages.info(request, "Sorry we couldn't match your search!")
                 return redirect(reverse('products'))
 
     context = {
