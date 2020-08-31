@@ -2,6 +2,7 @@
 
 <p>Welcome to DN Fitness this e-commerce website was developed by Stephen Seagrave as a final milestone project for the Code Institute Full-Stack Web development course. This application is aimed at targeting users who wish to purchase a variety of services that are available to help improve the individuals fitness / quality of life. If you would like to reach out to me please use my GitHub contact Details</p>
 
+<p>This is a full stack website developed for Code Institute milestone project 4. For full functionality of this website registering for a profile is required to view profiles and order hisotry. To test card payments use Stripe test payments, use card number ``` 4242 4242 4242 4242 ```, CVC and expiry date 04 24 424242</p>
 ## Contents:
 
 - [UX](#User-experience)
@@ -287,33 +288,61 @@ A full write up of user testing can be found here
 
 ## [Bugs](#Contents) 
 
-#### Bugs During Development:
+### Bugs During Development:
 
-During the creation of the main page I was having issues / bugs with loading the background image from the media folder, at first the problem was I was not loading the directory into the settings.py file and joining to the basedir but I needed to resolve this by adding an additional param to the URLS.py file and import the settings from django config and import the static directory. This was added to the end of the URL patterns ```+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)``` After this it resolved the issue I was having with loading the images from the media directory.
+#### Issues with images not loading
 
-I had issues with the products page passing in the correct variable to allow access to the media folder and display images, inside the variable ```{{ MEDIA_URL}}``` i noticed it was not passing correctly to the view and couldnt understand why this was occuring. I attempted to pass a different variable to see if the error was different and noticed in the error it was stating /products/noimage.png is not found, I knew from here the variable was not passing correctly and had something to do with the context processors. Once I added the .media processor it resolved the issue and the images began displaying.
+##### Bug
 
-On the cart page using the tables from bootstrap, I was using 5 table columns and when it came to using them on small screens it was not responsive enough for good UX, I began trying to adjust the styling of the bootstrap classes and the best solution to get this working smoothly on a small screen I utilized these classes ```d-none d-sm-table-cell``` on the child of tr, this removed the image of the item on small screens but kept it on medium and above screens.
+Images not loading from media folder
 
-I was having an issue with the products page styling, I added a background colour behind the image to cover where the anchor text was used, after doing this the class from bootstrap border-top was being clipped by the background colour and it looked like there was no rounded corners on the products I decided to try and add a gradient instead of a solid colour to the background. Doing this worked perfectly, the top was white like the background and the rounder corners could now be seen and the bottom was a solid colour.
+##### Fix
 
-One difficult issue I ran into was with the order checkout process when using webhooks. All orders where processing and adding to the database, but I noticed after 5 seconds it would add a second order of the same to the orderline item. I began debugging the code to see what was wrong with the code.
-I tried many things one of the main things I noticed when i removed the ```form.submit()``` in the js it would still fire instantly, this was due to not correctly getting the element by ID for the button, as I was missing the # in the selector. Also there was a conflict on the checkout page with my class and ID as I had a class the same as my ID, once changing this I noticed something was still wrong. I was using ```document.getElementById``` I changed this to ```document.querySelector``` and it worked without issues. Inside the webhook handler it was time to resolve the issue with the webhook not finding the order and re-creating it. After countless times of reading the logic of the code, I finally noticed when the order is being saved it was not saving the stripe pid, this was because I had miss typed and was saving ```stripe_id =```, once I changed the code to ```stripe_pid``` the order was no longer sending a duplicate order and was finding the order in the database. This proved to be one of the most annoying bugs I was having during the duration of this project.
+Ensure settings file has correct routing to media files and on the URL patters ```+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)```
 
-Issues with styling conflicts when a user added a product to their cart, i had it set that the ammount of the cart would show the ammount below the cart icon, but it was pushing the icons up and offset the bottom of the navbar, removing this and adding a counter with a circle to display how many items were in the cart was a better solution as the items on the site are quite big, having a counter for this type of site seemed like the best decision to make.
+##### Verdict
 
-Issues with styling conflicts with the search icon on the icon header, I wanted to make the search icon like the netflix search bar, when clicked it slides left and opens an input field. I knew how to do this with jquery but wanted to limit the ammount of code written to achieve this. The simplist solution was to take the boostrap class ```.list-inline-item.dropdown.show ``` and added a margin left property to push the other nav anchors to the left. As a result it worked to what was needed but it intefered with other classes using the ``` .dropdown.show ``` class, the easiest fix was to add a custom class which I done ```.list-inline-item.icon-nav-spacer.dropdown.show``` and achieved the exact effect I was looking for.
+This bug was resolved
+
+#### Issues with products image when image is not available
+
+##### Bug
+
+When you direct to a products page when the product has no image, it would throw errors.
+
+##### Fix
+
+Ensure the view is being passed the correct context processors, adding .media processor and in the template use ```{{ MEDIA_URL}}```
+
+##### Verdict
+
+This bug was resolved
+
+#### Stripe webhook duplicating order
+
+##### Bug
+
+When you would process the order everything would process correcly.
+when checking the webhooks from stripe payment intent was failing.
+This was causing 2 issues, 1. No email was being sent to a user 2. users order would be duplicated in the admin, 1 with stripe pid and 1 without.
+
+##### Fix
+
+Check spelling of all variables, stripe_pid was spelt incorrectly missing the "p" this was causing the error not to be found. Missing parentheses at the return was causing the email issue.
+
+##### Verdict
+
+This bug was resolved
+
+
+### Other bugs to note 
 
 On the profile page, I did not want a single page that displayed on the left and right, profile details and order history, I wanted to have it like there was a navigation button on the user profile. To get this concept working I created a profile nav with 3 list items, that would be controlled by jquery and remove and add ```display:none;``` when clicked on the navbar. I was originally having issues with the functionality of the jquery as I was on the variable name ```navIcon.on('click', function{})``` I was unable to get responses, so I changed the syntax slightly to ```$('#account-profile').click(function(){}``` which then housed the hide and show calls. This solution made a sleek and easily accessible user profile nav bar for the user.
 
 I was having issues with the logout functionality that was built into the allauth package. on my user profile I had setup a sign out and are you sure you wish to sign out page on the profile, but when you click the url for signout on allauth it brings you to a provision page to ask if you wish to sign out which I did not want. The solution to this problem after reading the allauth documentation was simple, in settings.py in the project directory I added ```ACCOUNT_LOGOUT_ON_GET = True```, this has got one downfall tho which I am fully aware and does not effect this project direction. When you use the navicons to logout, it instantly logs you out now instead of having the provisonal page. This is something I can handle with a popup modal for logout if necessary.
 
-I had issues when I split my css files into seperate components. I was getting errors in console when deployed to heroku that the MIME type was text type. To resolve this I attempted to add a ```type="css"``` but this did not resolve the issue and after discussing with a mentor, the best solution was to introduce the css into the base.css file. 
-
 Issues with bootstrap dropdown menu text blurry when using transform - only fix i could find was forcing dropdown class to transform unset and re-positioning the profile dropdown to match how it was with transition.
 This was a know bug with bootstrap and was the easiest and quickest solution.
-
-Confirmation emails not being sent to a user who has purchased from the store, after debugging this was due to missing Parenthesis on the ``` content=(f'Webhook received: {event["type"]} | SUCCESS: 'Created order in webhook') ```
 
 
 ## [Deployment](#Contents):
