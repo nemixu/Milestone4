@@ -17,12 +17,3 @@
     <div class="white-overlay"></div>
      {% include 'templates/components/search-results.html'%}       
 {% endblock  %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $('.totop-link').click(function(e){
-            window.scrollTo(0,0)
-        })
-        </script>
-{% endblock %}
