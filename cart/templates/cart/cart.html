@@ -43,35 +43,9 @@
                     <p class="my-0"><strong>€ {{ item.product.price }}</strong></p>
                     <p>Currently in your cart: {{ item.quantity }}</p>
                     <p class="my-0">Subtotal: €{{ item.product.price | calc_subtotal:item.quantity }}
-                    <form class="form update-form pt-3" method="POST" action="{% url 'update_cart' item.item_id %}">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <div class="input-group" id="quantity-control">
-                                <div class="input-group-prepend">
-                                    <button class="decrease-qty btn btn-sm orange-btn rounded-left text-white" 
-                                        data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
-                                        <span>
-                                            <i class="fas fa-minus fa-sm"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <input class="form-control form-control-sm qty_input" type="number"
-                                    name="quantity" value="{{ item.quantity }}" min="0" max="10"
-                                    data-item_id="{{ item.item_id }}"
-                                    id="id_qty_{{ item.item_id }}">
-                                <div class="input-group-append">
-                                    <button class="increase-qty btn btn-sm orange-btn rounded-right text-white"
-                                        data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
-                                        <span>
-                                            <i class="fas fa-plus fa-sm"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <a class="update-button text-white button-styling dark-btn rounded"><small>Update</small></a>
-                    <a class="remove-button text-white button-styling orange-btn rounded float-around" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                    {% include 'cart/components/cart-form.html'%}
+                    <a class="update-button text-white button-styling dark-btn rounded" aria-label="update button"><small>Update</small></a>
+                    <a class="remove-button text-white button-styling orange-btn rounded float-around" aria-label="remove button" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                 </div>
             </div>   
         </div>
