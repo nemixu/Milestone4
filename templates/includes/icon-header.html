@@ -6,7 +6,7 @@
             </li>
             
             <li class="list-inline-item dropdown d-none d-lg-block"> 
-            <a class="text-black " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-lg"></i></a>
+            <a class="text-black " href="#" data-toggle="dropdown" aria-label="nav search button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search fa-lg"></i></a>
                 <div class="text-center dropdown-menu search navbar-search-focus">
                     <form class="form-inline" action="{% url 'search' %}" method="GET">
                         <input class="form-control inline-form-icon" type="text" name="q"
@@ -17,7 +17,7 @@
                 </div>
             </li>
             <li class="list-inline-item dropdown d-block">
-                <a class="text-black " href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="text-black " href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="user profile">
                     <div class="text-center">
                         {% if request.user.is_authenticated %}
                         <div><i class="fas fa-user-circle fa-lg"></i></div>
@@ -41,7 +41,7 @@
             </li>
 
             <li class="list-inline-item">
-                <a class="{% if grand_total %}cart-colour font-weight-bold{% else %}text-black{% endif %} d-block " href="{% url 'cart' %}">
+                <a class="{% if grand_total %}cart-colour font-weight-bold{% else %}text-black{% endif %} d-block" arial-label="shopping cart" href="{% url 'cart' %}">
                     <div class="text-center cart-icon-styling">
                         <div><i class="fas fa-shopping-basket fa-lg mr-3"></i></div>
                             {% if product_count %}
