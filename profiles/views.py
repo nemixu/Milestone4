@@ -1,32 +1,33 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from checkout.models import Order
 
 from .models import UserProfile
 from .forms import UserProfileForm
 
-from checkout.models import Order
 
-# Create your views here.
 @login_required
 def profile(request):
-    """View to display the users profile"""
+    """
+    View to display the users profile
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
-    
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed, Please check your form and try again')    
-    else:    
+            messages.error(request, 'Update failed, Please check your form and try again')
+    else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
-    
-    
-    
-    template ='profiles/profile.html'
+
+
+
+    template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
@@ -37,17 +38,20 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
+    """
+    View to handle previous order history
+    """
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'
     ))
-    
+
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
         'from_profile': True
     }
-    
+
     return render(request, template, context)
