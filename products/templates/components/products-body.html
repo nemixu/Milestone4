@@ -1,24 +1,24 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-3">
+        <div class="col text-center">
             <hr class="hr-black-long">
             <h2 class="text-black text-uc mb-4 text-center">Classes</h2>
             <hr class="hr-black-long">
         </div>
         <div class="col-12 text-center mt-2 mb-4">
         <div class="container">
-            <a href="{% url 'products' %}?category=toning,fullbody,strength,weightloss" class="d-inline-block classes-text h5 text-black m-1" aria-label="classes">All Classes</a>|
-            <a href="{% url 'products' %}?category=weightloss" class="d-inline-block classes-text h5 text-black m-1" aria-label="weight loss class link">Weight Loss</a>|
-            <a href="{% url 'products' %}?category=strength" class="d-inline-block classes-text h5 text-black m-1" aria-label="strength class link">Strength</a>|
-            <a href="{% url 'products' %}?category=fullbody" class="d-inline-block classes-text h5 text-black m-1" aria-label="fullbody class link">Full Body</a>|
-            <a href="{% url 'products' %}?category=toning" class="d-inline-block classes-text h5 text-black m-1" aria-label="toning class link">Toning Workout</a>
+            <a href="{% url 'products' %}?category=toning,fullbody,strength,weightloss" class="d-inline-block classes-text h5 text-black m-1" aria-label="classes"><u>All Classes</u></a>|
+            <a href="{% url 'products' %}?category=weightloss" class="d-inline-block classes-text h5 text-black m-1" aria-label="weight loss class link"><u>Weight Loss</u></a>|
+            <a href="{% url 'products' %}?category=strength" class="d-inline-block classes-text h5 text-black m-1" aria-label="strength class link"><u>Strength</u></a>|
+            <a href="{% url 'products' %}?category=fullbody" class="d-inline-block classes-text h5 text-black m-1" aria-label="fullbody class link"><u>Full Body</u></a>|
+            <a href="{% url 'products' %}?category=toning" class="d-inline-block classes-text h5 text-black m-1" aria-label="toning class link"><u>Toning Workout</u></a>
         </div>
         </div>
     </div>
     <div class="row">
         <div class="class-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
-            <div class="row">
+            <div class="row pb-5">
                 {% for product in products %}
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
                         <div class="card h-100 border-0 card-shadow">
